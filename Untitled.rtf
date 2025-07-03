@@ -1,0 +1,35 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2708
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0   OF-33997\
+      [Documentation]    [SharePoint Group][Content aware collab] Verify file collab revocation\
+      [Tags]      p1  ft-sharepoint_groups    rp-modify_permission_to     ft_collab   external_collab\
+      set test variable   $\{SERVICE\}  SharePoint\
+  #    $\{dictionary_id\} =  create policy dictionary  internal-domains  $\{TEST_NAME\}  dictionary_type_id=3\
+  #    set test variable  $\{exception\}   [\{"collab_external_dictionary": \{"from_id": $\{dictionary_id\},"from_name": "$\{TEST_NAME\}", "to_id": $\{dictionary_id\}, "to_name": "$\{TEST_NAME\}", "role": ["Any"],"match_criteria": "MATCH_ALL" , "to_match_criteria": True\}\}]\
+  #    set test variable  @\{rules\}  [\{"dictionary": \{"keywords": ["confidential"]\}, "description": ""\}, \{"user_share": \{"from": ["*"], "to": ["external_domain"], "role": ["Editor"]\}\}]\
+      set test variable  $\{response\}       ["INCIDENT", \{"MODIFY_PERMISSIONS_TO_NONE":\{"modify_permissions_for": "External Collaborators"\}\}]\
+      set test variable  @\{rules\}  [\{"dictionary": \{"keywords": ["confidential"]\}, "description": ""\},\{"sharepoint_setting":\{"settings":"privacy_settings","privacy":"PUBLIC"\}\},\{"user_share": \{"from": ["*"], "to": ["*"], "role": ["Editor"]\}\}]\
+      set test variable  $\{bind\}  $\{True\}\
+      set test variable  $\{field_incident_count\}  $\{1\}\
+      set test variable  $\{incident_response\}  revoked collaboration\
+      set test variable  $\{collab_type\}  group\
+      set test variable  $\{incident_filename\}      Confidential.docx\
+      set test variable  $\{group_name\}        Group_$\{TEST_NAME\}_Internal_And_External_Users\
+      $\{group_name\}=       Evaluate    '$\{group_name\}'.replace(':','_')\
+      set test variable  $\{o365_users\}  i2*e2*\
+      In $\{SERVICE\} create sharepoint group $\{group_name\}\
+      In $\{SERVICE\} add members to sharepoint group $\{grou_pname\}\
+      $\{site_name\}=   get config variable     publicsite   SharePoint\
+      Create folder   $\{SERVICE\}  random      site=$\{site_name\}\
+      upload file to  $\{SERVICE\}  Confidential.docx   site=$\{site_name\}\
+      sleep  1 minutes\
+      create policy and bind to service\
+      sleep   1 minutes\
+      add permission  $\{SERVICE\}  $\{None\}   \{'role':'editor', 'email':'group'\}   file_collaboration=$\{True\}  collaborator=$\{group_name\}     add_to_all_collaborators=$\{True\}\
+      $\{result\}=   validate the result\
+      [Teardown]  Run Keywords  In $\{SERVICE\} delete latest sharepoint group}
