@@ -1,0 +1,9320 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+    <title>CR-EP-5897 DLP-10321: Added mfe client_id and client_secret in pop json files - Under Review</title>
+    
+    
+
+
+
+
+
+<meta name="application-name" content="fecru" display-name="Fisheye and Crucible">
+<link rel="shortcut icon" href="/static/q97jxk/2static/images/favicons/crucible-16.ico">
+<link rel="apple-touch-icon" href="/static/q97jxk/2static/images/favicons/crucible-32.png">
+<link rel="icon" href="/static/q97jxk/2static/images/favicons/crucible-32.png" type="image/png">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Start WebResourceManager included resources -->
+<script>
+window.WRM=window.WRM||{};window.WRM._unparsedData=window.WRM._unparsedData||{};window.WRM._unparsedErrors=window.WRM._unparsedErrors||{};
+WRM._unparsedData["com.atlassian.plugins.atlassian-plugins-webresource-plugin:context-path.context-path"]="\"\"";
+WRM._unparsedData["com.atlassian.analytics.analytics-client:policy-update-init.policy-update-data-provider"]="false";
+WRM._unparsedData["com.atlassian.analytics.analytics-client:programmatic-analytics-init.programmatic-analytics-data-provider"]="false";
+if(window.WRM._dataArrived)window.WRM._dataArrived();</script>
+<link type="text/css" rel="stylesheet" href="/s/a9ecb56714183b8d8e091c36271bea16-CDN/20200422210507/1/4debdabe54067d3653de2536dd968080/_/download/contextbatch/css/crucible.review,atl.general,-_super/batch.css" data-wrm-key="crucible.review,atl.general,-_super" data-wrm-batch-type="context" media="all">
+<link type="text/css" rel="stylesheet" href="/s/071963bba1dc30251c74ac7b39308354-CDN/20200422210507/1/5.8.15/_/download/batch/com.atlassian.auiplugin:aui-lozenge/com.atlassian.auiplugin:aui-lozenge.css" data-wrm-key="com.atlassian.auiplugin:aui-lozenge" data-wrm-batch-type="resource" media="all">
+<link type="text/css" rel="stylesheet" href="/s/071963bba1dc30251c74ac7b39308354-CDN/20200422210507/1/5.8.15/_/download/batch/com.atlassian.auiplugin:aui-badge/com.atlassian.auiplugin:aui-badge.css" data-wrm-key="com.atlassian.auiplugin:aui-badge" data-wrm-batch-type="resource" media="all">
+<link type="text/css" rel="stylesheet" href="/s/d41d8cd98f00b204e9800998ecf8427e-CDN/20200422210507/1/5.8.15/_/download/batch/com.atlassian.auiplugin:aui-tipsy/com.atlassian.auiplugin:aui-tipsy.css" data-wrm-key="com.atlassian.auiplugin:aui-tipsy" data-wrm-batch-type="resource" media="all">
+<link type="text/css" rel="stylesheet" href="/s/071963bba1dc30251c74ac7b39308354-CDN/20200422210507/1/5.8.15/_/download/batch/com.atlassian.auiplugin:aui-tooltips/com.atlassian.auiplugin:aui-tooltips.css" data-wrm-key="com.atlassian.auiplugin:aui-tooltips" data-wrm-batch-type="resource" media="all">
+<link type="text/css" rel="stylesheet" href="/s/d41d8cd98f00b204e9800998ecf8427e-CDN/20200422210507/1/5.4.18/_/download/batch/com.atlassian.applinks.applinks-plugin:applinks-public/com.atlassian.applinks.applinks-plugin:applinks-public.css" data-wrm-key="com.atlassian.applinks.applinks-plugin:applinks-public" data-wrm-batch-type="resource" media="all">
+<link type="text/css" rel="stylesheet" href="/s/d41d8cd98f00b204e9800998ecf8427e-CDN/20200422210507/1/1.1.7/_/download/batch/com.atlassian.plugins.issue-status-plugin:issue-status-resources/com.atlassian.plugins.issue-status-plugin:issue-status-resources.css" data-wrm-key="com.atlassian.plugins.issue-status-plugin:issue-status-resources" data-wrm-batch-type="resource" media="all">
+<link type="text/css" rel="stylesheet" href="/s/85aded984d32e6df43893124b5aff573-CDN/20200422210507/1/3.0.4/_/download/batch/com.atlassian.integration.jira.jira-integration-plugin:fields/com.atlassian.integration.jira.jira-integration-plugin:fields.css" data-wrm-key="com.atlassian.integration.jira.jira-integration-plugin:fields" data-wrm-batch-type="resource" media="all">
+<link type="text/css" rel="stylesheet" href="/s/85aded984d32e6df43893124b5aff573-CDN/20200422210507/1/3.0.4/_/download/batch/com.atlassian.integration.jira.jira-integration-plugin:transition-form/com.atlassian.integration.jira.jira-integration-plugin:transition-form.css" data-wrm-key="com.atlassian.integration.jira.jira-integration-plugin:transition-form" data-wrm-batch-type="resource" media="all">
+<link type="text/css" rel="stylesheet" href="/s/426098d71d6a8ab3200011488477c99f-CDN/20200422210507/1/3.0.4/_/download/batch/com.atlassian.integration.jira.jira-integration-plugin:jira-issues-dialog/com.atlassian.integration.jira.jira-integration-plugin:jira-issues-dialog.css" data-wrm-key="com.atlassian.integration.jira.jira-integration-plugin:jira-issues-dialog" data-wrm-batch-type="resource" media="all">
+<!--[if lte IE 8]>
+<link type="text/css" rel="stylesheet" href="/s/426098d71d6a8ab3200011488477c99f-CDN/20200422210507/1/3.0.4/_/download/batch/com.atlassian.integration.jira.jira-integration-plugin:jira-issues-dialog/com.atlassian.integration.jira.jira-integration-plugin:jira-issues-dialog.css?conditionalComment=lte+IE+8" data-wrm-key="com.atlassian.integration.jira.jira-integration-plugin:jira-issues-dialog" data-wrm-batch-type="resource" media="all">
+<![endif]-->
+<link type="text/css" rel="stylesheet" href="/s/0cc4d373fbff66a6f9d4ba2f6e9bb08f-CDN/20200422210507/1/4.8.2-20200422210507/_/download/batch/com.atlassian.crucible.plugins.crucible-review-activity-plugin:resources/com.atlassian.crucible.plugins.crucible-review-activity-plugin:resources.css" data-wrm-key="com.atlassian.crucible.plugins.crucible-review-activity-plugin:resources" data-wrm-batch-type="resource" media="all">
+<script type="text/javascript" src="/s/d41d8cd98f00b204e9800998ecf8427e-CDN/20200422210507/1/c9eaee5193cb001557ad47a43cb1e97a/_/download/contextbatch/js/_super/batch.js" data-wrm-key="_super" data-wrm-batch-type="context" data-initially-rendered></script>
+<script type="text/javascript" src="/s/f7f535d276e5e69bde4077d88a0fc2f4-CDN/20200422210507/1/4debdabe54067d3653de2536dd968080/_/download/contextbatch/js/crucible.review,atl.general,-_super/batch.js?locale=en-US" data-wrm-key="crucible.review,atl.general,-_super" data-wrm-batch-type="context" data-initially-rendered></script>
+<script type="text/javascript" src="/s/d41d8cd98f00b204e9800998ecf8427e-CDN/20200422210507/1/5.8.15/_/download/batch/com.atlassian.auiplugin:internal-jquery-ui-datepicker/com.atlassian.auiplugin:internal-jquery-ui-datepicker.js" data-wrm-key="com.atlassian.auiplugin:internal-jquery-ui-datepicker" data-wrm-batch-type="resource" data-initially-rendered></script>
+<script type="text/javascript" src="/s/d41d8cd98f00b204e9800998ecf8427e-CDN/20200422210507/1/5.8.15/_/download/batch/com.atlassian.auiplugin:jquery-ui-other/com.atlassian.auiplugin:jquery-ui-other.js" data-wrm-key="com.atlassian.auiplugin:jquery-ui-other" data-wrm-batch-type="resource" data-initially-rendered></script>
+<script type="text/javascript" src="/s/d41d8cd98f00b204e9800998ecf8427e-CDN/20200422210507/1/5.8.15/_/download/batch/com.atlassian.auiplugin:aui-tipsy/com.atlassian.auiplugin:aui-tipsy.js" data-wrm-key="com.atlassian.auiplugin:aui-tipsy" data-wrm-batch-type="resource" data-initially-rendered></script>
+<script type="text/javascript" src="/s/d41d8cd98f00b204e9800998ecf8427e-CDN/20200422210507/1/5.8.15/_/download/batch/com.atlassian.auiplugin:aui-tooltips/com.atlassian.auiplugin:aui-tooltips.js" data-wrm-key="com.atlassian.auiplugin:aui-tooltips" data-wrm-batch-type="resource" data-initially-rendered></script>
+<script type="text/javascript" src="/s/d41d8cd98f00b204e9800998ecf8427e-CDN/20200422210507/1/5.4.18/_/download/batch/com.atlassian.applinks.applinks-plugin:lodash-amd/com.atlassian.applinks.applinks-plugin:lodash-amd.js" data-wrm-key="com.atlassian.applinks.applinks-plugin:lodash-amd" data-wrm-batch-type="resource" data-initially-rendered></script>
+<script type="text/javascript" src="/s/d41d8cd98f00b204e9800998ecf8427e-CDN/20200422210507/1/5.4.18/_/download/batch/com.atlassian.applinks.applinks-plugin:applinks-lib/com.atlassian.applinks.applinks-plugin:applinks-lib.js" data-wrm-key="com.atlassian.applinks.applinks-plugin:applinks-lib" data-wrm-batch-type="resource" data-initially-rendered></script>
+<script type="text/javascript" src="/s/d41d8cd98f00b204e9800998ecf8427e-CDN/20200422210507/1/5.4.18/_/download/batch/com.atlassian.applinks.applinks-plugin:applinks-public/com.atlassian.applinks.applinks-plugin:applinks-public.js" data-wrm-key="com.atlassian.applinks.applinks-plugin:applinks-public" data-wrm-batch-type="resource" data-initially-rendered></script>
+<script type="text/javascript" src="/s/99914b932bd37a50b983c5e7c90ae93b-CDN/20200422210507/1/1.1.7/_/download/batch/com.atlassian.plugins.issue-status-plugin:issue-status-resources/com.atlassian.plugins.issue-status-plugin:issue-status-resources.js?locale=en-US" data-wrm-key="com.atlassian.plugins.issue-status-plugin:issue-status-resources" data-wrm-batch-type="resource" data-initially-rendered></script>
+<script type="text/javascript" src="/s/c1b1d8d7ef6a6d9dbba566242b4d5061-CDN/20200422210507/1/3.0.4/_/download/batch/com.atlassian.integration.jira.jira-integration-plugin:fields/com.atlassian.integration.jira.jira-integration-plugin:fields.js?locale=en-US" data-wrm-key="com.atlassian.integration.jira.jira-integration-plugin:fields" data-wrm-batch-type="resource" data-initially-rendered></script>
+<script type="text/javascript" src="/s/c1b1d8d7ef6a6d9dbba566242b4d5061-CDN/20200422210507/1/3.0.4/_/download/batch/com.atlassian.integration.jira.jira-integration-plugin:transition-form/com.atlassian.integration.jira.jira-integration-plugin:transition-form.js?locale=en-US" data-wrm-key="com.atlassian.integration.jira.jira-integration-plugin:transition-form" data-wrm-batch-type="resource" data-initially-rendered></script>
+<script type="text/javascript" src="/s/c1b1d8d7ef6a6d9dbba566242b4d5061-CDN/20200422210507/1/3.0.4/_/download/batch/com.atlassian.integration.jira.jira-integration-plugin:jira-issues-dialog/com.atlassian.integration.jira.jira-integration-plugin:jira-issues-dialog.js?locale=en-US" data-wrm-key="com.atlassian.integration.jira.jira-integration-plugin:jira-issues-dialog" data-wrm-batch-type="resource" data-initially-rendered></script>
+<script type="text/javascript" src="/s/d41d8cd98f00b204e9800998ecf8427e-CDN/20200422210507/1/1.0/_/download/batch/fecru.webresources:xsrf/fecru.webresources:xsrf.js" data-wrm-key="fecru.webresources:xsrf" data-wrm-batch-type="resource" data-initially-rendered></script>
+<script type="text/javascript" src="/s/d41d8cd98f00b204e9800998ecf8427e-CDN/20200422210507/1/4.8.2-20200422210507/_/download/batch/com.atlassian.crucible.plugins.crucible-review-activity-plugin:marionette/com.atlassian.crucible.plugins.crucible-review-activity-plugin:marionette.js" data-wrm-key="com.atlassian.crucible.plugins.crucible-review-activity-plugin:marionette" data-wrm-batch-type="resource" data-initially-rendered></script>
+<script type="text/javascript" src="/s/d41d8cd98f00b204e9800998ecf8427e-CDN/20200422210507/1/4.8.2-20200422210507/_/download/batch/com.atlassian.crucible.plugins.crucible-review-activity-plugin:namespace-init/com.atlassian.crucible.plugins.crucible-review-activity-plugin:namespace-init.js" data-wrm-key="com.atlassian.crucible.plugins.crucible-review-activity-plugin:namespace-init" data-wrm-batch-type="resource" data-initially-rendered></script>
+<script type="text/javascript" src="/s/d41d8cd98f00b204e9800998ecf8427e-CDN/20200422210507/1/4.8.2-20200422210507/_/download/batch/com.atlassian.crucible.plugins.crucible-review-activity-plugin:vendor-mousewheel-stop-propagation/com.atlassian.crucible.plugins.crucible-review-activity-plugin:vendor-mousewheel-stop-propagation.js" data-wrm-key="com.atlassian.crucible.plugins.crucible-review-activity-plugin:vendor-mousewheel-stop-propagation" data-wrm-batch-type="resource" data-initially-rendered></script>
+<script type="text/javascript" src="/s/d41d8cd98f00b204e9800998ecf8427e-CDN/20200422210507/1/0.5.0/_/download/batch/com.atlassian.plugin.jslibs:moment-2.10.3/com.atlassian.plugin.jslibs:moment-2.10.3.js" data-wrm-key="com.atlassian.plugin.jslibs:moment-2.10.3" data-wrm-batch-type="resource" data-initially-rendered></script>
+<script type="text/javascript" src="/s/d41d8cd98f00b204e9800998ecf8427e-CDN/20200422210507/1/1.0/_/download/batch/fecru.webresources:vendor-moment-js/fecru.webresources:vendor-moment-js.js" data-wrm-key="fecru.webresources:vendor-moment-js" data-wrm-batch-type="resource" data-initially-rendered></script>
+<script type="text/javascript" src="/s/d41d8cd98f00b204e9800998ecf8427e-CDN/20200422210507/1/1.0/_/download/batch/fecru.webresources:util-date-formatter/fecru.webresources:util-date-formatter.js" data-wrm-key="fecru.webresources:util-date-formatter" data-wrm-batch-type="resource" data-initially-rendered></script>
+<script type="text/javascript" src="/s/d41d8cd98f00b204e9800998ecf8427e-CDN/20200422210507/1/1.0/_/download/batch/fecru.webresources:crucible-review-model-pending/fecru.webresources:crucible-review-model-pending.js" data-wrm-key="fecru.webresources:crucible-review-model-pending" data-wrm-batch-type="resource" data-initially-rendered></script>
+<script type="text/javascript" src="/s/d41d8cd98f00b204e9800998ecf8427e-CDN/20200422210507/1/1.0/_/download/batch/fecru.webresources:fecru-mixins/fecru.webresources:fecru-mixins.js" data-wrm-key="fecru.webresources:fecru-mixins" data-wrm-batch-type="resource" data-initially-rendered></script>
+<script type="text/javascript" src="/s/d41d8cd98f00b204e9800998ecf8427e-CDN/20200422210507/1/1.0/_/download/batch/fecru.webresources:crucible-review-model/fecru.webresources:crucible-review-model.js" data-wrm-key="fecru.webresources:crucible-review-model" data-wrm-batch-type="resource" data-initially-rendered></script>
+<script type="text/javascript" src="/s/99914b932bd37a50b983c5e7c90ae93b-CDN/20200422210507/1/4.8.2-20200422210507/_/download/batch/com.atlassian.crucible.plugins.crucible-review-activity-plugin:resources/com.atlassian.crucible.plugins.crucible-review-activity-plugin:resources.js?locale=en-US" data-wrm-key="com.atlassian.crucible.plugins.crucible-review-activity-plugin:resources" data-wrm-batch-type="resource" data-initially-rendered></script>
+<script type="text/javascript" src="/s/d41d8cd98f00b204e9800998ecf8427e-T/20200422210507/1/4.8.2-20200422210507/_/download/batch/com.atlassian.crucible.plugins.crucible-review-activity-plugin:initializer/com.atlassian.crucible.plugins.crucible-review-activity-plugin:initializer.js" data-wrm-key="com.atlassian.crucible.plugins.crucible-review-activity-plugin:initializer" data-wrm-batch-type="resource" data-initially-rendered></script>
+
+<!-- End WebResourceManager included resources -->
+<script type="text/javascript" src="/static/q97jxk/concat.commonScriptAndStyleIncludes.334abc1825e8b8d6c2fb4a38c365c4a7.cache.js"></script>
+
+<link type="text/css" rel="stylesheet" href="/static/q97jxk/2static/style/concat.commonScriptAndStyleIncludes.4d5a517ce513233f062794fd33e309f8.cache.css">
+<link type="text/css" rel="stylesheet" href="/static/q97jxk/2static/style/jquery/theme/concat.commonScriptAndStyleIncludes.54ff45406887c7698534445611f083dc.cache.css">
+<link type="text/css" rel="stylesheet" href="/static/q97jxk/2static/style/concat.commonScriptAndStyleIncludes.8d36e5ce850f0d174bd955c6a0a0b802.cache.css">
+<link type="text/css" rel="stylesheet" href="/static/q97jxk/css/concat.commonScriptAndStyleIncludes.f1b977442c2d358b4b8cb85da0727569.cache.css">
+<link type="text/css" rel="stylesheet" href="/static/q97jxk/2static/style/concat.commonScriptAndStyleIncludes.5ac4846fff62cbacc28db6027e7c1b3e.cache.css">
+<link type="text/css" rel="stylesheet" href="/static/q97jxk/2static/style/components/concat.commonScriptAndStyleIncludes.a2935706994749e51a0a97aa5ed84c09.cache.css">
+<link type="text/css" rel="stylesheet" href="/static/q97jxk/2static/style/jquery/plugin/concat.commonScriptAndStyleIncludes.f3f5b1ba768fed813e974d6ac559c5c2.cache.css">
+<link type="text/css" rel="stylesheet" href="/static/q97jxk/2static/style/concat.commonScriptAndStyleIncludes.b77ee58b99c9c3b346dfafd03580e7c5.cache.css">
+<link type="text/css" rel="stylesheet" href="/static/q97jxk/2static/style/third-party-plugins/concat.commonScriptAndStyleIncludes.a7ef6fdaefa62179d39db56feed2f36c.cache.css">
+
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+<!-- @ADG -->
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+
+ 
+
+
+
+
+<script type="text/x-template" title="share-content-popup">
+    <form action="#" method="post" class="aui share-content-popup">
+        <fieldset class="share-content-popup">
+            <div class="autocomplete-user-target">
+                <div class="fecru-autocomplete-wrapper">
+                    <input id="share-user-input" type="text" name="share-user-input" class="text ac_input" value=""
+                           autocomplete="off" placeholder="Enter user name or email address" />
+                    <span class="fecru-autocomplete-dropdown-icon">&nbsp;</span>
+                </div>
+            </div>
+            <ol class="recipients">
+            </ol>
+            <textarea class="textarea" id="share-dialog-note" placeholder="Add an optional note"/>
+        </fieldset>
+        <div class="share-dialog-button-panel">
+            <div class="share-dialog-progress-messages"></div>
+            <button type="button" id="share-submit-button" class="aui-button aui-style" aria-disabled="true" >Send</button>
+            <a class="close-dialog">Cancel</a>
+        </div>
+    </form>
+</script>
+
+<script type="text/x-template" title="share-content-popup-recipient-user">
+    <li data-user="{id}" style="display: none">
+        <span>
+            <img src="{avatarUrl}" title="{id}" />
+            <span title="{displayPrimary}" class="recipient-username-wrapped">{displayPrimary}</span>
+            <span class="remove-recipient"/>
+        </span>
+    </li>
+</script>
+
+<script type="text/x-template" title="share-content-popup-recipient-email">
+    <li data-email="{email}" style="display: none">
+        <span>
+            <img src="/static/q97jxk/images/unknownavatar.png" title="{email}" />
+            <span title="{displayPrimary}" class="recipient-username-wrapped">{email}</span>
+            <span class="remove-recipient"/>
+        </span>
+    </li>
+</script>
+
+
+
+
+<link type="text/css" rel="stylesheet" href="/static/q97jxk/2static/style/concat.crucible-css.90248b553c9646f154fd43da554a8d47.cache.css">
+<link type="text/css" rel="stylesheet" href="/static/q97jxk/2static/style/controls/concat.crucible-css.21dafb3ef750c4e28fbd8548de50d275.cache.css">
+<link type="text/css" rel="stylesheet" href="/static/q97jxk/2static/style/jquery/plugin/concat.crucible-css.b78be88696fad04cd0865cdebb6109a7.cache.css">
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+<script type="text/javascript">jQuery.noConflict();</script>
+
+<script type="text/javascript" src="/static/q97jxk/concat.crucible.64cd2fd5673be38906d82383cd360bab.cache.js"></script>
+
+<link type="text/css" rel="stylesheet" href="/static/q97jxk/2static/style/cru/concat.crucible.035e0c6d476c16ddf762a0e00ae636dc.cache.css">
+<link type="text/css" rel="stylesheet" href="/static/q97jxk/2static/style/components/concat.crucible.52d2642eb0e49770e250ae05a99a3fc0.cache.css">
+<link type="text/css" rel="stylesheet" href="/static/q97jxk/css/concat.crucible.36fa24cecb248c825db2d8dc1cc8a205.cache.css">
+<link type="text/css" rel="stylesheet" href="/static/q97jxk/2static/style/concat.crucible.8b1eeda6fdecc4328b3ae81dcd3656f1.cache.css">
+
+
+
+ 
+ 
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" href="/static/q97jxk/2static/style/style-ie.css">
+<link type="text/css" rel="stylesheet" href="/static/q97jxk/2static/style/cru/crucible-ie.css">
+
+<script type="text/javascript" src="/static/q97jxk/2static/script/fecru/ie.js"></script>
+<![endif]-->
+
+
+    <script type="text/x-template" title="add-content-popup">
+        <div class="managefiles">
+            <div id="add-content-methods">
+                
+
+                
+                    <a id="com_atlassian_fisheye_plugin_systemplugins_system-crucible-review-addcontent-items-changelog" class="method method-changelog"
+                       data-analytics-name="method-changelog"
+                       data-url="/cru/CR-EP-5897/edit-changelog/{baseUrlSuffix}">
+                        <h3>Browse changesets</h3>
+                        <p>Browse recent changes for revisions to add to this review</p>
+                    </a>
+                
+                    <a id="com_atlassian_crucible_plugins_crucible-branch-review-plugin-crucible-review-add-content-option" class="method method-track-branch aui-iconfont-devtools-branch"
+                       data-analytics-name="method-track-branch"
+                       data-url="/plugins/servlet/branchreview?reviewId=CR-EP-5897">
+                        <h3>Choose branches</h3>
+                        <p>Pick one or more branches to review</p>
+                    </a>
+                
+                    <a id="com_atlassian_fisheye_plugin_systemplugins_system-crucible-review-addcontent-items-browse" class="method method-browse"
+                       data-analytics-name="method-browse"
+                       data-url="/cru/CR-EP-5897/edit-browse/{baseUrlSuffix}">
+                        <h3>Explore repositories</h3>
+                        <p>Use a directory tree to find files</p>
+                    </a>
+                
+                    <a id="com_atlassian_fisheye_plugin_systemplugins_system-crucible-review-addcontent-items-search" class="method method-search"
+                       data-analytics-name="method-search"
+                       data-url="/cru/CR-EP-5897/edit-search/{baseUrlSuffix}">
+                        <h3>Search for files</h3>
+                        <p>Use Crucible&#039;s search to find revisions to add to this review</p>
+                    </a>
+                
+                    <a id="com_atlassian_fisheye_plugin_systemplugins_system-crucible-review-addcontent-items-patch" class="method method-patch"
+                       data-analytics-name="method-patch"
+                       data-url="/cru/CR-EP-5897/edit-patch/{baseUrlSuffix}">
+                        <h3>Pre-commit</h3>
+                        <p>Upload a patch file to be reviewed - diffs of files will be extracted</p>
+                    </a>
+                
+                    <a id="com_atlassian_fisheye_plugin_systemplugins_system-crucible-review-addcontent-items-upload" class="method method-upload"
+                       data-analytics-name="method-upload"
+                       data-url="/cru/CR-EP-5897/edit-upload/{baseUrlSuffix}">
+                        <h3>Attachments</h3>
+                        <p>Upload a file to be reviewed</p>
+                    </a>
+                
+            </div>
+    </script>
+
+
+
+
+
+
+
+<script type="text/javascript">
+    window.FECRU = window.FECRU || {};
+    FECRU.pageContext = "";
+    FECRU.staticDirectory = "static/q97jxk";
+    FECRU.userTimeZoneOffset = "-420";
+    FECRU.userTimeZone = "US/Pacific";
+    FECRU.isAnon = false;
+    FECRU.isFishEye = true;
+    FECRU.isCrucible = true;
+    FECRU.isJiraIntegrationPluginEnabled = true;
+    FECRU.isSelectionHistoryEnabled = false;
+    FECRU.initialInProductHelpProperties = {"commentResolutionActionInProductHelpShowed":true,"reviewActivityInProductHelpShowed":true};
+</script>
+
+
+
+    <script type="text/javascript" src="/static/q97jxk/2static/script/cru/review/keynav.js"></script>
+
+    
+
+    <link rel="stylesheet" href="/static/q97jxk/2static/style/jquery/plugin/jquery.fecru.autocomplete.css"
+          type="text/css" media="screen">
+
+    
+        
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+    review.setId('CR-EP-5897')
+            .setProjectKey('CR-EP')
+            .setWritable(false)
+            .setCommentable(false)
+            .setStateName('Review')
+            .setStateVerbage('Under Review')
+            .setMetaStateName('OPEN')
+            .setName("DLP-10321: Added mfe client_id and client_secret in pop json files")
+            .setAutoMarkFilesRead(true)
+            .setOverdue(true)
+            .addActivityItems([{"type":"REVIEW_COMPLETED","id":"logItem1580322","created":"2025-10-28T03:16:21.118Z","user":{"userName":"mkumar11","displayName":"Manoj Kumar M","avatarUrl":"https://secure.gravatar.com/avatar/e1478d0be54f0f0861c23927c4ce0a43?s=32&d=mm","url":"/user/mkumar11"},"data":{"completed":true}},{"type":"REVIEW_COMPLETED","id":"logItem1580296","created":"2025-10-27T22:14:56.678Z","user":{"userName":"svadivel","displayName":"Senthilnathan Vadivel","avatarUrl":"https://secure.gravatar.com/avatar/dab5e00502d4b3fa55fcaed8f5f4a38e?s=32&d=mm","url":"/user/svadivel"},"data":{"completed":true}},{"type":"REVIEW_STATE_CHANGE","id":"logItem1577617","created":"2025-10-15T10:15:10.894Z","user":{"userName":"sdola","displayName":"Suryamanikanta Dola","avatarUrl":"https://secure.gravatar.com/avatar/dab96877977046e6b52ee2655fb82083?s=32&d=mm","url":"/user/sdola"},"data":{"state":"Review","stateBefore":"Draft"}},{"type":"REVIEW_CREATED","id":"logItem1577613","created":"2025-10-15T10:14:50.863Z","user":{"userName":"sdola","displayName":"Suryamanikanta Dola","avatarUrl":"https://secure.gravatar.com/avatar/dab96877977046e6b52ee2655fb82083?s=32&d=mm","url":"/user/sdola"},"data":null}]);
+
+
+    
+
+    
+    
+    (function() {
+        var frxModelLoader = 
+
+
+
+
+
+
+
+
+function(insertAfterFrx) {
+
+    
+    
+    
+
+    
+        
+        
+            
+        
+        
+    
+
+    
+        
+        
+            
+        
+    
+
+    var frx = new Frx("582312", review);
+
+    frx.setBinary(false)
+       .setDirectory(false)
+       .setNewSinceComplete(true)
+       .setPath("settings/trunk/corp-uswest2qaautoregressionpopods.json")
+       .setPathTruncated("/settings/trunk/corp-uswest2qaautoregressionpopods.json")
+       .setBranch("")
+       .setSourceName("PATCH:126284")
+
+    
+       .addFrxRevision("1123603", "126284:0:F")
+    
+       .addFrxRevision("1123604", "126284:0:T")
+    
+    
+       .setSliderFrxRevisions(frx.frxRevisions())
+    
+    
+       .setVisibleToRevision("1123604")
+       .setVisibleFromRevision("1123603")
+       .setVisibleToSCMRevision("126284:0:T")
+       .setVisibleFromSCMRevision("126284:0:F")
+       .setFrxRevisionToCruRevisionMap(
+
+
+
+
+{
+
+    "1123603": "1479691"
+, 
+    "1123604": "1479692"
+
+}
+
+)
+       .setColspan(5)
+       .setContext(3)
+       .setWhitespace("b")
+       .setDiffLayout("u")
+       .setIgnoreBlankLines(true)
+       .setReadStatus("unread");
+    review.addFrx(frx, insertAfterFrx);
+
+    
+
+    
+};
+
+;
+        frxModelLoader();
+
+    
+    
+        review.setCommentFrxId('172277', 582312);
+    
+        review.setCommentFrxId('172278', 582312);
+    
+    
+        
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+(function() {
+    var frx = null;
+
+
+    
+    frx = review.frx(582312);
+
+    var addedComments = {};
+
+    var comment = review.comment(172277) || new Comment(172277, "unknownfrx");
+    comment
+        .setStatus("read")
+        .setMessage("secrets needs to be added to aws secret manager")
+        .setMessageAsHtml("\u003cp\u003esecrets needs to be added to aws secret manager\u003c/p\u003e")
+        .setDefect(false)
+        .setMetrics(
+
+
+
+
+
+
+    
+    
+        []
+    
+
+)
+        .setDraft(false)
+
+
+        .setResolution(CommentResolution.from({
+            status: "RESOLVED",
+            date: 1760526652355,
+            user: 
+
+
+
+{
+    "id": 2428,
+    "userName": "sdola",
+    "displayName": "Suryamanikanta Dola",
+    "avatarUrl": "https://secure.gravatar.com/avatar/dab96877977046e6b52ee2655fb82083?s=32&d=mm"
+}
+
+        }))
+
+        .setIssueKey("")
+        .setDate(new Date(1760523990049))
+        .setAuthor(User.getFromLocalIndexOrCreate(2451, 
+
+
+
+{
+    "id": 2451,
+    "userName": "jgavini",
+    "displayName": "Jayanth Gavini",
+    "avatarUrl": "https://secure.gravatar.com/avatar/296cab24048ea92e9c1ce47df7c2c8db?s=32&d=mm"
+}
+));
+
+    addedComments[comment.id()] = comment;
+
+    var parent = addedComments[172277];
+    reply = review.comment(172278) || new Comment(172278, "unknownfrxreply");
+    reply.setReplyTo(parent)
+        .setStatus("read")
+        .setMessage("Ok, Created an ops ticket for keys - https://jira.myshn.net/browse/OPS-27481")
+        .setMessageAsHtml("\u003cp\u003eOk, Created an ops ticket for keys - https://jira.myshn.net/browse/\u003ca href=\"https://jira.myshn.net/browse/OPS-27481\"\u003eOPS-27481\u003c/a\u003e\u003c/p\u003e")
+        .setDefect(false)
+        .setMetrics(
+
+
+
+
+
+
+    
+    
+        []
+    
+
+)
+        .setDraft(false)
+        .setDate(new Date(1760526049691))
+
+         .setAuthor(User.getFromLocalIndexOrCreate(2428, 
+
+
+
+{
+    "id": 2428,
+    "userName": "sdola",
+    "displayName": "Suryamanikanta Dola",
+    "avatarUrl": "https://secure.gravatar.com/avatar/dab96877977046e6b52ee2655fb82083?s=32&d=mm"
+}
+));
+
+    parent.addReply(reply);
+
+    addedComments[172278] = reply;
+
+    AJS.$.each( addedComments, function() {
+        var comment = this;
+        if( frx ) {
+            comment.setFrx(frx);
+            frx.addComment(comment);
+        } else {
+            comment.setReview(review);
+        }
+        review.addComment(comment);
+    } );
+})();
+
+
+        
+    
+        
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+(function() {
+    var frx = null;
+
+
+    
+    frx = review.frx(582312);
+
+    var addedComments = {};
+
+    var comment = review.comment(172278) || new Comment(172278, "unknownfrx");
+    comment
+        .setStatus("read")
+        .setMessage("Ok, Created an ops ticket for keys - https://jira.myshn.net/browse/OPS-27481")
+        .setMessageAsHtml("\u003cp\u003eOk, Created an ops ticket for keys - https://jira.myshn.net/browse/\u003ca href=\"https://jira.myshn.net/browse/OPS-27481\"\u003eOPS-27481\u003c/a\u003e\u003c/p\u003e")
+        .setDefect(false)
+        .setMetrics(
+
+
+
+
+
+
+    
+    
+        []
+    
+
+)
+        .setDraft(false)
+
+
+        .setIssueKey("")
+        .setDate(new Date(1760526049691))
+        .setAuthor(User.getFromLocalIndexOrCreate(2428, 
+
+
+
+{
+    "id": 2428,
+    "userName": "sdola",
+    "displayName": "Suryamanikanta Dola",
+    "avatarUrl": "https://secure.gravatar.com/avatar/dab96877977046e6b52ee2655fb82083?s=32&d=mm"
+}
+));
+
+    addedComments[comment.id()] = comment;
+
+    AJS.$.each( addedComments, function() {
+        var comment = this;
+        if( frx ) {
+            comment.setFrx(frx);
+            frx.addComment(comment);
+        } else {
+            comment.setReview(review);
+        }
+        review.addComment(comment);
+    } );
+})();
+
+
+        
+    
+    })();
+    
+    
+    (function() {
+        var frxModelLoader = 
+
+
+
+
+
+
+
+
+function(insertAfterFrx) {
+
+    
+    
+    
+
+    
+        
+        
+            
+        
+        
+    
+
+    
+        
+        
+            
+        
+    
+
+    var frx = new Frx("582313", review);
+
+    frx.setBinary(false)
+       .setDirectory(false)
+       .setNewSinceComplete(true)
+       .setPath("settings/trunk/corp-uswest2qatpopapi.json")
+       .setPathTruncated("/settings/trunk/corp-uswest2qatpopapi.json")
+       .setBranch("")
+       .setSourceName("PATCH:126284")
+
+    
+       .addFrxRevision("1123605", "126284:1:F")
+    
+       .addFrxRevision("1123606", "126284:1:T")
+    
+    
+       .setSliderFrxRevisions(frx.frxRevisions())
+    
+    
+       .setVisibleToRevision("1123606")
+       .setVisibleFromRevision("1123605")
+       .setVisibleToSCMRevision("126284:1:T")
+       .setVisibleFromSCMRevision("126284:1:F")
+       .setFrxRevisionToCruRevisionMap(
+
+
+
+
+{
+
+    "1123605": "1479693"
+, 
+    "1123606": "1479694"
+
+}
+
+)
+       .setColspan(5)
+       .setContext(3)
+       .setWhitespace("b")
+       .setDiffLayout("u")
+       .setIgnoreBlankLines(true)
+       .setReadStatus("unread");
+    review.addFrx(frx, insertAfterFrx);
+
+    
+
+    
+};
+
+;
+        frxModelLoader();
+
+    
+    
+    
+    })();
+    
+    
+    (function() {
+        var frxModelLoader = 
+
+
+
+
+
+
+
+
+function(insertAfterFrx) {
+
+    
+    
+    
+
+    
+        
+        
+            
+        
+        
+    
+
+    
+        
+        
+            
+        
+    
+
+    var frx = new Frx("582314", review);
+
+    frx.setBinary(false)
+       .setDirectory(false)
+       .setNewSinceComplete(true)
+       .setPath("settings/trunk/corp-uswest2qatpopapi2.json")
+       .setPathTruncated("/settings/trunk/corp-uswest2qatpopapi2.json")
+       .setBranch("")
+       .setSourceName("PATCH:126284")
+
+    
+       .addFrxRevision("1123607", "126284:2:F")
+    
+       .addFrxRevision("1123608", "126284:2:T")
+    
+    
+       .setSliderFrxRevisions(frx.frxRevisions())
+    
+    
+       .setVisibleToRevision("1123608")
+       .setVisibleFromRevision("1123607")
+       .setVisibleToSCMRevision("126284:2:T")
+       .setVisibleFromSCMRevision("126284:2:F")
+       .setFrxRevisionToCruRevisionMap(
+
+
+
+
+{
+
+    "1123607": "1479695"
+, 
+    "1123608": "1479696"
+
+}
+
+)
+       .setColspan(5)
+       .setContext(3)
+       .setWhitespace("b")
+       .setDiffLayout("u")
+       .setIgnoreBlankLines(true)
+       .setReadStatus("unread");
+    review.addFrx(frx, insertAfterFrx);
+
+    
+
+    
+};
+
+;
+        frxModelLoader();
+
+    
+    
+    
+    })();
+    
+
+    
+
+    var permaId = 'CR-EP-5897';
+    var baseAjaxUrl = '/cru/CR-EP-5897/';
+
+    review.setRenderTime(new Date(1761627707213));
+    review.setLastUpdatedTime(new Date(1761627707213));
+
+    
+    
+    review.setReviewer(
+        2210,
+        "mp4",
+        "Megha P",
+        0,
+        false,
+        "https://secure.gravatar.com/avatar/331bdadaf5c3d8bfd09cb23e7d85aea8?s=22&d=mm");
+    
+    
+    
+    
+    
+    review.setReviewer(
+        2422,
+        "avishwak",
+        "Anupam Vishwakarma",
+        100,
+        false,
+        "https://secure.gravatar.com/avatar/5fb571248204712573a8cc4ff6ac19a1?s=22&d=mm");
+    
+    
+    
+    
+    
+    review.setReviewer(
+        2219,
+        "vkintali",
+        "Venkataramana Kintali",
+        0,
+        false,
+        "https://secure.gravatar.com/avatar/de0961ba3dd9f30228328a918d8b6fdf?s=22&d=mm");
+    
+    
+    
+    
+    
+    review.setReviewer(
+        2282,
+        "jniba",
+        "Jerome Niba",
+        0,
+        false,
+        "https://secure.gravatar.com/avatar/a25e23260c73548256eee518ab51b492?s=22&d=mm");
+    
+    
+    
+    
+    
+    review.setReviewer(
+        190,
+        "schinnan",
+        "Santhosh Chinnan",
+        0,
+        false,
+        "https://secure.gravatar.com/avatar/1f7f2a9b0cd922e9853195f3fe6547ce?s=22&d=mm");
+    
+    
+    
+    
+    
+    
+    review.setAuthor(2428,
+        "sdola",
+        "Suryamanikanta Dola",
+        "https://secure.gravatar.com/avatar/dab96877977046e6b52ee2655fb82083?s=48&d=mm");
+    
+    
+    
+    
+    review.setReviewer(
+        2451,
+        "jgavini",
+        "Jayanth Gavini",
+        100,
+        false,
+        "https://secure.gravatar.com/avatar/296cab24048ea92e9c1ce47df7c2c8db?s=22&d=mm");
+    
+    
+    
+    
+    
+    review.setReviewer(
+        1513,
+        "jgarciam",
+        "Julio Garcia Munoz",
+        0,
+        false,
+        "https://secure.gravatar.com/avatar/89f08f260e82830f18d3335685d55105?s=22&d=mm");
+    
+    
+    
+    
+    
+    review.setReviewer(
+        2535,
+        "juradi",
+        "Jayapal Uradi",
+        0,
+        false,
+        "https://secure.gravatar.com/avatar/95b02cf7c909e0a07d5c01b2c64ffcb5?s=22&d=mm");
+    
+    
+    
+    
+    
+    review.setReviewer(
+        199,
+        "pawan",
+        "Pawan Sirse",
+        100,
+        false,
+        "https://secure.gravatar.com/avatar/2f7a8b685b794b367140fbc8491f9799?s=22&d=mm");
+    
+    
+    
+    
+    
+    review.setReviewer(
+        1465,
+        "svadivel",
+        "Senthilnathan Vadivel",
+        100,
+        true,
+        "https://secure.gravatar.com/avatar/dab5e00502d4b3fa55fcaed8f5f4a38e?s=22&d=mm");
+    
+    
+    
+    
+    
+    review.setReviewer(
+        2752,
+        "mkumar11",
+        "Manoj Kumar M",
+        100,
+        true,
+        "https://secure.gravatar.com/avatar/e1478d0be54f0f0861c23927c4ce0a43?s=22&d=mm");
+    
+    
+    
+    
+    review.setStatePercentComplete("36");
+
+    
+        (function() {
+            var currentUser = new User(
+                    2515,
+                    "stirumal",
+                    "Sudhamini Tirumalagari",
+                    "https://secure.gravatar.com/avatar/dc10fded23c824a00a75bea7edb48871?s=48&d=mm");
+            review.setLoggedInUser(currentUser);
+        })();
+    
+
+</script>
+
+    
+    <script type="text/javascript">
+        CRU.CREATE.repnameInUse = 'skyhighdev';
+        AJS.$(document).ready(function () {
+            CRU.FRX.revPostLoad(false);
+            AJS.$(window).hashchange(function () {
+                CRU.COMMENT.commentScrollTracker && CRU.COMMENT.commentScrollTracker.setTrackingEnabled(false);
+                CRU.COMMENT.NAV.checkCommentAnchor();
+                CRU.FRX.NAV.checkFrxAnchor();
+                CRU.COMMENT.commentScrollTracker && CRU.COMMENT.commentScrollTracker.setTrackingEnabled(true, true);
+            });
+        });
+
+        AJS.$(document).ready(function () {
+            reviewObserver(FECRU.eventBus);
+        });
+    </script>
+    
+</head>
+
+
+
+
+
+<body id="reviewpage" class="crucible show-inline-comments noWrapping hideNotAuthorNewLines">
+<div id="aui-message-bar"></div>
+<div id="page">
+    <div id="stp-licenseStatus-banner-container"></div>
+    <div id="atlas">
+        
+        
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+    
+    
+        
+    
+
+
+
+
+
+    
+    
+
+
+
+
+    
+        
+        
+            
+        
+        
+    
+
+
+
+
+<div class="system-messages">
+    
+
+
+
+
+
+
+
+
+
+
+    
+        
+            
+            
+        
+    
+
+    
+        
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+    
+</div>
+
+
+    
+
+
+
+
+
+
+
+
+
+<header id="header" role="banner">
+    <nav class="aui-header aui-dropdown2-trigger-group" role="navigation"><div class="aui-header-inner"><div class="aui-header-before"><a class=" aui-dropdown2-trigger app-switcher-trigger" aria-controls="app-switcher" aria-haspopup="true" role="button" tabindex="0" data-aui-trigger href="#app-switcher"><span class="aui-icon aui-icon-small aui-iconfont-appswitcher">Linked Applications</span></a><div id="app-switcher" class="aui-dropdown2 aui-style-default" role="menu" aria-hidden="true" data-is-switcher="true" data-environment="{&quot;isUserAdmin&quot;:false,&quot;isAppSuggestionAvailable&quot;:false,&quot;isSiteAdminUser&quot;:false}"><div role="application"><div class="app-switcher-loading">Loading&hellip;</div></div></div></div><div class="aui-header-primary"><h1 id="logo" class="aui-header-logo aui-header-logo-fecru"><a href="/"><span class="aui-header-logo-device"></span></a></h1><ul class="aui-nav" id="main-nav">
+                
+                    <li>
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="source-dropdown" class="aui-dropdown2 aui-style-default" aria-hidden="true"
+        
+        >
+    
+                                <div class="aui-dropdown2-section">
+                                    <ul>
+                                        <li>
+                                            <a href="/browse">All repositories</a>
+                                        </li>
+                                    </ul>
+                                </div>
+    <div class="dropdown2-loading" style="display: none"></div>
+</div>
+
+
+
+<a href="/browse" aria-owns="source-dropdown" aria-haspopup="true" class="aui-dropdown2-trigger aui-style-default ">
+    
+    
+        
+        
+            Repositories
+        
+    
+
+
+</a>
+
+
+
+                    </li>
+                
+                <li>
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="projects-dropdown" class="aui-dropdown2 aui-style-default" aria-hidden="true"
+        
+        >
+    
+                                    <div class="aui-dropdown2-section">
+                                        <strong>Current project</strong>
+                                        <input type="hidden" name="currentProjectKey" value="CR-EP" />
+                                        <ul>
+                                            <li>
+                                                
+
+
+
+
+
+
+   
+   
+
+
+<a  href="/project/CR-EP">
+    EngineeringProductivity (CR-EP)
+
+</a>
+
+                                            </li>
+                                        </ul>
+                                    </div>
+                                
+                                <div class="aui-dropdown2-section">
+                                    <ul>
+                                        <li>
+                                            <a href="/projects">All projects</a>
+                                        </li>
+                                    </ul>
+                                </div>
+    <div class="dropdown2-loading" style="display: none"></div>
+</div>
+
+
+
+<a href="/projects" aria-owns="projects-dropdown" aria-haspopup="true" class="aui-dropdown2-trigger aui-style-default ">
+    
+    
+        
+        
+            Projects
+        
+    
+
+
+</a>
+
+
+
+                </li>
+                <li>
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="people-dropdown" class="aui-dropdown2 aui-style-default" aria-hidden="true"
+        
+        >
+    <div class="aui-dropdown2-section">
+                                    <ul>
+                                        <li>
+                                            <a href="/users">All users</a>
+                                        </li>
+                                    </ul>
+                                </div>
+    <div class="dropdown2-loading" style="display: none"></div>
+</div>
+
+
+
+<a href="/users" aria-owns="people-dropdown" aria-haspopup="true" class="aui-dropdown2-trigger aui-style-default ">
+    
+    
+        
+        
+            People
+        
+    
+
+
+</a>
+
+
+
+                </li>
+                
+                    <li>
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="reviews-dropdown" class="aui-dropdown2 aui-style-default" aria-hidden="true"
+        
+        >
+    <div class="aui-dropdown2-section">
+                                    <ul>
+                                        <li>
+                                            <a href="/cru">Review dashboard</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                
+                                
+                                    <div class="aui-dropdown2-section">
+                                    <ul>
+                                        
+                                        
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a id="inbox" title="All reviews requiring my attention"
+       href="/cru?filter=inbox">
+        <span class="">
+            Inbox
+        </span>
+        <span class="count"><em>(96)</em></span>
+    </a>
+</li>
+                                        
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a id="outbox" title="Reviews awaiting action by others"
+       href="/cru?filter=outbox">
+        <span class="">
+            Outbox
+        </span>
+        <span class="count"><em>(62)</em></span>
+    </a>
+</li>
+                                    </ul>
+                                    </div>
+                                
+
+                                
+                                
+                                    
+                                    <div class="aui-dropdown2-section">
+                                    <ul>
+                                        <li>
+                                            <a href="/plugins/servlet/review-stats">Reports</a>
+                                        </li>
+                                    </ul>
+                                    </div>
+                                
+    <div class="dropdown2-loading" style="display: none"></div>
+</div>
+
+
+
+<a href="/cru" aria-owns="reviews-dropdown" aria-haspopup="true" class="aui-dropdown2-trigger aui-style-default ">
+    
+    
+        
+        
+            Reviews
+        
+    
+
+
+</a>
+
+
+
+                    </li>
+                
+
+            
+
+            
+            
+                <li class="split-button-container aui-buttons">
+                    <button class="aui-button aui-button-split-main aui-button-primary create-review-trigger" title="Create a new Review">
+                        Create review
+                    </button><button id="menu-create-trigger" class="aui-button aui-button-split-more aui-button-primary aui-dropdown2-trigger"
+                        data-container=".split-button-container" aria-owns="menu-create" aria-haspopup="true">
+                        More
+                    </button>
+                </li>
+                <div id="menu-create" class="aui-dropdown2 aui-style-default" aria-hidden="true">
+                    <ul class="aui-list-truncate">
+                        <li><a class="create-review-trigger">Create review</a></li>
+                        <li><a class="create-snippet-trigger" id="create-snippet">Create snippet</a></li>
+                    </ul>
+                </div>
+            
+            </ul></div><div class="aui-header-secondary"><ul class="aui-nav">
+                
+                    <form id="quicknav-form" class="aui-quicksearch" action="/qsearch">
+    <input name="q" id="quicknav-input" type="text" autocomplete="off" placeholder="Search"/>
+</form>
+                
+                <li>
+                    
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                    
+                    
+                    
+                    
+                    
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="help-menu-link-content" class="aui-dropdown2 aui-style-default" aria-hidden="true"
+        
+        >
+    
+                                    <div class="aui-dropdown2-section">
+                                        <strong>Fisheye</strong>
+                                        <ul class="aui-list-truncate">
+                                            <li><a target="_help" href="https://docs.atlassian.com/fisheye/docs-048/Fisheye+Documentation+Home">Help</a></li>
+                                            <li><a target="_help" href="https://community.atlassian.com/t5/tag/fisheye/tg-p">Atlassian Community</a></li>
+                                            <li><a target="_whatsnew" href="https://docs.atlassian.com/fisheye/docs-048/Fisheye+releases">What's new</a></li>
+                                        </ul>
+                                    </div>
+                                
+                                
+                                    <div class="aui-dropdown2-section">
+                                        <strong>Crucible</strong>
+                                        <ul class="aui-list-truncate">
+                                            <li><a target="_help" href="https://docs.atlassian.com/crucible/docs-048/Crucible+Documentation+Home">Help</a></li>
+                                            <li><a target="_help" href="https://community.atlassian.com/t5/tag/crucible/tg-p">Atlassian Community</a></li>
+                                            <li><a target="_whatsnew" href="https://docs.atlassian.com/crucible/docs-048/Crucible+releases">What's new</a></li>
+                                        </ul>
+                                    </div>
+                                
+                                <div class="aui-dropdown2-section">
+                                    <ul class="aui-list-truncate">
+                                        <li><a href="#" id="masthead-about-link"
+                                                >About Fisheye &amp; Crucible</a></li>
+                                    </ul>
+                                </div>
+    <div class="dropdown2-loading" style="display: none"></div>
+</div>
+
+
+
+<a href="" aria-owns="help-menu-link-content" aria-haspopup="true" class="aui-dropdown2-trigger aui-style-default ">
+    
+    
+        
+            <span class="aui-icon aui-icon-small aui-iconfont-help">Help</span>
+        
+        
+    
+
+
+</a>
+
+
+
+                </li>
+            
+
+                
+
+                
+                    <li id="user-options" title="Sudhamini Tirumalagari">
+                        
+                        
+                                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="login-dropdown" class="aui-dropdown2 aui-style-default" aria-hidden="true"
+        
+        >
+    <div class="aui-dropdown2-section">
+                                            <ul>
+                                                <li><a href="/user/stirumal">Activity</a></li>
+                                                
+                                                    <li class=><a href="/cru/">Reviews</a></li>
+                                                
+
+                                                <li><a data-tab="favourites"
+                                                       class="dialog-settings">Favourites</a></li>
+
+                                                <li><a data-tab="profile"
+                                                       class="dialog-settings">Profile settings</a>
+                                                </li>
+
+                                        
+                                                </ul>
+                                        </div>
+
+                                        <div class="aui-dropdown2-section">
+                                            <ul class="control last">
+                                                <li><a href="/logout">Log out</a></li>
+                                            </ul>
+                                        </div>
+    <div class="dropdown2-loading" style="display: none"></div>
+</div>
+
+
+
+<a href="/user/stirumal" aria-owns="login-dropdown" aria-haspopup="true" class="aui-dropdown2-trigger aui-style-default ">
+    
+    
+        
+            <span class="aui-avatar aui-avatar-small">
+                                            <span class="aui-avatar-inner">
+                                                <img src="https://secure.gravatar.com/avatar/dc10fded23c824a00a75bea7edb48871?s=24&amp;d=mm" />
+                                            </span>
+                                        </span>
+        
+        
+    
+
+
+</a>
+
+
+
+                        
+                    </li>
+
+                
+            
+            </ul></div></div><!-- .aui-header-inner--></nav><!-- .aui-header -->
+</header>
+
+
+
+
+
+
+    <script type="text/x-template" title="create-issue-form">
+    <div class="create-issue-wrapper">
+        <form class="aui long-label">
+            <fieldset class="create-issue-form-fieldset inline">
+                {fields}
+            </fieldset>
+        </form>
+    </div>
+</script>
+<script type="text/x-template" title="credentials-required">
+    <div class="aui-message warning shadowed ril-credentials-required">
+        <span class="aui-icon icon-warning"></span>
+        <strong>Credentials required</strong> <br>
+        <a href="{authUri}" target="_empty">
+            Authenticate with {applicationLinkName}
+        </a>
+    </div>
+</script>
+<script type="text/x-template" title="create-issue-form-field">
+    <div class="field-group {fieldType}">
+        {field}
+    </div>
+</script>
+<script type="text/x-template" title="jira-issuefield-group">
+    <div class="field-group jira-issuefield">
+        {field}
+    </div>
+</script>
+<script type="text/x-template" title="create-issue-select">
+    <label>{label}<span class="aui-icon icon-required required"></span></label>
+    <select class='{cssClass}' name='{name}'>{options}</select>
+</script>
+<script type="text/x-template" title="create-issue-field">
+    <label>{label}<span class="aui-icon icon-required {requiredClass}"></span></label>
+    <input type="text" value="{value}" name="{name}" class="create-issue-field {extraClass}"/>
+</script>
+<script type="text/x-template" title="create-issue-field-textarea">
+    <label>{label}<span class="aui-icon icon-required {requiredClass}"></span></label>
+    <textarea name="{name}" class="create-issue-field textarea long-field {extraClass}">{value}</textarea>
+</script>
+<script type="text/x-template" title="create-issue-assignee">
+    <label for="issue-assignee">Assignee<span class="aui-icon icon-required {requiredClass}"></span></label>
+    <select id="issue-assignee" class='create-issue-assignee'>{options}</select>
+</script>
+<script type="text/x-template" title="create-issue-option">
+    <option value="{value}" {selected}>{display}</option>
+</script>
+<script type="text/x-template" title="create-issue-optgroup">
+	<optgroup label="{name}"></optgroup>
+</script>
+<script type="text/x-template" title="create-issue-button">
+    <div class="buttons-container right">
+        <div class="buttons">
+            <input class="button submit create-issue-submit" type="submit" value="Create" style="margin-top: 10px;">
+        </div>
+    </div>
+</script>
+<script type="text/x-template" title="display-issue">
+    <span class="jira-issue-lazy-load" data-jira-key="{issueKey}" data-jira-issue-lazy-load="true" data-hide-issue-title="true">
+        <div class="jira-title jira-icon">
+            <a href="{contextPath}/action/jira-issue.do?key={issueKey}" class="jira-link jira-hover-trigger">{issueKey}</a>
+        </div>
+    </span>
+</script>
+<script type="text/x-template" title="transition-issue-toolbar">
+    <span class="aui-toolbar">
+        <ul class="toolbar-group">
+            <li class="toolbar-item toolbar-splitbutton dd-allocated">
+                <a class="transition-issue-trigger toolbar-trigger main-action-trigger"
+                   data-transition-id="{transitionId}">
+                    {transitionDisplay}
+                </a>
+
+                <div class="aui-dd-parent" style="">
+                    <a class="toolbar-trigger aui-dd-trigger" href="#" title="Other transitions">
+                        <span class="icon icon-dropdown"></span>
+                    </a>
+                    <ul class="aui-dropdown aui-dropdown-right aui-box-shadow hidden" style="top: 24px; ">
+                        {otherTransitionsDropdowns}
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </span>
+</script>
+<script type="text/x-template" title="transition-issue-other-dropdown-list-item">
+    <li class="dropdown-item">
+        <a class="issue-workflow-transition" data-transition-id="{transitionId}">
+            {transitionDisplay}
+        </a>
+    </li>
+</script>
+
+<script type="text/x-template" title="issue-create-error-message">
+    <div class="aui-message error shadowed">
+        <span class="aui-icon icon-error"></span>
+        {message}
+    </div>
+</script>
+<script type="text/x-template" title="oauth-failed-completely-error">
+    <div class="aui-message error shadowed">
+        <p class="title">
+            <span class="aui-icon icon-error"></span>
+            <strong>{title}</strong>
+        </p>
+        <p>Oauth Failed. Please refresh the page. <br> {innerMsg}</p>
+    </div>
+</script>
+<script type="text/x-template" title="issue-creation-spinner">
+    <div class="spinner-container {containerClass}">
+        <label>&nbsp;</label>
+        <span class="spinner">
+            <img src="{contextPath}/currentstatic/2static/images/blank.gif">
+        </span>
+    </div>
+</script>
+<script type="text/x-template" title="jira-assignee-link">
+    <a href="{serverDisplayUrl}/secure/ViewProfile.jspa?name={assigneeUsername}">{assigneeDisplayName}</a>
+</script>
+<script type="text/x-template" title="jira-issue-summary-row-empty">
+    <tr data-jira-issue-key="{issueKey}" class="jira-issues-report-row">
+        <td>
+        <span class="jira-title jira-title-detailed jira-icon jira-hover-trigger">
+            <a class="jira-link" href="/action/jira-issue.do?key={issueKey}">{issueKey}</a>
+        </span>
+        </td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</script>
+<script type="text/x-template" title="jira-issue-summary-row">
+    <td>
+        <span class="jira-title jira-title-detailed jira-icon jira-hover-trigger" style="background: url({iconUrl}) no-repeat;">
+            <a class="jira-link" href="{displayUrl}">{issueKey}</a>
+        </span>
+    </td>
+    <td>{summary}</td>
+    <td class="status-lozenge status-{statusClassName}">{status}</td>
+    <td>{assigneeHtml}</td>
+</script>
+<script type="text/x-template" title="jira-issue-summary-row-error">
+    <td>
+        <span class="jira-title jira-title-detailed jira-icon jira-hover-trigger">
+            <a class="jira-link" href="{issueLink}">{issueKey}</a>
+        </span>
+    </td>
+    <td><em style="color: #575757">{errorMessage}</em></td>
+    <td></td>
+    <td></td>
+</script>
+<script type="text/x-template" title="jira-issue-summary-oauth-error">
+    <div class="aui-message warning closeable shadowed">
+        <span class="aui-icon icon-warning"></span>
+        <strong>Credentials Required:</strong> <br>
+        <a class="comment-applink"
+           href="{credentialsRequiredAuthorizationUri}"
+           onclick="FECRU.HOVER.invalidateCache(FECRU.HOVER.CACHE_FOREVER);">
+            Authenticate with {applinkName}
+        </a>
+    </div>
+</script>
+
+
+
+<script type="text/javascript">
+    FECRU.INFO.set({
+        isPipelined: false,
+        repoName: ""
+    });
+</script>
+
+
+
+
+
+        <div id="content">
+            <header class="aui-page-header"><div class="aui-page-header-inner">
+                    <div class="aui-page-header-image review-page-header-image"><span></span></div><!-- .aui-page-header-image -->
+                    <div class="aui-page-header-main">
+                            <ol class="aui-nav aui-nav-breadcrumbs">
+                                <li class="project"><a
+                                        href="/cru/browse/CR-EP">EngineeringProductivity</a></li>
+                            </ol>
+                            <h1 id="review-perm-id">CR-EP-5897</h1>
+                        </div><!-- .aui-page-header-main -->
+                    <div class="aui-page-header-actions">
+                            <div id="page-actions" class="aui-buttons">
+                                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+
+
+
+    
+
+
+
+
+
+
+
+<div class="aui-buttons aui-style">
+    
+        
+        
+
+
+
+
+
+
+
+
+
+    
+    
+    
+        
+        
+        
+        
+    
+    
+    
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a id="aui-menu-item-views" class="aui-button stateAction join" onclick="CRU.CREATE.command(&#39;join&#39;,&#39;CR-EP-5897&#39;, this);" title="Join this review in order to participate in it." tabindex="0">Join Review</a>
+
+
+
+        
+
+
+
+
+
+
+
+
+
+    <!-- @AUI: There is a explicit leading space on the button text.
+        Please don't remove it, as it is required to give a proper gap between the share icon and the button text.
+        However, do keep an eye on AUI's implementation regarding icon buttons. https://ecosystem.atlassian.net/browse/AUI-2309
+        We might need to remove it someday.
+    -->
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a id="share-content-link" class="aui-button aui-style" data-content-type="review" tabindex="0"><span class="aui-icon aui-icon-small aui-iconfont-share"></span> Send Reminder</a>
+
+    <script type="text/javascript">
+        var shareEntity1 = "74626";
+        var shareEntity2 = "";
+    </script>
+
+
+        
+    
+
+    
+
+    
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="tools-dropdown" class="aui-dropdown2 aui-style-default" aria-hidden="true"
+        
+        >
+    <div class="aui-dropdown2-section">
+                        <ul>
+                            
+                            
+                        </ul>
+                    </div>
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+
+
+
+
+
+
+<div class="aui-dropdown2-section">
+<ul>
+
+    
+        
+        
+            
+        
+    
+    <li class="tools-download">
+        <a class="controls" href="/cru/CR-EP-5897/comments.txt">Download&nbsp;Review&nbsp;as&nbsp;Text</a>
+    </li>
+
+
+
+    <li class="tools-history"> 
+       <a onclick="CRU.REVIEW.HISTORY.showPage('CR-EP-5897');">
+            View Review History
+        </a>
+    </li>
+
+</ul>
+</div>
+        
+            <div class="aui-dropdown2-section">
+                <ul>
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        
+        
+            
+            
+        
+    
+
+
+
+
+
+    
+        
+        
+    
+    
+        
+        
+    
+    
+        
+        
+            
+            
+            
+        
+    
+    
+        
+        
+            
+        
+    
+
+    
+        <li class="tools-favourite">
+    
+    <a class="starrable star-off  throbEnabled">
+        <span class="inputs" style="display: none">
+            <input class="starKey" type="hidden" name="itemType" value="atlassian-review">
+            
+            
+            
+            
+            
+            
+            
+                <input class="starKey" type="hidden" name="intKey1" value="74626">
+            
+            
+            
+            
+            
+            
+            
+
+            <input type="hidden" class="star-textAdd" value="Add to favourites">
+            <input type="hidden" class="star-textRemove" value="Remove from favourites">
+        </span>
+        <span class="starText">Add to favourites</span>
+    </a>
+    
+        </li>
+    
+
+
+                </ul>
+            </div>
+        
+        
+
+
+
+
+
+
+
+
+
+        <div class="aui-dropdown2-section">
+            <ul>
+                <li class="tools-keyboard"><a id="keyboard-shortcut-help">Keyboard Shortcuts</a></li>
+            </ul>
+        </div>
+    <div class="dropdown2-loading" style="display: none"></div>
+</div>
+
+
+
+<a href="/projects" aria-owns="tools-dropdown" aria-haspopup="true" class="aui-dropdown2-trigger aui-style-default aui-button aui-style">
+    
+        <span class="aui-icon aui-icon-small aui-iconfont-configure"></span>
+    
+    
+        
+        
+            Tools
+        
+    
+
+
+</a>
+
+
+
+    
+</div>
+
+
+                                </div>
+                        </div><!-- .aui-page-header-actions -->
+                </div><!-- .aui-page-header-inner --></header><!-- .aui-page-header -->
+
+            
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+                    
+                    
+                
+            
+
+            <div class="review-header">
+                <div class="review-header--metadata">
+                    <div class="review-header--metadata--section">
+                        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="aui-lozenge aui-lozenge-complete review-header--metadata--state">open</span>
+
+                        
+                            
+                            
+                                
+
+
+
+
+
+<time datetime="2025-10-15 03:15:10-0700"
+    title="15 Oct 2025 03:10AM"
+    class="review-header--metadata--create-date" >
+    
+                                    for 12 days
+                                
+</time>
+
+                                
+                                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+<time datetime="2025-10-17 03:00:00-0700"
+    title="17 Oct 2025 03:10AM"
+    class="review-header--metadata--due-date review-due-date review-due-date__overdue" >
+    
+        due 
+        10 days
+        ago
+    
+</time>
+
+
+
+                                
+                            
+                            
+                        
+                    </div>
+                    <div class="review-header--metadata--section">
+                        
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="review-header--metadata--participants">
+    <div class="review-participants">
+        <span class="review-participants--label">Author</span>
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <span class="review-avatar
+        " data-user-id="2428" data-user-username="sdola">
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        
+            
+        
+        
+    
+    
+
+
+
+
+    
+        
+        
+            
+        
+        
+    
+    
+    
+
+
+
+
+
+    
+    
+    
+        
+    
+
+
+
+    
+
+
+
+    
+        
+            
+            
+            
+                
+            
+        
+        <a class="user avatar " style='background-image:url(https://secure.gravatar.com/avatar/dab96877977046e6b52ee2655fb82083?s=24&amp;amp;d=mm);
+        
+        
+        ' href="/user/sdola"  title="Suryamanikanta Dola">
+        
+        </a>
+        
+    
+    
+
+
+
+
+
+
+
+    
+
+    
+
+
+    </span>
+
+
+    </div>
+
+    
+    
+        <div class="review-participants">
+            <span class="review-participants--label">Reviewers</span>
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="reviewers" class="expandable-list-wrap  ">
+    
+        
+            
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <span class="review-avatar
+        " data-user-id="2210" data-user-username="mp4">
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        
+            
+        
+        
+    
+    
+
+
+
+
+    
+        
+        
+            
+        
+        
+    
+    
+    
+
+
+
+
+
+    
+    
+    
+        
+    
+
+
+
+    
+
+
+
+    
+        
+            
+            
+            
+                
+            
+        
+        <a class="user avatar " style='background-image:url(https://secure.gravatar.com/avatar/331bdadaf5c3d8bfd09cb23e7d85aea8?s=24&amp;amp;d=mm);
+        
+        
+        ' href="/user/mp4"  title="Megha P">
+        
+        </a>
+        
+    
+    
+
+
+
+
+
+
+
+    
+
+    
+
+
+    </span>
+
+
+        
+    
+        
+            
+                 
+            
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <span class="review-avatar
+        " data-user-id="2422" data-user-username="avishwak">
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        
+            
+        
+        
+    
+    
+
+
+
+
+    
+        
+        
+            
+        
+        
+    
+    
+    
+
+
+
+
+
+    
+    
+    
+        
+    
+
+
+
+    
+
+
+
+    
+        
+            
+            
+            
+                
+            
+        
+        <a class="user avatar " style='background-image:url(https://secure.gravatar.com/avatar/5fb571248204712573a8cc4ff6ac19a1?s=24&amp;amp;d=mm);
+        
+        
+        ' href="/user/avishwak"  title="Anupam Vishwakarma">
+        
+        </a>
+        
+    
+    
+
+
+
+
+
+
+
+    
+
+    
+
+
+    </span>
+
+
+        
+    
+        
+            
+                 
+            
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <span class="review-avatar
+        " data-user-id="2219" data-user-username="vkintali">
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        
+            
+        
+        
+    
+    
+
+
+
+
+    
+        
+        
+            
+        
+        
+    
+    
+    
+
+
+
+
+
+    
+    
+    
+        
+    
+
+
+
+    
+
+
+
+    
+        
+            
+            
+            
+                
+            
+        
+        <a class="user avatar " style='background-image:url(https://secure.gravatar.com/avatar/de0961ba3dd9f30228328a918d8b6fdf?s=24&amp;amp;d=mm);
+        
+        
+        ' href="/user/vkintali"  title="Venkataramana Kintali">
+        
+        </a>
+        
+    
+    
+
+
+
+
+
+
+
+    
+
+    
+
+
+    </span>
+
+
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+    
+        
+        
+            
+            
+            
+                
+            
+        
+
+        
+            
+                
+                     
+                
+                <a class="expandable-list-more aui-badge">8</a>
+            
+            
+        
+
+        
+        <ul class="expandable-list-dropdown-content">
+            
+        
+            
+        
+            
+        
+            
+                <li>
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <span class="review-avatar
+        " data-user-id="2282" data-user-username="jniba">
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        
+            
+        
+        
+    
+    
+
+
+
+
+    
+        
+        
+            
+        
+        
+    
+    
+    
+
+
+
+
+
+    
+    
+    
+        
+    
+
+
+
+    
+
+
+
+    
+        
+            
+            
+            
+                
+            
+        
+        <a class="user avatar " style='background-image:url(https://secure.gravatar.com/avatar/a25e23260c73548256eee518ab51b492?s=24&amp;amp;d=mm);
+        
+        
+        ' href="/user/jniba"  title="Jerome Niba">
+        
+        </a>
+        
+            <a class="linkText user-text-outside"
+            href="/user/jniba"
+            >Jerome Niba</a>
+        
+    
+    
+
+
+
+
+
+
+
+    
+
+    
+
+
+    </span>
+
+
+                </li>
+            
+        
+            
+                <li>
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <span class="review-avatar
+        " data-user-id="190" data-user-username="schinnan">
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        
+            
+        
+        
+    
+    
+
+
+
+
+    
+        
+        
+            
+        
+        
+    
+    
+    
+
+
+
+
+
+    
+    
+    
+        
+    
+
+
+
+    
+
+
+
+    
+        
+            
+            
+            
+                
+            
+        
+        <a class="user avatar " style='background-image:url(https://secure.gravatar.com/avatar/1f7f2a9b0cd922e9853195f3fe6547ce?s=24&amp;amp;d=mm);
+        
+        
+        ' href="/user/schinnan"  title="Santhosh Chinnan">
+        
+        </a>
+        
+            <a class="linkText user-text-outside"
+            href="/user/schinnan"
+            >Santhosh Chinnan</a>
+        
+    
+    
+
+
+
+
+
+
+
+    
+
+    
+
+
+    </span>
+
+
+                </li>
+            
+        
+            
+                <li>
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <span class="review-avatar
+        " data-user-id="2451" data-user-username="jgavini">
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        
+            
+        
+        
+    
+    
+
+
+
+
+    
+        
+        
+            
+        
+        
+    
+    
+    
+
+
+
+
+
+    
+    
+    
+        
+    
+
+
+
+    
+
+
+
+    
+        
+            
+            
+            
+                
+            
+        
+        <a class="user avatar " style='background-image:url(https://secure.gravatar.com/avatar/296cab24048ea92e9c1ce47df7c2c8db?s=24&amp;amp;d=mm);
+        
+        
+        ' href="/user/jgavini"  title="Jayanth Gavini">
+        
+        </a>
+        
+            <a class="linkText user-text-outside"
+            href="/user/jgavini"
+            >Jayanth Gavini</a>
+        
+    
+    
+
+
+
+
+
+
+
+    
+
+    
+
+
+    </span>
+
+
+                </li>
+            
+        
+            
+                <li>
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <span class="review-avatar
+        " data-user-id="1513" data-user-username="jgarciam">
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        
+            
+        
+        
+    
+    
+
+
+
+
+    
+        
+        
+            
+        
+        
+    
+    
+    
+
+
+
+
+
+    
+    
+    
+        
+    
+
+
+
+    
+
+
+
+    
+        
+            
+            
+            
+                
+            
+        
+        <a class="user avatar " style='background-image:url(https://secure.gravatar.com/avatar/89f08f260e82830f18d3335685d55105?s=24&amp;amp;d=mm);
+        
+        
+        ' href="/user/jgarciam"  title="Julio Garcia Munoz">
+        
+        </a>
+        
+            <a class="linkText user-text-outside"
+            href="/user/jgarciam"
+            >Julio Garcia Munoz</a>
+        
+    
+    
+
+
+
+
+
+
+
+    
+
+    
+
+
+    </span>
+
+
+                </li>
+            
+        
+            
+                <li>
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <span class="review-avatar
+        " data-user-id="2535" data-user-username="juradi">
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        
+            
+        
+        
+    
+    
+
+
+
+
+    
+        
+        
+            
+        
+        
+    
+    
+    
+
+
+
+
+
+    
+    
+    
+        
+    
+
+
+
+    
+
+
+
+    
+        
+            
+            
+            
+                
+            
+        
+        <a class="user avatar " style='background-image:url(https://secure.gravatar.com/avatar/95b02cf7c909e0a07d5c01b2c64ffcb5?s=24&amp;amp;d=mm);
+        
+        
+        ' href="/user/juradi"  title="Jayapal Uradi">
+        
+        </a>
+        
+            <a class="linkText user-text-outside"
+            href="/user/juradi"
+            >Jayapal Uradi</a>
+        
+    
+    
+
+
+
+
+
+
+
+    
+
+    
+
+
+    </span>
+
+
+                </li>
+            
+        
+            
+                <li>
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <span class="review-avatar
+        " data-user-id="199" data-user-username="pawan">
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        
+            
+        
+        
+    
+    
+
+
+
+
+    
+        
+        
+            
+        
+        
+    
+    
+    
+
+
+
+
+
+    
+    
+    
+        
+    
+
+
+
+    
+
+
+
+    
+        
+            
+            
+            
+                
+            
+        
+        <a class="user avatar " style='background-image:url(https://secure.gravatar.com/avatar/2f7a8b685b794b367140fbc8491f9799?s=24&amp;amp;d=mm);
+        
+        
+        ' href="/user/pawan"  title="Pawan Sirse">
+        
+        </a>
+        
+            <a class="linkText user-text-outside"
+            href="/user/pawan"
+            >Pawan Sirse</a>
+        
+    
+    
+
+
+
+
+
+
+
+    
+
+    
+
+
+    </span>
+
+
+                </li>
+            
+        
+            
+                <li>
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <span class="review-avatar
+        completed" data-user-id="1465" data-user-username="svadivel">
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        
+            
+        
+        
+    
+    
+
+
+
+
+    
+        
+        
+            
+        
+        
+    
+    
+    
+
+
+
+
+
+    
+    
+    
+        
+    
+
+
+
+    
+
+
+
+    
+        
+            
+            
+            
+                
+            
+        
+        <a class="user avatar " style='background-image:url(https://secure.gravatar.com/avatar/dab5e00502d4b3fa55fcaed8f5f4a38e?s=24&amp;amp;d=mm);
+        
+        
+        ' href="/user/svadivel"  title="Senthilnathan Vadivel">
+        
+        </a>
+        
+            <a class="linkText user-text-outside"
+            href="/user/svadivel"
+            >Senthilnathan Vadivel</a>
+        
+    
+    
+
+
+
+
+
+
+
+    
+
+    
+
+
+    </span>
+
+
+                </li>
+            
+        
+            
+                <li>
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <span class="review-avatar
+        completed" data-user-id="2752" data-user-username="mkumar11">
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        
+            
+        
+        
+    
+    
+
+
+
+
+    
+        
+        
+            
+        
+        
+    
+    
+    
+
+
+
+
+
+    
+    
+    
+        
+    
+
+
+
+    
+
+
+
+    
+        
+            
+            
+            
+                
+            
+        
+        <a class="user avatar " style='background-image:url(https://secure.gravatar.com/avatar/e1478d0be54f0f0861c23927c4ce0a43?s=24&amp;amp;d=mm);
+        
+        
+        ' href="/user/mkumar11"  title="Manoj Kumar M">
+        
+        </a>
+        
+            <a class="linkText user-text-outside"
+            href="/user/mkumar11"
+            >Manoj Kumar M</a>
+        
+    
+    
+
+
+
+
+
+
+
+    
+
+    
+
+
+    </span>
+
+
+                </li>
+            
+        </ul>
+
+        <script>
+            ;
+            (function ($) {
+                $(function() {
+                    var $expandableList = $('#reviewers'),
+                            isFirstRun = true,
+                            $moreLink = $expandableList.find('.expandable-list-more'),
+                            $content = $expandableList.find('.expandable-list-dropdown-content'),
+                            dialogWidth = $content.outerWidth(true);
+
+                    var dialog = AJS.InlineDialog($moreLink, "more-" + "reviewers", function ($container, trigger, showPopup) {
+                        if (isFirstRun) {
+                            $container.html($content);
+                            isFirstRun = false;
+                        }
+                        showPopup();
+                    }, {
+                        width: dialogWidth < 120 ? 120 : dialogWidth > 400 ? 400 : dialogWidth
+                    });
+                })
+            })(AJS.$);
+        </script>
+    
+</div>
+
+        </div>
+    
+
+    <script type="text/javascript">
+        (function($) {
+            $('.review-header--metadata--participants .review-avatar > .user')
+                    .tooltip({
+                        gravity: function() {
+                            var $self = $(this),
+                                $tip = $self.tipsy('tip').data('tipsy').tip(),
+                                $window = $(window),
+                                isEastGravity = (($window.width() + $window.scrollLeft())
+                                    - $self.offset().left) < $tip.width() / 2;
+
+                            return 'n'+(isEastGravity ? 'e' : '');
+                        }
+                    });
+        })(AJS.$);
+    </script>
+</div>
+
+                    </div>
+                </div>
+                <div class="review-header--title">
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        
+            
+            
+                <h2 title="DLP-10321: Added mfe client_id and client_secret in pop json files">
+                    
+                        
+                            <span class="jira-hover-trigger"><a href="https://fisheye.myshn.net/action/jira-issue.do?key=DLP-10321">DLP-10321</a></span>: Added mfe client_id and client_secret in pop json files
+                        
+                        
+                    
+                </h2>
+            
+        
+    
+    
+
+
+                </div>
+
+                <div class="review-header--buttons">
+                    
+                        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div
+    
+    
+
+    
+
+
+    class="review-header--buttons--button review-activity-button"
+
+    
+        data-action-label=Activity
+    
+>
+
+    
+
+
+
+
+    Activity
+</div>
+
+
+                    
+                </div>
+
+            </div>
+
+            
+
+
+
+
+            <script type="text/javascript">
+                review.setSummarize(false);
+            </script>
+
+            <div id="messages" style="position:relative;"></div>
+            
+            <div id="content-resizable">
+                <div id="review-navigation-top">
+                    <div class="review-meta-info">
+                        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="review-meta">
+    <h3>
+        CR-EP-5897
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span id="totalCommentCount" class="aui-badge stats  aui-badge-subtle" data-unread="0" data-count="2">2</span>
+
+    </h3>
+    <div id="review-meta-toolbar">
+        
+        <a id="toggle-tree" title="Toggle sidebar ('shift+[')"><span>Toggle Tree</span></a>
+    </div>
+</div>
+
+                    </div>
+                </div>
+                <div id="content-navigation" class="navigation-resizable">
+                    <div id="content-navigation-panel" class="panel panel-directory">
+                        <div id="navigation-tree">
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ul id="frx-overview">
+    <li>
+        <span class="details">
+            <a id="scroll-to-details" href="#details">Details</a>
+        </span>
+    </li>
+    <li>
+        <span class="objectives">
+            <a id="scroll-to-objectives" href="#objectives">Objectives</a>
+        </span>
+    </li>
+
+    <li>
+        <span class="comments">
+            <a id="scroll-to-general-comments" href="#general-comments">General Comments</a>
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span id="generalCommentCount" class="aui-badge stats  aui-badge-subtle" data-unread="0" data-count="0">0</span>
+
+        </span>
+    </li>
+
+    
+        <li>
+            <span class="frx-overview-link-holder">
+                
+
+
+
+
+
+
+
+
+<a class=" review-activity--shortcut-trigger review-activity--shortcut-trigger__unresolved"
+    
+     href=""
+    
+
+ >
+        
+
+
+
+Unresolved
+</a>
+
+
+            </span>
+        </li>
+
+    
+        <li>
+            <span class="frx-overview-link-holder">
+                
+
+
+
+
+
+
+
+
+<a class=" review-activity--shortcut-trigger review-activity--shortcut-trigger__resolved"
+    
+     href=""
+    
+
+ >
+        
+
+
+
+Resolved
+</a>
+
+
+            </span>
+        </li>
+
+    
+
+    <li>
+        <span class="number-of-files">
+            Number of files included: <span class="file-count">3</span>
+        </span>
+    </li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ul id="tree-root" class="tree" data-skate-ignore="true">
+
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+        
+        
+            
+                
+                
+                    
+                
+            
+            <li class="source-node" id="folder-list-item0">
+                <div class="source-node-hr"></div>
+                <span class=" ">
+                    
+                        
+                        
+                            
+                            DLP-10321__Added_mfe_client_id_and_client_secret_in_pop_json_files.patch (12 days ago)
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span id="folderCommentCount0" class="aui-badge stats  aui-badge-subtle" data-unread="0" data-count="0">0</span>
+
+                        
+                    
+                </span>
+        
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+        
+            <ul class="tree">
+        
+    
+    
+    
+    
+
+    
+        
+        
+            
+                
+                
+                    
+                
+            
+            <li class="frx-list-item" id="folder-list-item1">
+                
+                <span class="tree folder open ">
+                    
+                        
+                        
+                            
+                                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="aui-icon aui-icon-small aui-iconfont-devtools-folder-open node-icon node-folder-icon">Folder</span>
+                            
+                            settings/trunk
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span id="folderCommentCount1" class="aui-badge stats  aui-badge-subtle" data-unread="0" data-count="0">0</span>
+
+                        
+                    
+                </span>
+        
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+        
+            <ul class="tree">
+        
+    
+    
+    
+    
+
+    
+        
+            
+            <li class="frx-list-item" id="frx-list-item582312">
+                <span class="tree frx file filetype-json frx-operation frx-changed">
+                    
+                        
+                        
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+
+    
+        
+    
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="fecru-icon fecru-icon-small fecru-icon-code-file node-icon node-file-icon" >File</span>
+
+
+                        
+                    
+                    <a id="scroll-to-frx582312" href="#CFR-582312" class="scroll-to-frx">corp-uswest2qaautoregressionpopods.json</a>
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span id="frxCommentCount582312" class="aui-badge stats  aui-badge-subtle" data-unread="0" data-count="2">2</span>
+
+                    <span class="edit-remove-frx removeFrx disabled"
+                       id="removeFrx-582312-1479692"
+                       title="Cannot remove files with comments">
+                       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="aui-icon aui-icon-small aui-iconfont-remove">Remove</span>
+                    </span>
+                </span>
+        
+        
+    
+
+    
+    
+    
+    
+        </li>
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+        
+            
+            <li class="frx-list-item" id="frx-list-item582313">
+                <span class="tree frx file filetype-json frx-operation frx-changed">
+                    
+                        
+                        
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+
+    
+        
+    
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="fecru-icon fecru-icon-small fecru-icon-code-file node-icon node-file-icon" >File</span>
+
+
+                        
+                    
+                    <a id="scroll-to-frx582313" href="#CFR-582313" class="scroll-to-frx">corp-uswest2qatpopapi.json</a>
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span id="frxCommentCount582313" class="aui-badge stats  aui-badge-subtle" data-unread="0" data-count="0">0</span>
+
+                    <span class="edit-remove-frx removeFrx"
+                       id="removeFrx-582313-1479694"
+                       title="Remove top file">
+                       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="aui-icon aui-icon-small aui-iconfont-remove">Remove</span>
+                    </span>
+                </span>
+        
+        
+    
+
+    
+    
+    
+    
+        </li>
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+        
+            
+            <li class="frx-list-item" id="frx-list-item582314">
+                <span class="tree frx file filetype-json frx-operation frx-changed">
+                    
+                        
+                        
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+
+    
+        
+    
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="fecru-icon fecru-icon-small fecru-icon-code-file node-icon node-file-icon" >File</span>
+
+
+                        
+                    
+                    <a id="scroll-to-frx582314" href="#CFR-582314" class="scroll-to-frx">corp-uswest2qatpopapi2.json</a>
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span id="frxCommentCount582314" class="aui-badge stats  aui-badge-subtle" data-unread="0" data-count="0">0</span>
+
+                    <span class="edit-remove-frx removeFrx"
+                       id="removeFrx-582314-1479696"
+                       title="Remove top file">
+                       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="aui-icon aui-icon-small aui-iconfont-remove">Remove</span>
+                    </span>
+                </span>
+        
+        
+    
+
+
+
+    
+        </li>
+    </ul>
+    
+        </li>
+    </ul>
+    
+
+</ul>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="content-column" class="overview-active">
+                <div id="review-info-container">
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="toolbar">
+    <div class="tb_drop tb_left toolbar-frame element-navigation-frame">
+        <ul>
+            <li id="prev-element-link" title="Go to previous element"><span></span></li>
+            <li id="next-element-link" title="Go to next element"><span></span></li>
+            <li id="element-navigation" class="aui-dd-parent toolbar-setting">
+            <a id="element-link" class="aui-dd-link" title="Select element types to search for"></a>
+                <div class="dropdown-holder">
+                <div class="aui-dropdown aui-dropdown-left hidden element-navigation-options">
+                    
+                        
+                    
+
+                    <ol class="selectable">
+                        <li id="search-file" class="search-option selected" title="Go to files ('k', 'j')"><a>Files</a></li>
+                        <li id="search-comment" class="search-option selected" title="Go to comments ('p', 'n')"><a>Comments</a></li>
+                        <li id="search-defect" class="search-option selected" title="Go to defects"><a>Defects</a></li>
+                        <li id="search-diff" class="search-option selected" title="Go to diffs"><a>Diffs</a></li>
+                    </ol>
+                </div>
+                </div>
+                </ul>
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="tb_drop tb_left toolbar-frame toolbar-lean">
+        <ul>
+            <li class="aui-dd-parent toolbar-setting selectable">
+            <a class="aui-dd-link">Prefs</a>
+
+            <div class="dropdown-holder">
+                <div class="aui-dropdown aui-dropdown-left hidden">
+
+                    <ol>
+                        <li>
+                            <div><strong>Source comments:</strong></div>
+                        </li>
+                        <li id="set-inline-comments" class="selected">
+                            <a>Inline</a>
+                        </li>
+                        <li id="set-above-comments">
+                            <a>Above</a>
+                        </li>
+                        <li id="set-hidden-comments">
+                            <a>Hidden</a>
+                        </li>
+                    </ol>
+
+                    <ol>
+                        <li id="set-side-by-side-diffs" class="">
+                            <a>Side-by-side Diffs</a>
+                        </li>
+                        <li id="set-unified-diffs" class="selected">
+                            <a>Unified Diffs</a>
+                        </li>
+                    </ol>
+
+                    <ol>
+                        <li id="set-soft-wrapping-on" class="">
+                            <a>Soft Wrapping</a>
+                        </li>
+                        <li id="set-soft-wrapping-off" class="selected">
+                            <a>No Wrapping</a>
+                        </li>
+                    </ol>
+
+                    <ol class="last">
+                        <li id="show_source_button" class="disabled">
+                            <a>Show Source</a>
+                        </li>
+                    </ol>
+
+                </div>
+            </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="tb_drop tb_left toolbar-frame toolbar-lean">
+        <ul>
+            <li class="toolbar-setting filter aui-dd-parent">
+                <a id="navigation-filter-link" class="filter-toggle aui-dd-trigger">Filter</a>
+
+                <div class="dropdown-holder">
+                    <div id="frxFilterOptions" class="frx-filter aui-dropdown aui-dropdown-left hidden">
+                        
+                            
+                        
+
+                        
+                            
+                        
+
+                        <ol>
+                            <li><strong>Only show me content:</strong></li>
+                        </ol>
+
+                        <ol>
+                            <li class="frx-filter-option" id="frx-filter-comments"><a>with comments</a></li>
+                            <li class="frx-filter-option disabled" id="frx-filter-unreadcomments"><a>with unread comments</a></li>
+                            <li class="frx-filter-option disabled" id="frx-filter-draftcomments"><a>with draft comments</a></li>
+                            <li class="frx-filter-option" id="frx-filter-defects"><a>with defects</a></li>
+                        </ol>
+
+                        <ol>
+                            
+                                
+                            
+                            <li class="frx-filter-option disabled" id="frx-filter-incomplete"><a>that is unreviewed</a></li>
+                            <li class="frx-filter-option disabled"
+                                id="frx-filter-newsincecomplete"
+                                title="that has been added as a new revision, or that I haven't seen yet"><a>that has a new or unread revision</a></li>
+                        </ol>
+
+                        
+                            
+                        <ol>
+                            <li class="frx-filter-option" id="frx-filter-subtasks"><a>with Jira subtasks</a></li>
+                            <li class="frx-filter-option" id="frx-filter-unresolvedsubtasks"><a>with unresolved Jira subtasks</a></li>
+                        </ol>
+                        
+
+                        <ol>
+                            <li class="frx-filter-option" id="frx-filter-nonbinary"><a>that is text</a></li>
+                            <li class="frx-filter-option" id="frx-filter-binary"><a>that is binary</a></li>
+                            <li class="frx-filter-option" id="frx-filter-nondirectory"><a>that are not directories</a></li>
+                        </ol>
+
+                        <ol class="last">
+                            <li><em>Unfiltered files: <span id="filter-frxs-shown-count">dynamically added content</span></em></li>
+                            <li><em>Filtered files: <span id="filter-frxs-unshown-count">dynamically added content</span></em></li>
+                            <li><a id="filter-frxs-clear" class="disabled frx-filter-clear">Clear filters</a></li>
+                        </ol>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="tb_right toolbar-frame toolbar-lean toolbar-keyboard-shortcuts">
+        <span>Keyboard shortcuts</span>
+        <span class="keyboard-icon">&nbsp;</span>
+    </div>
+
+    <div class="tb_right toolbar-frame toolbar-lean">
+        
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+<li class="blame-trigger-wrapper blame-trigger-wrapper__review">
+    <div class="blame-trigger-spinner"></div>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<button class="aui-button blame-trigger aui-button-light" aria-disabled="true" disabled="disabled" >Blame</button>
+
+</li>
+
+
+    </div>
+
+    
+
+    
+
+    <div style="display:none;">
+        <div id="closingComment" class="wiki-preview-wrapper">
+            <h5>Summarize the review outcomes <em>(optional)</em></h5>
+                
+                    
+                    
+                        
+                    
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="wiki-preview-pane markup view " style="display: none;">
+    
+</div>
+
+
+    <div class="wiki-preview-button-holder ">
+        
+        
+            <a class="wiki-preview-button icon-ie" title="Preview comment">
+                <span class="aui-icon aui-icon-small aui-iconfont-view">Preview</span>
+            </a>
+            <span class="wiki-preview-button-spinner"></span>
+            <a class="wiki-help-button icon-ie" title="Help for wiki syntax"><span>wiki&nbsp;syntax&nbsp;help</span></a>
+        
+        
+    </div>
+
+
+                <textarea rows="18" cols="80" name="summary" class="commentTextarea" id="reviewSummaryInput"></textarea>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        require(['FECRU/component/blame'], function (blame) {
+            blame.init();
+        });
+
+        AJS.$(document).ready(function() {
+            AJS.$('#element-navigation').live('mouseover', function () {
+                AJS.$(this).closest('div').addClass('highlight');
+            });
+            AJS.$('#element-navigation').live('mouseout', function () {
+                AJS.$(this).closest('div').removeClass('highlight');
+            });
+        });
+    </script>
+</div>
+
+                </div>
+                <div id="content-shield">&nbsp;</div>
+                <div id="frx-pane" class="panel panel-content">
+                    <div id="panel-target">
+                        
+                            
+                            
+                                
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="frx-content">
+
+    <div id="frxs">
+        <div id="generalComments" class="frxouter">
+            <div id="generalCommentsInner">
+                <div id="reviewOverview">
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="details" class="overview-container">
+    <div class="overview-item ">
+        <a href="#details" class="frx-permalink" title="Link to this section"><span>#permalink</span></a>
+        
+
+        
+
+        
+            <h4 class="overview-heading">Details</h4>
+        
+
+        <div class="overview-body">
+            <div class="overview-content">
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>
+    <div id="frxs-filtered-warning">
+        <div class="review-tip">
+            Warning: no files are visible, they have all been filtered.
+        </div>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table id="participant-table" class="reviewers aui">
+    <thead>
+        <tr>
+            <th>Participant</th>
+            <th>Role</th>
+            <th>Time Spent</th>
+            <th>Comments</th>
+            <th>Latest Comment</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        
+            
+            
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<tr id="details-participant-2428">
+    <td>
+        <div class="reviewer">
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        
+            
+        
+        
+    
+    
+
+
+
+
+    
+        
+        
+            
+        
+        
+    
+    
+    
+
+
+
+
+
+    
+        
+    
+    
+    
+
+
+
+    
+
+
+
+    
+        
+            
+                
+            
+            
+            
+        
+        <a class="user avatar userorcommitter-parent" style='background-image:url(https://secure.gravatar.com/avatar/dab96877977046e6b52ee2655fb82083?s=24&amp;amp;d=mm);
+        padding-left:28px ;
+        
+        ' href="/user/sdola"  title="Suryamanikanta Dola">
+        
+                <span class="linkText">Suryamanikanta Dola</span>
+            
+        </a>
+        
+    
+    
+
+
+
+
+
+
+
+    
+
+    
+        <img src="/static/q97jxk/2static/images/blank.gif"
+            alt=""
+            title="">
+    
+
+
+
+        </div>
+    </td>
+    <td class="role">
+        
+            
+            
+                Author
+            
+            
+            
+            
+        
+    </td>
+    <td class="timeSpent">
+
+
+
+
+
+
+
+    16m
+</td>
+    <td class="authored-comments">
+        
+            1
+            
+        
+    </td>
+    <td class="latest-comment">
+        
+            
+            <a class="latest-comment-link" id="latest-comment172278" title="Scroll to this comment">Ok, Created an ops ticket for keys - https://jira.myshn.n...</a>
+        
+    </td>
+    
+</tr>
+
+                
+            
+        
+        
+            
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<tr id="details-participant-2210">
+    <td>
+        <div class="reviewer">
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        
+            
+        
+        
+    
+    
+
+
+
+
+    
+        
+        
+            
+        
+        
+    
+    
+    
+
+
+
+
+
+    
+        
+    
+    
+    
+
+
+
+    
+
+
+
+    
+        
+            
+                
+            
+            
+            
+        
+        <a class="user avatar userorcommitter-parent" style='background-image:url(https://secure.gravatar.com/avatar/331bdadaf5c3d8bfd09cb23e7d85aea8?s=24&amp;amp;d=mm);
+        padding-left:28px ;
+        
+        ' href="/user/mp4"  title="Megha P">
+        
+                <span class="linkText">Megha P</span>
+            
+        </a>
+        
+    
+    
+
+
+
+
+
+
+
+    
+        <div class="reviewer-progressbar"
+            style="background-position: 100% 0"
+            title="0% reviewed">
+        </div>
+    
+
+    
+        <img src="/static/q97jxk/2static/images/blank.gif"
+            alt=""
+            title="">
+    
+
+
+
+        </div>
+    </td>
+    <td class="role">
+        
+            
+            
+            
+            
+            
+                Reviewer - <span class="role-progress">0</span>% reviewed
+            
+        
+    </td>
+    <td class="timeSpent">&nbsp;</td>
+    <td class="authored-comments">
+        &nbsp;
+    </td>
+    <td class="latest-comment">&nbsp;</td>
+    
+</tr>
+
+            
+        
+            
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<tr id="details-participant-2422">
+    <td>
+        <div class="reviewer">
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        
+            
+        
+        
+    
+    
+
+
+
+
+    
+        
+        
+            
+        
+        
+    
+    
+    
+
+
+
+
+
+    
+        
+    
+    
+    
+
+
+
+    
+
+
+
+    
+        
+            
+                
+            
+            
+            
+        
+        <a class="user avatar userorcommitter-parent" style='background-image:url(https://secure.gravatar.com/avatar/5fb571248204712573a8cc4ff6ac19a1?s=24&amp;amp;d=mm);
+        padding-left:28px ;
+        
+        ' href="/user/avishwak"  title="Anupam Vishwakarma">
+        
+                <span class="linkText">Anupam Vishwakarma</span>
+            
+        </a>
+        
+    
+    
+
+
+
+
+
+
+
+    
+        <div class="reviewer-progressbar"
+            style="background-position: 0% 0"
+            title="100% reviewed">
+        </div>
+    
+
+    
+        <img src="/static/q97jxk/2static/images/blank.gif"
+            alt=""
+            title="">
+    
+
+
+
+        </div>
+    </td>
+    <td class="role">
+        
+            
+            
+            
+            
+            
+                Reviewer - <span class="role-progress">100</span>% reviewed
+            
+        
+    </td>
+    <td class="timeSpent">
+
+
+
+
+
+
+
+    0m
+</td>
+    <td class="authored-comments">
+        &nbsp;
+    </td>
+    <td class="latest-comment">&nbsp;</td>
+    
+</tr>
+
+            
+        
+            
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<tr id="details-participant-2219">
+    <td>
+        <div class="reviewer">
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        
+            
+        
+        
+    
+    
+
+
+
+
+    
+        
+        
+            
+        
+        
+    
+    
+    
+
+
+
+
+
+    
+        
+    
+    
+    
+
+
+
+    
+
+
+
+    
+        
+            
+                
+            
+            
+            
+        
+        <a class="user avatar userorcommitter-parent" style='background-image:url(https://secure.gravatar.com/avatar/de0961ba3dd9f30228328a918d8b6fdf?s=24&amp;amp;d=mm);
+        padding-left:28px ;
+        
+        ' href="/user/vkintali"  title="Venkataramana Kintali">
+        
+                <span class="linkText">Venkataramana Kintali</span>
+            
+        </a>
+        
+    
+    
+
+
+
+
+
+
+
+    
+        <div class="reviewer-progressbar"
+            style="background-position: 100% 0"
+            title="0% reviewed">
+        </div>
+    
+
+    
+        <img src="/static/q97jxk/2static/images/blank.gif"
+            alt=""
+            title="">
+    
+
+
+
+        </div>
+    </td>
+    <td class="role">
+        
+            
+            
+            
+            
+            
+                Reviewer - <span class="role-progress">0</span>% reviewed
+            
+        
+    </td>
+    <td class="timeSpent">&nbsp;</td>
+    <td class="authored-comments">
+        &nbsp;
+    </td>
+    <td class="latest-comment">&nbsp;</td>
+    
+</tr>
+
+            
+        
+            
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<tr id="details-participant-2282">
+    <td>
+        <div class="reviewer">
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        
+            
+        
+        
+    
+    
+
+
+
+
+    
+        
+        
+            
+        
+        
+    
+    
+    
+
+
+
+
+
+    
+        
+    
+    
+    
+
+
+
+    
+
+
+
+    
+        
+            
+                
+            
+            
+            
+        
+        <a class="user avatar userorcommitter-parent" style='background-image:url(https://secure.gravatar.com/avatar/a25e23260c73548256eee518ab51b492?s=24&amp;amp;d=mm);
+        padding-left:28px ;
+        
+        ' href="/user/jniba"  title="Jerome Niba">
+        
+                <span class="linkText">Jerome Niba</span>
+            
+        </a>
+        
+    
+    
+
+
+
+
+
+
+
+    
+        <div class="reviewer-progressbar"
+            style="background-position: 100% 0"
+            title="0% reviewed">
+        </div>
+    
+
+    
+        <img src="/static/q97jxk/2static/images/blank.gif"
+            alt=""
+            title="">
+    
+
+
+
+        </div>
+    </td>
+    <td class="role">
+        
+            
+            
+            
+            
+            
+                Reviewer - <span class="role-progress">0</span>% reviewed
+            
+        
+    </td>
+    <td class="timeSpent">&nbsp;</td>
+    <td class="authored-comments">
+        &nbsp;
+    </td>
+    <td class="latest-comment">&nbsp;</td>
+    
+</tr>
+
+            
+        
+            
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<tr id="details-participant-190">
+    <td>
+        <div class="reviewer">
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        
+            
+        
+        
+    
+    
+
+
+
+
+    
+        
+        
+            
+        
+        
+    
+    
+    
+
+
+
+
+
+    
+        
+    
+    
+    
+
+
+
+    
+
+
+
+    
+        
+            
+                
+            
+            
+            
+        
+        <a class="user avatar userorcommitter-parent" style='background-image:url(https://secure.gravatar.com/avatar/1f7f2a9b0cd922e9853195f3fe6547ce?s=24&amp;amp;d=mm);
+        padding-left:28px ;
+        
+        ' href="/user/schinnan"  title="Santhosh Chinnan">
+        
+                <span class="linkText">Santhosh Chinnan</span>
+            
+        </a>
+        
+    
+    
+
+
+
+
+
+
+
+    
+        <div class="reviewer-progressbar"
+            style="background-position: 100% 0"
+            title="0% reviewed">
+        </div>
+    
+
+    
+        <img src="/static/q97jxk/2static/images/blank.gif"
+            alt=""
+            title="">
+    
+
+
+
+        </div>
+    </td>
+    <td class="role">
+        
+            
+            
+            
+            
+            
+                Reviewer - <span class="role-progress">0</span>% reviewed
+            
+        
+    </td>
+    <td class="timeSpent">&nbsp;</td>
+    <td class="authored-comments">
+        &nbsp;
+    </td>
+    <td class="latest-comment">&nbsp;</td>
+    
+</tr>
+
+            
+        
+            
+        
+            
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<tr id="details-participant-2451">
+    <td>
+        <div class="reviewer">
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        
+            
+        
+        
+    
+    
+
+
+
+
+    
+        
+        
+            
+        
+        
+    
+    
+    
+
+
+
+
+
+    
+        
+    
+    
+    
+
+
+
+    
+
+
+
+    
+        
+            
+                
+            
+            
+            
+        
+        <a class="user avatar userorcommitter-parent" style='background-image:url(https://secure.gravatar.com/avatar/296cab24048ea92e9c1ce47df7c2c8db?s=24&amp;amp;d=mm);
+        padding-left:28px ;
+        
+        ' href="/user/jgavini"  title="Jayanth Gavini">
+        
+                <span class="linkText">Jayanth Gavini</span>
+            
+        </a>
+        
+    
+    
+
+
+
+
+
+
+
+    
+        <div class="reviewer-progressbar"
+            style="background-position: 0% 0"
+            title="100% reviewed">
+        </div>
+    
+
+    
+        <img src="/static/q97jxk/2static/images/blank.gif"
+            alt=""
+            title="">
+    
+
+
+
+        </div>
+    </td>
+    <td class="role">
+        
+            
+            
+            
+            
+            
+                Reviewer - <span class="role-progress">100</span>% reviewed
+            
+        
+    </td>
+    <td class="timeSpent">
+
+
+
+
+
+
+
+    2m
+</td>
+    <td class="authored-comments">
+        
+            1
+            
+        
+    </td>
+    <td class="latest-comment">
+        
+            
+            <a class="latest-comment-link" id="latest-comment172277" title="Scroll to this comment">secrets needs to be added to aws secret manager</a>
+        
+    </td>
+    
+</tr>
+
+            
+        
+            
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<tr id="details-participant-1513">
+    <td>
+        <div class="reviewer">
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        
+            
+        
+        
+    
+    
+
+
+
+
+    
+        
+        
+            
+        
+        
+    
+    
+    
+
+
+
+
+
+    
+        
+    
+    
+    
+
+
+
+    
+
+
+
+    
+        
+            
+                
+            
+            
+            
+        
+        <a class="user avatar userorcommitter-parent" style='background-image:url(https://secure.gravatar.com/avatar/89f08f260e82830f18d3335685d55105?s=24&amp;amp;d=mm);
+        padding-left:28px ;
+        
+        ' href="/user/jgarciam"  title="Julio Garcia Munoz">
+        
+                <span class="linkText">Julio Garcia Munoz</span>
+            
+        </a>
+        
+    
+    
+
+
+
+
+
+
+
+    
+        <div class="reviewer-progressbar"
+            style="background-position: 100% 0"
+            title="0% reviewed">
+        </div>
+    
+
+    
+        <img src="/static/q97jxk/2static/images/blank.gif"
+            alt=""
+            title="">
+    
+
+
+
+        </div>
+    </td>
+    <td class="role">
+        
+            
+            
+            
+            
+            
+                Reviewer - <span class="role-progress">0</span>% reviewed
+            
+        
+    </td>
+    <td class="timeSpent">&nbsp;</td>
+    <td class="authored-comments">
+        &nbsp;
+    </td>
+    <td class="latest-comment">&nbsp;</td>
+    
+</tr>
+
+            
+        
+            
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<tr id="details-participant-2535">
+    <td>
+        <div class="reviewer">
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        
+            
+        
+        
+    
+    
+
+
+
+
+    
+        
+        
+            
+        
+        
+    
+    
+    
+
+
+
+
+
+    
+        
+    
+    
+    
+
+
+
+    
+
+
+
+    
+        
+            
+                
+            
+            
+            
+        
+        <a class="user avatar userorcommitter-parent" style='background-image:url(https://secure.gravatar.com/avatar/95b02cf7c909e0a07d5c01b2c64ffcb5?s=24&amp;amp;d=mm);
+        padding-left:28px ;
+        
+        ' href="/user/juradi"  title="Jayapal Uradi">
+        
+                <span class="linkText">Jayapal Uradi</span>
+            
+        </a>
+        
+    
+    
+
+
+
+
+
+
+
+    
+        <div class="reviewer-progressbar"
+            style="background-position: 100% 0"
+            title="0% reviewed">
+        </div>
+    
+
+    
+        <img src="/static/q97jxk/2static/images/blank.gif"
+            alt=""
+            title="">
+    
+
+
+
+        </div>
+    </td>
+    <td class="role">
+        
+            
+            
+            
+            
+            
+                Reviewer - <span class="role-progress">0</span>% reviewed
+            
+        
+    </td>
+    <td class="timeSpent">&nbsp;</td>
+    <td class="authored-comments">
+        &nbsp;
+    </td>
+    <td class="latest-comment">&nbsp;</td>
+    
+</tr>
+
+            
+        
+            
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<tr id="details-participant-199">
+    <td>
+        <div class="reviewer">
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        
+            
+        
+        
+    
+    
+
+
+
+
+    
+        
+        
+            
+        
+        
+    
+    
+    
+
+
+
+
+
+    
+        
+    
+    
+    
+
+
+
+    
+
+
+
+    
+        
+            
+                
+            
+            
+            
+        
+        <a class="user avatar userorcommitter-parent" style='background-image:url(https://secure.gravatar.com/avatar/2f7a8b685b794b367140fbc8491f9799?s=24&amp;amp;d=mm);
+        padding-left:28px ;
+        
+        ' href="/user/pawan"  title="Pawan Sirse">
+        
+                <span class="linkText">Pawan Sirse</span>
+            
+        </a>
+        
+    
+    
+
+
+
+
+
+
+
+    
+        <div class="reviewer-progressbar"
+            style="background-position: 0% 0"
+            title="100% reviewed">
+        </div>
+    
+
+    
+        <img src="/static/q97jxk/2static/images/blank.gif"
+            alt=""
+            title="">
+    
+
+
+
+        </div>
+    </td>
+    <td class="role">
+        
+            
+            
+            
+            
+            
+                Reviewer - <span class="role-progress">100</span>% reviewed
+            
+        
+    </td>
+    <td class="timeSpent">
+
+
+
+
+
+
+
+    0m
+</td>
+    <td class="authored-comments">
+        &nbsp;
+    </td>
+    <td class="latest-comment">&nbsp;</td>
+    
+</tr>
+
+            
+        
+            
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<tr id="details-participant-1465">
+    <td>
+        <div class="completedReviewer reviewer">
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        
+            
+        
+        
+    
+    
+
+
+
+
+    
+        
+        
+            
+        
+        
+    
+    
+    
+
+
+
+
+
+    
+        
+    
+    
+    
+
+
+
+    
+
+
+
+    
+        
+            
+                
+            
+            
+            
+        
+        <a class="user avatar userorcommitter-parent" style='background-image:url(https://secure.gravatar.com/avatar/dab5e00502d4b3fa55fcaed8f5f4a38e?s=24&amp;amp;d=mm);
+        padding-left:28px ;
+        
+        ' href="/user/svadivel"  title="Senthilnathan Vadivel">
+        
+                <span class="linkText">Senthilnathan Vadivel</span>
+            
+        </a>
+        
+    
+    
+
+
+
+
+
+
+
+    
+        <div class="reviewer-progressbar"
+            style="background-position: 0% 0"
+            title="100% reviewed">
+        </div>
+    
+
+    
+        <img src="/static/q97jxk/2static/images/blank.gif"
+            alt="Reviewer completed"
+            title="Reviewer completed">
+    
+
+
+
+        </div>
+    </td>
+    <td class="role">
+        
+            
+            
+            
+            
+                Reviewer - Complete
+            
+            
+        
+    </td>
+    <td class="timeSpent">
+
+
+
+
+
+
+
+    0m
+</td>
+    <td class="authored-comments">
+        &nbsp;
+    </td>
+    <td class="latest-comment">&nbsp;</td>
+    
+</tr>
+
+            
+        
+            
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<tr id="details-participant-2752">
+    <td>
+        <div class="completedReviewer reviewer">
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        
+            
+        
+        
+    
+    
+
+
+
+
+    
+        
+        
+            
+        
+        
+    
+    
+    
+
+
+
+
+
+    
+        
+    
+    
+    
+
+
+
+    
+
+
+
+    
+        
+            
+                
+            
+            
+            
+        
+        <a class="user avatar userorcommitter-parent" style='background-image:url(https://secure.gravatar.com/avatar/e1478d0be54f0f0861c23927c4ce0a43?s=24&amp;amp;d=mm);
+        padding-left:28px ;
+        
+        ' href="/user/mkumar11"  title="Manoj Kumar M">
+        
+                <span class="linkText">Manoj Kumar M</span>
+            
+        </a>
+        
+    
+    
+
+
+
+
+
+
+
+    
+        <div class="reviewer-progressbar"
+            style="background-position: 0% 0"
+            title="100% reviewed">
+        </div>
+    
+
+    
+        <img src="/static/q97jxk/2static/images/blank.gif"
+            alt="Reviewer completed"
+            title="Reviewer completed">
+    
+
+
+
+        </div>
+    </td>
+    <td class="role">
+        
+            
+            
+            
+            
+                Reviewer - Complete
+            
+            
+        
+    </td>
+    <td class="timeSpent">
+
+
+
+
+
+
+
+    7m
+</td>
+    <td class="authored-comments">
+        &nbsp;
+    </td>
+    <td class="latest-comment">&nbsp;</td>
+    
+</tr>
+
+            
+        
+        <tr id="details-participants-total">
+            <td>Total</td>
+            <td>&nbsp;</td>
+            <td class="timeSpent">
+
+
+
+
+
+
+
+    26m
+</td>
+            <td class="authored-comments">2</td>
+            <td>&nbsp;</td>
+        </tr>
+    </tbody>
+</table>
+
+</div>
+
+<div>
+    <ul id="review-meta-links">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+        
+        <li id="jiraDisplayDiv" class="top-level hidden">
+        </li>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li class="top-level">
+        
+            <h4 class="overview-heading">Patches</h4>
+        
+        
+            
+            
+                <ul>
+                    
+                        <li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span id="patch-controls-126284" class="patch-controls inline-select viewing anchored">
+    
+    
+
+    <span class="patch-name">
+        <a href="/cru/CR-EP-5897/downloadpatch/126284/DLP-10321__Added_mfe_client_id_and_client_secret_in_pop_json_files.patch">DLP-10321__Added_mfe_client_id_and_client_secret_in_pop_json_files.patch</a>:
+    </span>
+
+    
+        
+        
+            <span class="current-anchor">
+                    (anchored to <span class="anchored-source">skyhighdev</span> :
+                                 <span class="anchored-path">shnbin</span>/ )
+            </span>
+        
+    
+
+    
+
+    
+    
+</span></li>
+                    
+                </ul>
+            
+        
+    </li>
+
+
+    </ul>
+</div>
+
+<script type="text/javascript">
+    AJS.$(document).ready(function() {
+        AJS.$('#details .reviewers .latest-comment-link').live('click', function() {
+            var comment_nav = CRU.COMMENT.NAV;
+            var $this = AJS.$(this);
+            var commentId = $this.attr('id').replace('latest-comment', '');
+            var scrollToMap = comment_nav.navigateFindComment({ commentId: commentId });
+            comment_nav.navigateDirectlyToElement({ commentId: commentId }, scrollToMap, $this);
+        });
+    });
+</script>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="objectives" class="overview-container">
+    <div class="overview-item ">
+        <a href="#objectives" class="frx-permalink" title="Link to this section"><span>#permalink</span></a>
+        
+
+        
+
+        
+            <h4 class="overview-heading">Objectives</h4>
+        
+
+        <div class="overview-body">
+            <div class="overview-content">
+                <div id="objectives-markup" class="objectives ">
+            <div class="meta-objectives">
+                
+                    
+                    
+                        There are no specific objectives for this review.
+                    
+                
+            </div>
+        </div>
+        
+            </div>
+        </div>
+    </div>
+</div>
+
+                    
+
+                    
+
+                    
+                        <div class="overview-item"><h4 class="overview-heading">Branches in review</h4><div class="overview-body"><table class="tracked-branches-table aui hidden"data-perma-id="CR-EP-5897"data-show-actions="false"><thead><tr><th class="tracked-branch-repository">Repository</th><th class="tracked-branch-target-branch">Branch to review</th><th class="tracked-branch-base-branch">Branched from</th></tr></thead><tbody></tbody></table></div></div>
+                    
+                        
+<div id="jira-issues-report" class="overview-container">
+    <div class="overview-item">
+        <a class="frx-permalink" title="Link to this section" href="#jira-issues-report">
+            <span>#permalink</span>
+        </a>
+        <h4 class="overview-heading">Issues Raised From Comments</h4>
+        <div class="overview-body">
+            <div class="overview-content">
+                <div id="jira-issue-report-oauth-errors"></div>
+                <table class="aui status-container" id="jira-issues-report-summary-table">
+                    <tr>
+                        <th>Key</th>
+                        <th>Summary</th>
+                        <th>State</th>
+                        <th id="jira-issue-report-spinner-container">Assignee</th>
+                    </tr>
+                                    </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+                    
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="general-comments" class="overview-container">
+    <div class="overview-item ">
+        <a href="#general-comments" class="frx-permalink" title="Link to this section"><span>#permalink</span></a>
+        
+
+        
+
+        
+            <h4 class="overview-heading">General Comments</h4>
+        
+
+        <div class="overview-body">
+            <div class="overview-content">
+                <div class="create-issue-dialog-spacer">
+                                
+                                    
+                                    
+                                        <div id="no-general-comments">
+                                            <em>There are no general comments on this review.</em>
+                                        </div>
+                                    
+                                
+                            </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+        
+            
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="frxControlsContainer" id="frxControlsContainer582312" style="display:none;">
+    
+    <div class="frxControls unread revision-info" id="frxControls582312">
+        <div class="frx-details frx-details-readonly">
+            
+            
+        </div>
+        <div class="frxSliderDiv" id="frxSliderDiv-582312">
+            
+        </div>
+
+        
+        <div class="clear no-height"><!-- --></div>
+    </div>
+</div> <!-- .frxControlsContainer -->
+
+
+
+
+<div class="change frxouter" id="frxouter582312">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="frx-table-cloth">
+    <div class="frx-table-set">
+        <div class="frx-header-container frx-actions frx-actions-primary">
+                    <div id="frx-header-582312" class="frx-header">
+
+                        <div id="frx-toolbar-582312" class="frx-toolbar clearfix">
+
+                        <div class="path">
+                            
+                            
+                            
+                                
+                                
+                                
+                                    
+                                
+                            
+                            
+                                
+                                
+                            
+                            
+                            
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+       
+
+<span id="revPath1479692" class="path-truncated fileRevisionLink fileRevisionPathLink file filetype-json frx-operation frx-changed" title="settings/trunk/corp-uswest2qaautoregressionpopods.json"><span class="path-prefix">/settings/trunk/</span><span class="path-basename frx-operation frx-changed">corp-uswest2qaautoregressionpopods.json</span></span>
+
+                            
+                            
+                                <span class="frx-operation frx-changed operation-text no-read-status"><span>Changed</span></span>
+                            
+                            
+                            
+                                
+                                    
+                                        <span class="anchor success" title="Anchored to 'skyhighdev'.">&nbsp;</span>
+                                    
+                                    
+                                
+                            
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<strong class="stats" >
+    <span id="frxpathCommentCount582312"
+          class="commentCount  "
+          data-count="2"
+          data-unread="0"
+          >2</span>
+    <span id="frxpathUnreadCommentCountWrapper582312" class="unreadCommentCount  hidden">
+        (<span id="frxpathUnreadCommentCount582312" class="count-unread">0</span>)
+    </span>
+    <span id="frxpathHiddenCommentCount582312" class="hiddenCommentCount" ></span>
+</strong>
+                        </div>
+
+                        <div class="frx-actions-secondary">
+
+                            <div id="diffControls582312" class="toolbar diffControls">
+
+                                
+
+                                
+                                    <div id="diffOptionsFormPlaceholder582312" class="tb_drop tb_left">
+                                        
+                                    </div>
+                                
+
+                                
+
+                                
+                                
+
+                                
+                                
+
+                                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+    
+        
+        
+    
+
+
+
+
+
+    
+    <img class="ide-icon tb_right"
+         id="ide-icon-797053017"
+         title="Open file settings/trunk/corp-uswest2qaautoregressionpopods.json in IDE"
+         onclick="this.src=CRU.UTIL.createIdeSrc('http://localhost:51235/file?file=settings/trunk/corp-uswest2qaautoregressionpopods.json', 582312);"
+         alt="Open in IDE"
+         src="http://localhost:51235/icon">
+
+    <script type="text/javascript">
+        AJS.$("#ide-icon-797053017").load(function () {
+            AJS.$(this).show();
+        });
+    </script>
+
+
+
+                                <a class="frx-permalink" title="Link to this file" href="#CFR-582312"><span>#permalink</span></a>
+
+                            </div>
+                        </div>
+
+                        </div>  
+                        <div class="frx-context-info" id="frx-context-info-582312">
+                             
+                        </div>
+                    </div>
+            </div>
+            <div id="frxinner582312" class="change_body frxinner frx-loading">
+                
+                    
+                    
+                    
+                        <div id="frxLoadDiff582312" class="frx-unloaded">
+                            <a onclick="CRU.FRX.AJAX.frxLoad(582312);return false;">Click to load diff</a>
+                        </div>
+                    
+                
+            </div>
+    </div>
+</div><!-- /.frx-table-cloth -->
+
+                    
+</div>
+
+            
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="frxControlsContainer" id="frxControlsContainer582313" style="display:none;">
+    
+    <div class="frxControls unread revision-info" id="frxControls582313">
+        <div class="frx-details frx-details-readonly">
+            
+            
+        </div>
+        <div class="frxSliderDiv" id="frxSliderDiv-582313">
+            
+        </div>
+
+        
+        <div class="clear no-height"><!-- --></div>
+    </div>
+</div> <!-- .frxControlsContainer -->
+
+
+
+
+<div class="change frxouter" id="frxouter582313">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="frx-table-cloth">
+    <div class="frx-table-set">
+        <div class="frx-header-container frx-actions frx-actions-primary">
+                    <div id="frx-header-582313" class="frx-header">
+
+                        <div id="frx-toolbar-582313" class="frx-toolbar clearfix">
+
+                        <div class="path">
+                            
+                            
+                            
+                                
+                                
+                                
+                                    
+                                
+                            
+                            
+                                
+                                
+                            
+                            
+                            
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+       
+
+<span id="revPath1479694" class="path-truncated fileRevisionLink fileRevisionPathLink file filetype-json frx-operation frx-changed" title="settings/trunk/corp-uswest2qatpopapi.json"><span class="path-prefix">/settings/trunk/</span><span class="path-basename frx-operation frx-changed">corp-uswest2qatpopapi.json</span></span>
+
+                            
+                            
+                                <span class="frx-operation frx-changed operation-text no-read-status"><span>Changed</span></span>
+                            
+                            
+                            
+                                
+                                    
+                                        <span class="anchor success" title="Anchored to 'skyhighdev'.">&nbsp;</span>
+                                    
+                                    
+                                
+                            
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<strong class="stats" style="display:none;">
+    <span id="frxpathCommentCount582313"
+          class="commentCount  hidden"
+          data-count="0"
+          data-unread="0"
+          >0</span>
+    <span id="frxpathUnreadCommentCountWrapper582313" class="unreadCommentCount  hidden">
+        (<span id="frxpathUnreadCommentCount582313" class="count-unread">0</span>)
+    </span>
+    <span id="frxpathHiddenCommentCount582313" class="hiddenCommentCount" ></span>
+</strong>
+                        </div>
+
+                        <div class="frx-actions-secondary">
+
+                            <div id="diffControls582313" class="toolbar diffControls">
+
+                                
+
+                                
+                                    <div id="diffOptionsFormPlaceholder582313" class="tb_drop tb_left">
+                                        
+                                    </div>
+                                
+
+                                
+
+                                
+                                
+
+                                
+                                
+
+                                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+    
+        
+        
+    
+
+
+
+
+
+    
+    <img class="ide-icon tb_right"
+         id="ide-icon1210158445"
+         title="Open file settings/trunk/corp-uswest2qatpopapi.json in IDE"
+         onclick="this.src=CRU.UTIL.createIdeSrc('http://localhost:51235/file?file=settings/trunk/corp-uswest2qatpopapi.json', 582313);"
+         alt="Open in IDE"
+         src="http://localhost:51235/icon">
+
+    <script type="text/javascript">
+        AJS.$("#ide-icon1210158445").load(function () {
+            AJS.$(this).show();
+        });
+    </script>
+
+
+
+                                <a class="frx-permalink" title="Link to this file" href="#CFR-582313"><span>#permalink</span></a>
+
+                            </div>
+                        </div>
+
+                        </div>  
+                        <div class="frx-context-info" id="frx-context-info-582313">
+                             
+                        </div>
+                    </div>
+            </div>
+            <div id="frxinner582313" class="change_body frxinner frx-loading">
+                
+                    
+                    
+                    
+                        <div id="frxLoadDiff582313" class="frx-unloaded">
+                            <a onclick="CRU.FRX.AJAX.frxLoad(582313);return false;">Click to load diff</a>
+                        </div>
+                    
+                
+            </div>
+    </div>
+</div><!-- /.frx-table-cloth -->
+
+                    
+</div>
+
+            
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="frxControlsContainer" id="frxControlsContainer582314" style="display:none;">
+    
+    <div class="frxControls unread revision-info" id="frxControls582314">
+        <div class="frx-details frx-details-readonly">
+            
+            
+        </div>
+        <div class="frxSliderDiv" id="frxSliderDiv-582314">
+            
+        </div>
+
+        
+        <div class="clear no-height"><!-- --></div>
+    </div>
+</div> <!-- .frxControlsContainer -->
+
+
+
+
+<div class="change frxouter" id="frxouter582314">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="frx-table-cloth">
+    <div class="frx-table-set">
+        <div class="frx-header-container frx-actions frx-actions-primary">
+                    <div id="frx-header-582314" class="frx-header">
+
+                        <div id="frx-toolbar-582314" class="frx-toolbar clearfix">
+
+                        <div class="path">
+                            
+                            
+                            
+                                
+                                
+                                
+                                    
+                                
+                            
+                            
+                                
+                                
+                            
+                            
+                            
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+       
+
+<span id="revPath1479696" class="path-truncated fileRevisionLink fileRevisionPathLink file filetype-json frx-operation frx-changed" title="settings/trunk/corp-uswest2qatpopapi2.json"><span class="path-prefix">/settings/trunk/</span><span class="path-basename frx-operation frx-changed">corp-uswest2qatpopapi2.json</span></span>
+
+                            
+                            
+                                <span class="frx-operation frx-changed operation-text no-read-status"><span>Changed</span></span>
+                            
+                            
+                            
+                                
+                                    
+                                        <span class="anchor success" title="Anchored to 'skyhighdev'.">&nbsp;</span>
+                                    
+                                    
+                                
+                            
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<strong class="stats" style="display:none;">
+    <span id="frxpathCommentCount582314"
+          class="commentCount  hidden"
+          data-count="0"
+          data-unread="0"
+          >0</span>
+    <span id="frxpathUnreadCommentCountWrapper582314" class="unreadCommentCount  hidden">
+        (<span id="frxpathUnreadCommentCount582314" class="count-unread">0</span>)
+    </span>
+    <span id="frxpathHiddenCommentCount582314" class="hiddenCommentCount" ></span>
+</strong>
+                        </div>
+
+                        <div class="frx-actions-secondary">
+
+                            <div id="diffControls582314" class="toolbar diffControls">
+
+                                
+
+                                
+                                    <div id="diffOptionsFormPlaceholder582314" class="tb_drop tb_left">
+                                        
+                                    </div>
+                                
+
+                                
+
+                                
+                                
+
+                                
+                                
+
+                                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+    
+        
+        
+    
+
+
+
+
+
+    
+    <img class="ide-icon tb_right"
+         id="ide-icon-1249912903"
+         title="Open file settings/trunk/corp-uswest2qatpopapi2.json in IDE"
+         onclick="this.src=CRU.UTIL.createIdeSrc('http://localhost:51235/file?file=settings/trunk/corp-uswest2qatpopapi2.json', 582314);"
+         alt="Open in IDE"
+         src="http://localhost:51235/icon">
+
+    <script type="text/javascript">
+        AJS.$("#ide-icon-1249912903").load(function () {
+            AJS.$(this).show();
+        });
+    </script>
+
+
+
+                                <a class="frx-permalink" title="Link to this file" href="#CFR-582314"><span>#permalink</span></a>
+
+                            </div>
+                        </div>
+
+                        </div>  
+                        <div class="frx-context-info" id="frx-context-info-582314">
+                             
+                        </div>
+                    </div>
+            </div>
+            <div id="frxinner582314" class="change_body frxinner frx-loading">
+                
+                    
+                    
+                    
+                        <div id="frxLoadDiff582314" class="frx-unloaded">
+                            <a onclick="CRU.FRX.AJAX.frxLoad(582314);return false;">Click to load diff</a>
+                        </div>
+                    
+                
+            </div>
+    </div>
+</div><!-- /.frx-table-cloth -->
+
+                    
+</div>
+
+            
+        
+    </div>
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    (function () {
+        var templates = {};
+
+        templates["simpleCommentForm"] = "\u003cform id='simpleCommentForm' name='simpleCommentForm' class='comment aui' accept-charset='UTF-8' action=''\u003e\n    \u003cp class=\"userlogo\"\u003e\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\u003cspan class=\"aui-avatar aui-avatar-32\"\u003e\u003cspan class=\"aui-avatar-inner\"\u003e\u003cimg src=\"https://secure.gravatar.com/avatar/dc10fded23c824a00a75bea7edb48871?s=32&amp;d=mm\" /\u003e\u003c/span\u003e\u003c/span\u003e\n\u003c/p\u003e\n    \u003cdiv class=\"comment-body\"\u003e\n        \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\u003cdiv class=\"wiki-preview-pane markup view \" style=\"display: none;\"\u003e\n    \n\u003c/div\u003e\n\n\n\n        \u003ctextarea name='newText' class='commentTextarea'\u003e\u003c/textarea\u003e\n        \u003cdiv class=\"wiki-buttons\"\u003e\n\n            \n            \u003ca class=\"wiki-help-button icon-ie aui-icon aui-icon-small aui-iconfont-help\" title=\"Help for wiki syntax\"\n                    \u003e\u003cspan\u003ewiki syntax help\u003c/span\u003e\u003c/a\u003e\n\n            \u003ca class=\"wiki-preview-button icon-ie \" title=\"Preview comment\"\n                    \u003e\u003cspan class=\"aui-icon aui-icon-small aui-iconfont-view\"\u003ePreview\u003c/span\u003e\u003c/a\u003e\n            \u003cspan class=\"wiki-preview-button-spinner\"\u003e\u003c/span\u003e\n        \u003c/div\u003e\n        \u003cdiv class='comment-toolbar-holder aui'\u003e\n            \u003cdiv class=\"field-group\"\u003e\n                \u003cdiv class=\"comment-needs-resolution checkbox\"\u003e\n                    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\u003cinput class=\"checkbox comment-needs-resolution--checkbox\" type=\"checkbox\" name=\"resolutionStatus\" id=\"needsResolution\"/\u003e\n                    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\u003clabel for=\"needsResolution\"\u003eNeeds resolution\u003c/label\u003e\n                \u003c/div\u003e\n                \n                    \n\n\n\n\n\n\n\n\n\u003cdiv class=\"defectFlag checkbox\"\u003e\n    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\u003cinput class=\"checkbox\" type=\"checkbox\" name=\"defect\" id=\"defect-general\"/\u003e\n    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\u003clabel for=\"defect-general\" title=\"Mark this comment as a potential defect\"\u003eDefect\u003c/label\u003e\n\u003c/div\u003e\n\n\n\u003cdiv id=\"generalDefectFields\" class=\"defectFields\" style=\"display:none\"\u003e\n    \n\n\n\n\n\n\n\n\n\n    \n        \u003cselect class=\"select defectField\" name=\"rank\"\u003e\n            \u003coption value='' style='font-style:italic;'\u003eSelect Ranking\u003c/option\u003e\n            \n                \u003coption value=\"Major\"\u003eMajor\u003c/option\u003e\n            \n                \u003coption value=\"Minor\"\u003eMinor\u003c/option\u003e\n            \n        \u003c/select\u003e\n    \n\n    \n        \u003cselect class=\"select defectField\" name=\"classification\"\u003e\n            \u003coption value='' style='font-style:italic;'\u003eSelect Classification\u003c/option\u003e\n            \n                \u003coption value=\"Missing\"\u003eMissing\u003c/option\u003e\n            \n                \u003coption value=\"Extra (superfluous)\"\u003eExtra (superfluous)\u003c/option\u003e\n            \n                \u003coption value=\"Ambiguous\"\u003eAmbiguous\u003c/option\u003e\n            \n                \u003coption value=\"Inconsistent\"\u003eInconsistent\u003c/option\u003e\n            \n                \u003coption value=\"Improvement desirable\"\u003eImprovement desirable\u003c/option\u003e\n            \n                \u003coption value=\"Not conforming to standards\"\u003eNot conforming to standards\u003c/option\u003e\n            \n                \u003coption value=\"Risk-prone\"\u003eRisk-prone\u003c/option\u003e\n            \n                \u003coption value=\"Factually incorrect\"\u003eFactually incorrect\u003c/option\u003e\n            \n                \u003coption value=\"Not implementable\"\u003eNot implementable\u003c/option\u003e\n            \n                \u003coption value=\"Editorial\"\u003eEditorial\u003c/option\u003e\n            \n        \u003c/select\u003e\n    \n\n\u003c/div\u003e\n\n                \n            \u003c/div\u003e\n            \u003cdiv class=\"buttons\"\u003e\n                \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\u003cbutton class=\"aui-button aui-button-primary postButton defaultButton\" type=\"button\" value=\"publish\"\u003eComment\u003c/button\u003e\n\n                \n\n                \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\u003cbutton class=\"aui-button\" name=\"saveAsDraft\" type=\"button\" value=\"Save\"\u003eSave as draft\u003c/button\u003e\n\n                \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\u003ca class=\"aui-button aui-button-link\" name=\"cancelComment\" tabindex=\"0\"\u003eCancel\u003c/a\u003e\n\n                \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\u003ca class=\"aui-button aui-button-link\" name=\"discardComment\" style=\"display:none;\" tabindex=\"0\"\u003eDiscard\u003c/a\u003e\n\n                \u003cspan id='generalAutosaveMsg' class='autosavemessage'\u003e\u003c/span\u003e\n            \u003c/div\u003e\n        \u003c/div\u003e\n    \u003c/div\u003e\n    \u003cinput type='hidden' name='type' value='general' data-static='true'\u003e\n    \u003cinput type='hidden' name='commentId' value='-1'\u003e\n    \u003cdiv class=\"ui-block\"\u003e\u003c/div\u003e\n\u003c/form\u003e";
+        templates["revisionCommentForm"] = "\u003cform id='revisionCommentForm' name='revisionCommentForm' class='comment aui' accept-charset='UTF-8' action=''\u003e\n    \u003cp class=\"userlogo\"\u003e\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\u003cspan class=\"aui-avatar aui-avatar-32\"\u003e\u003cspan class=\"aui-avatar-inner\"\u003e\u003cimg src=\"https://secure.gravatar.com/avatar/dc10fded23c824a00a75bea7edb48871?s=32&amp;d=mm\" /\u003e\u003c/span\u003e\u003c/span\u003e\n\u003c/p\u003e\n    \u003cdiv class=\"comment-body\"\u003e\n        \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\u003cdiv class=\"wiki-preview-pane markup view \" style=\"display: none;\"\u003e\n    \n\u003c/div\u003e\n\n\n\n        \u003ctextarea name='newText' class='commentTextarea'\u003e\u003c/textarea\u003e\n        \u003cdiv class=\"wiki-buttons\"\u003e\n\n            \n                \u003ca class=\"copyCode edit-only\"\u003eQuote source\u003c/a\u003e\n            \n            \u003ca class=\"wiki-help-button icon-ie aui-icon aui-icon-small aui-iconfont-help\" title=\"Help for wiki syntax\"\n                    \u003e\u003cspan\u003ewiki syntax help\u003c/span\u003e\u003c/a\u003e\n\n            \u003ca class=\"wiki-preview-button icon-ie \" title=\"Preview comment\"\n                    \u003e\u003cspan class=\"aui-icon aui-icon-small aui-iconfont-view\"\u003ePreview\u003c/span\u003e\u003c/a\u003e\n            \u003cspan class=\"wiki-preview-button-spinner\"\u003e\u003c/span\u003e\n        \u003c/div\u003e\n        \u003cdiv class='comment-toolbar-holder aui'\u003e\n            \u003cdiv class=\"field-group\"\u003e\n                \u003cdiv class=\"comment-needs-resolution checkbox\"\u003e\n                    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\u003cinput class=\"checkbox comment-needs-resolution--checkbox\" type=\"checkbox\" name=\"resolutionStatus\" id=\"needsResolution\"/\u003e\n                    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\u003clabel for=\"needsResolution\"\u003eNeeds resolution\u003c/label\u003e\n                \u003c/div\u003e\n                \n                    \n\n\n\n\n\n\n\n\n\u003cdiv class=\"defectFlag checkbox\"\u003e\n    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\u003cinput class=\"checkbox\" type=\"checkbox\" name=\"defect\" id=\"defect-revision\"/\u003e\n    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\u003clabel for=\"defect-revision\" title=\"Mark this comment as a potential defect\"\u003eDefect\u003c/label\u003e\n\u003c/div\u003e\n\n\n\u003cdiv id=\"revisionDefectFields\" class=\"defectFields\" style=\"display:none\"\u003e\n    \n\n\n\n\n\n\n\n\n\n    \n        \u003cselect class=\"select defectField\" name=\"rank\"\u003e\n            \u003coption value='' style='font-style:italic;'\u003eSelect Ranking\u003c/option\u003e\n            \n                \u003coption value=\"Major\"\u003eMajor\u003c/option\u003e\n            \n                \u003coption value=\"Minor\"\u003eMinor\u003c/option\u003e\n            \n        \u003c/select\u003e\n    \n\n    \n        \u003cselect class=\"select defectField\" name=\"classification\"\u003e\n            \u003coption value='' style='font-style:italic;'\u003eSelect Classification\u003c/option\u003e\n            \n                \u003coption value=\"Missing\"\u003eMissing\u003c/option\u003e\n            \n                \u003coption value=\"Extra (superfluous)\"\u003eExtra (superfluous)\u003c/option\u003e\n            \n                \u003coption value=\"Ambiguous\"\u003eAmbiguous\u003c/option\u003e\n            \n                \u003coption value=\"Inconsistent\"\u003eInconsistent\u003c/option\u003e\n            \n                \u003coption value=\"Improvement desirable\"\u003eImprovement desirable\u003c/option\u003e\n            \n                \u003coption value=\"Not conforming to standards\"\u003eNot conforming to standards\u003c/option\u003e\n            \n                \u003coption value=\"Risk-prone\"\u003eRisk-prone\u003c/option\u003e\n            \n                \u003coption value=\"Factually incorrect\"\u003eFactually incorrect\u003c/option\u003e\n            \n                \u003coption value=\"Not implementable\"\u003eNot implementable\u003c/option\u003e\n            \n                \u003coption value=\"Editorial\"\u003eEditorial\u003c/option\u003e\n            \n        \u003c/select\u003e\n    \n\n\u003c/div\u003e\n\n                \n            \u003c/div\u003e\n            \u003cdiv class=\"buttons\"\u003e\n                \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\u003cbutton class=\"aui-button aui-button-primary postButton defaultButton\" type=\"button\" value=\"publish\"\u003eComment\u003c/button\u003e\n\n                \n\n                \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\u003cbutton class=\"aui-button\" name=\"saveAsDraft\" type=\"button\" value=\"Save\"\u003eSave as draft\u003c/button\u003e\n\n                \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\u003ca class=\"aui-button aui-button-link\" name=\"cancelComment\" tabindex=\"0\"\u003eCancel\u003c/a\u003e\n\n                \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\u003ca class=\"aui-button aui-button-link\" name=\"discardComment\" style=\"display:none;\" tabindex=\"0\"\u003eDiscard\u003c/a\u003e\n\n                \u003cspan id='revisionAutosaveMsg' class='autosavemessage'\u003e\u003c/span\u003e\n            \u003c/div\u003e\n        \u003c/div\u003e\n    \u003c/div\u003e\n    \u003cinput type='hidden' name='type' value='inline' data-static='true'\u003e\n                        \u003cinput type='hidden' name='toLineRange' value=''\u003e\n                        \u003cinput type='hidden' name='fromLineRange' value=''\u003e\n                        \u003cinput type='hidden' name='frxId' value='error'\u003e\n                        \u003cinput type='hidden' name='fromFrxRevisionId' value=''\u003e\n                        \u003cinput type='hidden' name='toFrxRevisionId' value=''\u003e\n    \u003cinput type='hidden' name='commentId' value='-1'\u003e\n    \u003cdiv class=\"ui-block\"\u003e\u003c/div\u003e\n\u003c/form\u003e";
+        templates["fileCommentForm"] = "\u003cform id='fileCommentForm' name='fileCommentForm' class='comment aui' accept-charset='UTF-8' action=''\u003e\n    \u003cp class=\"userlogo\"\u003e\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\u003cspan class=\"aui-avatar aui-avatar-32\"\u003e\u003cspan class=\"aui-avatar-inner\"\u003e\u003cimg src=\"https://secure.gravatar.com/avatar/dc10fded23c824a00a75bea7edb48871?s=32&amp;d=mm\" /\u003e\u003c/span\u003e\u003c/span\u003e\n\u003c/p\u003e\n    \u003cdiv class=\"comment-body\"\u003e\n        \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\u003cdiv class=\"wiki-preview-pane markup view \" style=\"display: none;\"\u003e\n    \n\u003c/div\u003e\n\n\n\n        \u003ctextarea name='newText' class='commentTextarea'\u003e\u003c/textarea\u003e\n        \u003cdiv class=\"wiki-buttons\"\u003e\n\n            \n            \u003ca class=\"wiki-help-button icon-ie aui-icon aui-icon-small aui-iconfont-help\" title=\"Help for wiki syntax\"\n                    \u003e\u003cspan\u003ewiki syntax help\u003c/span\u003e\u003c/a\u003e\n\n            \u003ca class=\"wiki-preview-button icon-ie \" title=\"Preview comment\"\n                    \u003e\u003cspan class=\"aui-icon aui-icon-small aui-iconfont-view\"\u003ePreview\u003c/span\u003e\u003c/a\u003e\n            \u003cspan class=\"wiki-preview-button-spinner\"\u003e\u003c/span\u003e\n        \u003c/div\u003e\n        \u003cdiv class='comment-toolbar-holder aui'\u003e\n            \u003cdiv class=\"field-group\"\u003e\n                \u003cdiv class=\"comment-needs-resolution checkbox\"\u003e\n                    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\u003cinput class=\"checkbox comment-needs-resolution--checkbox\" type=\"checkbox\" name=\"resolutionStatus\" id=\"needsResolution\"/\u003e\n                    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\u003clabel for=\"needsResolution\"\u003eNeeds resolution\u003c/label\u003e\n                \u003c/div\u003e\n                \n                    \n\n\n\n\n\n\n\n\n\u003cdiv class=\"defectFlag checkbox\"\u003e\n    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\u003cinput class=\"checkbox\" type=\"checkbox\" name=\"defect\" id=\"defect-file\"/\u003e\n    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\u003clabel for=\"defect-file\" title=\"Mark this comment as a potential defect\"\u003eDefect\u003c/label\u003e\n\u003c/div\u003e\n\n\n\u003cdiv id=\"fileDefectFields\" class=\"defectFields\" style=\"display:none\"\u003e\n    \n\n\n\n\n\n\n\n\n\n    \n        \u003cselect class=\"select defectField\" name=\"rank\"\u003e\n            \u003coption value='' style='font-style:italic;'\u003eSelect Ranking\u003c/option\u003e\n            \n                \u003coption value=\"Major\"\u003eMajor\u003c/option\u003e\n            \n                \u003coption value=\"Minor\"\u003eMinor\u003c/option\u003e\n            \n        \u003c/select\u003e\n    \n\n    \n        \u003cselect class=\"select defectField\" name=\"classification\"\u003e\n            \u003coption value='' style='font-style:italic;'\u003eSelect Classification\u003c/option\u003e\n            \n                \u003coption value=\"Missing\"\u003eMissing\u003c/option\u003e\n            \n                \u003coption value=\"Extra (superfluous)\"\u003eExtra (superfluous)\u003c/option\u003e\n            \n                \u003coption value=\"Ambiguous\"\u003eAmbiguous\u003c/option\u003e\n            \n                \u003coption value=\"Inconsistent\"\u003eInconsistent\u003c/option\u003e\n            \n                \u003coption value=\"Improvement desirable\"\u003eImprovement desirable\u003c/option\u003e\n            \n                \u003coption value=\"Not conforming to standards\"\u003eNot conforming to standards\u003c/option\u003e\n            \n                \u003coption value=\"Risk-prone\"\u003eRisk-prone\u003c/option\u003e\n            \n                \u003coption value=\"Factually incorrect\"\u003eFactually incorrect\u003c/option\u003e\n            \n                \u003coption value=\"Not implementable\"\u003eNot implementable\u003c/option\u003e\n            \n                \u003coption value=\"Editorial\"\u003eEditorial\u003c/option\u003e\n            \n        \u003c/select\u003e\n    \n\n\u003c/div\u003e\n\n                \n            \u003c/div\u003e\n            \u003cdiv class=\"buttons\"\u003e\n                \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\u003cbutton class=\"aui-button aui-button-primary postButton defaultButton\" type=\"button\" value=\"publish\"\u003eComment\u003c/button\u003e\n\n                \n\n                \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\u003cbutton class=\"aui-button\" name=\"saveAsDraft\" type=\"button\" value=\"Save\"\u003eSave as draft\u003c/button\u003e\n\n                \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\u003ca class=\"aui-button aui-button-link\" name=\"cancelComment\" tabindex=\"0\"\u003eCancel\u003c/a\u003e\n\n                \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\u003ca class=\"aui-button aui-button-link\" name=\"discardComment\" style=\"display:none;\" tabindex=\"0\"\u003eDiscard\u003c/a\u003e\n\n                \u003cspan id='fileAutosaveMsg' class='autosavemessage'\u003e\u003c/span\u003e\n            \u003c/div\u003e\n        \u003c/div\u003e\n    \u003c/div\u003e\n    \u003cinput type='hidden' name='type' value='revision' data-static='true'\u003e\n            \u003cinput type='hidden' name='frxId' value='error'\u003e\n    \u003cinput type='hidden' name='commentId' value='-1'\u003e\n    \u003cdiv class=\"ui-block\"\u003e\u003c/div\u003e\n\u003c/form\u003e";
+        templates["replyCommentForm"] = "\u003cform id='replyCommentForm' name='replyCommentForm' class='comment aui' accept-charset='UTF-8' action=''\u003e\n    \u003cp class=\"userlogo\"\u003e\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\u003cspan class=\"aui-avatar aui-avatar-32\"\u003e\u003cspan class=\"aui-avatar-inner\"\u003e\u003cimg src=\"https://secure.gravatar.com/avatar/dc10fded23c824a00a75bea7edb48871?s=32&amp;d=mm\" /\u003e\u003c/span\u003e\u003c/span\u003e\n\u003c/p\u003e\n    \u003cdiv class=\"comment-body\"\u003e\n        \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\u003cdiv class=\"wiki-preview-pane markup view \" style=\"display: none;\"\u003e\n    \n\u003c/div\u003e\n\n\n\n        \u003ctextarea name='newText' class='commentTextarea'\u003e\u003c/textarea\u003e\n        \u003cdiv class=\"wiki-buttons\"\u003e\n\n            \n                \u003ca class=\"copyCode edit-only\"\u003eQuote source\u003c/a\u003e\n            \n            \u003ca class=\"wiki-help-button icon-ie aui-icon aui-icon-small aui-iconfont-help\" title=\"Help for wiki syntax\"\n                    \u003e\u003cspan\u003ewiki syntax help\u003c/span\u003e\u003c/a\u003e\n\n            \u003ca class=\"wiki-preview-button icon-ie \" title=\"Preview comment\"\n                    \u003e\u003cspan class=\"aui-icon aui-icon-small aui-iconfont-view\"\u003ePreview\u003c/span\u003e\u003c/a\u003e\n            \u003cspan class=\"wiki-preview-button-spinner\"\u003e\u003c/span\u003e\n        \u003c/div\u003e\n        \u003cdiv class='comment-toolbar-holder aui'\u003e\n            \u003cdiv class=\"field-group\"\u003e\n                \u003cdiv class=\"comment-needs-resolution checkbox\"\u003e\n                    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\u003cinput class=\"checkbox comment-needs-resolution--checkbox\" type=\"checkbox\" name=\"resolutionStatus\" id=\"needsResolution\"/\u003e\n                    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\u003clabel for=\"needsResolution\"\u003eNeeds resolution\u003c/label\u003e\n                \u003c/div\u003e\n                \n            \u003c/div\u003e\n            \u003cdiv class=\"buttons\"\u003e\n                \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\u003cbutton class=\"aui-button aui-button-primary postButton defaultButton\" type=\"button\" value=\"publish\"\u003eComment\u003c/button\u003e\n\n                \n\n                \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\u003cbutton class=\"aui-button\" name=\"saveAsDraft\" type=\"button\" value=\"Save\"\u003eSave as draft\u003c/button\u003e\n\n                \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\u003ca class=\"aui-button aui-button-link\" name=\"cancelComment\" tabindex=\"0\"\u003eCancel\u003c/a\u003e\n\n                \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\u003ca class=\"aui-button aui-button-link\" name=\"discardComment\" style=\"display:none;\" tabindex=\"0\"\u003eDiscard\u003c/a\u003e\n\n                \u003cspan id='replyAutosaveMsg' class='autosavemessage'\u003e\u003c/span\u003e\n            \u003c/div\u003e\n        \u003c/div\u003e\n    \u003c/div\u003e\n    \u003cinput type='hidden' name='type' value='reply' data-static='true'\u003e\n            \u003cinput type='hidden' name='replyToId' value='-1'\u003e\n    \u003cinput type='hidden' name='commentId' value='-1'\u003e\n    \u003cdiv class=\"ui-block\"\u003e\u003c/div\u003e\n\u003c/form\u003e";
+
+        CRU.COMMENT.TEMPLATES = templates;
+    })();
+</script>
+
+
+
+</div> <!-- /review-body -->
+
+<script type="text/javascript">
+    AJS.$(document).ready(function () {
+
+        var cru_review = CRU.REVIEW;
+
+        AJS.$('#generalComments .tip-edit-objectives').live('click', function () {
+            $editObjectives.click();
+        });
+
+        var $generalCommentsContainer = AJS.$('#general-comments-container');
+        $generalCommentsContainer
+                .on('click', '.comment-form-placeholder', function() {
+//                    AJS.$(this).hide();
+
+                    cru_review.WIKI.resetPreview();
+                    commentator.displaySimpleCommentForm(null, 'generalCommentForm');
+                });
+
+        var $objectives = AJS.$('#objectives');
+        var $objectivesInput = AJS.$('#objectives-input');
+        var $objectivesField = $objectivesInput.children(".input");
+        var $editObjectives = $objectives.find('.edit-objectives');
+
+        var $summary = AJS.$('#summary');
+        var $summaryInput = AJS.$('#summary-input');
+        var $summaryField = $summaryInput.children(".input");
+
+        var unsaved = CRU.UNSAVED;
+        unsaved.watchForUnsavedChanges($objectivesField, "Objectives");
+        unsaved.watchForUnsavedChanges($summaryField, "Summary");
+
+        AJS.$('#generalCommentsInner .edit-objectives').live('click', function() {
+            AJS.$('#objectives-markup').hide();
+            $objectivesInput.show();
+            $objectivesField.focus();
+            $objectivesInput.trigger('objectives-form-visible');
+        });
+
+        $summary.find('.edit-summary').click(function() {
+            AJS.$('#summary-markup').hide();
+            $summaryInput.show();
+            $summaryField.focus();
+            $objectivesInput.trigger('summary-form-visible');
+        });
+
+        $objectivesInput.children('.input').keypress(function(e) {
+            if (e.keyCode == AJS.$.ui.keyCode.ESCAPE) {
+                CRU.REVIEW.UTIL.discardNewField('objectives');
+            }
+        });
+
+        $summaryInput.find('.input').keypress(function(e) {
+            if (e.keyCode == AJS.$.ui.keyCode.ESCAPE) {
+                CRU.REVIEW.UTIL.discardNewField('summary');
+            }
+        });
+
+        $objectivesInput.find('.submit-objectives').click(function() {
+            CRU.REVIEW.UTIL.updateReviewField('objectives', '/updateReviewObjectivesAjax', undefined, function() {
+                AJS.$('#objectives-markup').trigger('objectives-updated');
+            });
+        });
+
+        $objectivesInput.find('.discard-objectives').click(function() {
+            CRU.REVIEW.UTIL.discardNewField('objectives');
+        });
+
+        $summaryInput.find('.submit-summary').click(function() {
+            var opt = {wikiInputFieldSelector:AJS.$("#reviewSummaryInput"),
+                htmlOutputElementSelector:AJS.$("#summarize-dialog").find(".wiki-preview-pane")};
+            CRU.REVIEW.UTIL.updateReviewField('summary', '/updateReviewSummaryAjax', opt, function() {
+                AJS.$('#summary-markup').trigger('summary-updated');
+            });
+        });
+        $summaryInput.find('.discard-summary').click(function() {
+            CRU.REVIEW.UTIL.discardNewField('summary');
+        });
+
+    });
+</script>
+
+                            
+                        
+                    </div>
+                </div>
+                <div id="comment-forms-holder"></div>
+            </div>
+        </div>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="footer">
+    <div class="fineprint">
+        Atlassian
+        
+            <a class="smalltext" href="http://www.atlassian.com/software/fisheye/">Fisheye
+                
+                     analysis
+                
+                
+            </a>
+        
+        
+            with
+        
+        
+            <a class="smalltext" href="http://www.atlassian.com/software/crucible/">Crucible code review</a>.
+        
+
+        
+
+        
+            (Version:4.8.2
+    
+            Build:20200422210507 2020-04-22 21:06)
+            
+        
+
+        
+             - 
+            <a class="smalltext" href="/admin/">Administration</a>
+            
+        
+
+        
+            
+             - 
+            Page generated 2025-10-27 22:01 -0700
+        
+
+    </div>
+
+    <div id="footer-bar">
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+        
+
+        
+
+        
+
+        
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="aui-message aui-message-generic generic system-messages--banner aui-message-hint" data-dismiss-property=""><a class="smalltext" href="http://www.atlassian.com/software/fisheye/CrucibleDownloadCenter.jspa">
+                        Version 4.8.13 is available</a>.
+                    </div>
+
+
+        
+
+    </div>
+
+</div>
+
+
+
+
+
+
+<div id="errorBox-container" style="display: none;">
+    <div id="errorBox">
+        <div id="errorDetails">
+            <div id="errorResponses"></div>
+
+            <div class="errorProductDetails">
+                You are running release
+                
+                CR4.8.2
+                
+                FE4.8.2
+                (20200422210507 2020-04-22 21:06),
+                please report your release number when reporting bugs.
+            </div>
+
+            <div class="errorAtlassianHelp">
+                <p>Got a suggestion or an issue?<br>
+                    Discuss it on the <a href="https://community.atlassian.com">Atlassian Community</a> or
+                    visit <a href="https://support.atlassian.com">Atlassian Support</a> for other options.</p>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!--
+Page produced in 146 ms on qtp1058876963-42609
+-->
+
+</div>
+
+<div id="bottom-status-notifications" class="status-notifications">
+    
+
+
+
+<div id="review-updated-warning">
+    <div class="notice">
+        <p>
+            Review updated: <a class="reload" href="https://fisheye.myshn.net/cru/CR-EP-5897">Reload</a>&nbsp;|&nbsp;<a class="close">Ignore</a>&nbsp;|&nbsp;<a class="collapse">Collapse</a>
+        </p>
+        <p class="comment-warning">
+            You cannot reload the review while writing a comment.
+        </p>
+        <div class="more-info">
+        </div>
+    </div>
+</div>
+
+    <div id="also-viewing"></div>
+    
+</div>
+
+
+
+
+
+
+<div class="hidden">
+    <div id="wiki-notation-quick" class="markup">
+        <div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Notation </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'>[Crucible Review <span class="crulinkspan"><a href="https://fisheye.myshn.net/cru/CR-1">CR-1</a></span>&#124;<span class="crulinkspan"><a href="https://fisheye.myshn.net/cru/CR-1">CR-1</a></span>]</td>
+<td class='confluenceTd'> Creates a link to a Crucible review or FishEye artifact using the internal key reference for the item.<br class="atl-forced-newline" />
+                <br class="atl-forced-newline" />
+                Example: <span class="crulinkspan"><a href="https://fisheye.myshn.net/cru/CR-1">Crucible Review CR-1</a></span></td>
+</tr>
+<tr>
+<td class='confluenceTd'>[Atlassian Crucible&#124;<a href="http://atlassian.com/crucible">http://atlassian.com/crucible</a>] </td>
+<td class='confluenceTd'> Creates a link to an external resource, special characters that come after the URL and are not part of it must be separated with a space. External links are denoted with an arrow icon.<br class="atl-forced-newline" />
+                Example: <a href="http://atlassian.com/crucible">Atlassian Crucible</a></td>
+</tr>
+<tr>
+<td class='confluenceTd'>{cs:id=1&#124;rep=repository-key}</td>
+<td class='confluenceTd'>Render a link to the changeset<br class="atl-forced-newline" />
+                Example: <span class='cslinkspan'><a href='https://fisheye.myshn.net/changelog/repository-key?cs=1'>1<input type='hidden' value="1" class='csid'><input type='hidden' value="repository-key" class='repname'></a></span> </td>
+</tr>
+<tr>
+<td class='confluenceTd'>&#42;bold* </td>
+<td class='confluenceTd'> Makes text appear <b>bold</b>.</td>
+</tr>
+<tr>
+<td class='confluenceTd'>&#95;italic_ </td>
+<td class='confluenceTd'> Makes text appear in <em>italics</em>.</td>
+</tr>
+<tr>
+<td class='confluenceTd'>&#43;underline+ </td>
+<td class='confluenceTd'> Makes text appear <ins>underlined</ins>.</td>
+</tr>
+<tr>
+<td class='confluenceTd'>&#63;?citation??</td>
+<td class='confluenceTd'> Makes text appear in <cite>citation</cite> form.</td>
+</tr>
+<tr>
+<td class='confluenceTd'>&#45;strikethrough-</td>
+<td class='confluenceTd'> Makes text appear <del>struck through</del>.</td>
+</tr>
+<tr>
+<td class='confluenceTd'>&#94;superscript^ </td>
+<td class='confluenceTd'> Makes text appear in <sup>superscript</sup>.</td>
+</tr>
+<tr>
+<td class='confluenceTd'>&#126;subscript~ </td>
+<td class='confluenceTd'> Makes text appear in <sub>subscript</sub>.</td>
+</tr>
+<tr>
+<td class='confluenceTd'>{{ monospaced }} </td>
+<td class='confluenceTd'> Placing double curly-brackets around text makes it appear <tt>monospaced</tt>.</td>
+</tr>
+<tr>
+<td class='confluenceTd'>{code}<br/>
+                // Some comments here<br/>
+                public String getFoo()<br/>
+                {<br/>
+                return foo;<br/>
+                }<br/>
+                {code} </td>
+<td class='confluenceTd'> The code macro displays a preformatted block for showing code with syntax highlighting. <br class="atl-forced-newline" />
+                <br class="atl-forced-newline" />
+                Example:<br class="atl-forced-newline" />
+                <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<pre class="code-java">                <span class="code-comment">// Some comments here
+</span>                <span class="code-keyword">public</span> <span class="code-object">String</span> getFoo()
+                {
+                <span class="code-keyword">return</span> foo;
+                }
+                </pre>
+</div></div> </td>
+</tr>
+<tr>
+<td class='confluenceTd'><br class="atl-forced-newline" />bq. Block Quote </td>
+<td class='confluenceTd'> To make an entire paragraph into a block quotation, place &quot;bq. &quot; before it.<br class="atl-forced-newline" />
+                <br class="atl-forced-newline" />
+                Example:<br class="atl-forced-newline" />
+<blockquote><p>Block Quote</p></blockquote></td>
+</tr>
+<tr>
+<td class='confluenceTd'>{quote}<br class="atl-forced-newline" />
+                here is quoteable<br class="atl-forced-newline" />
+                content to be quoted<br class="atl-forced-newline" />
+                {quote} </td>
+<td class='confluenceTd'> Quote a block of text that&#39;s longer than one paragraph.<br class="atl-forced-newline" />
+                <br class="atl-forced-newline" />
+                Example:<br class="atl-forced-newline" />
+                <blockquote><p>here is quoteable <br>                content to be quoted</p></blockquote></td>
+</tr>
+<tr>
+<td class='confluenceTd'>{color:red} look ma, red text!{color} </td>
+<td class='confluenceTd'> Changes the color of a block of text.<br class="atl-forced-newline" />
+                <br class="atl-forced-newline" />
+                Example:<br class="atl-forced-newline" />
+                <font color="red">look ma, red text!</font></td>
+</tr>
+<tr>
+<td class='confluenceTd'>&#42; A list with bullets<br class="atl-forced-newline" />
+                &#42; Second item<br class="atl-forced-newline" />
+                &#42;* Indented item </td>
+<td class='confluenceTd'> Example:
+                <br class="atl-forced-newline" />
+<ul>
+	<li>A list with bullets<br class="atl-forced-newline" /></li>
+	<li>Second item<br class="atl-forced-newline" />
+	<ul>
+		<li>Indented item</li>
+	</ul>
+	</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class='confluenceTd'>&nbsp;# A list with numbers<br class="atl-forced-newline" />
+                &nbsp;# Second item<br class="atl-forced-newline" />
+                &nbsp;## Indented item<br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Example:
+                <br class="atl-forced-newline" />
+<ol>
+	<li>A list with numbers<br class="atl-forced-newline" /></li>
+	<li>Second item<br class="atl-forced-newline" />
+	<ol>
+		<li>Indented item<br class="atl-forced-newline" /></li>
+	</ol>
+	</li>
+</ol>
+</td>
+</tr>
+</tbody></table>
+</div>
+
+    </div>
+
+    <div id="wiki-notation-link">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+        
+        
+            
+        
+    
+
+
+
+
+    
+        
+    
+    
+
+
+    
+    
+
+    <a target="_blank"
+   href="https://docs.atlassian.com/crucible/docs-048/Using+Wiki+Markup+in+Crucible"
+   
+   
+    title="Full Wiki Notation Guide"
+   
+   target="fecruhelp">
+        <span>Full notation guide</span>
+        <span class="aui-icon aui-icon-small aui-iconfont-help inline-help-icon"></span></a>
+
+
+    </div>
+</div>
+
+
+
+
+
+<div class='submit-time-template submit-time-dialog'>
+    <div class='submit-time-label'>
+        <h4><span>Log time</span></h4>
+        
+
+
+<form class="aui submit-time-form">
+    <div class="field-group form-element-container">
+        <label for='dialog-selected-issue'>Selected issue</label>
+        <select class="select medium-field" id="dialog-selected-issue" name="selected-issue">
+        </select>
+    </div>
+    <div class="field-group form-element-container">
+        <label for='dialog-time-amount'>Time spent</label>
+        <input type='text' class="submit-time-amount text medium-field" id='dialog-time-amount' name="time-amount"
+               value=''>
+    </div>
+    <div class="field-group form-element-container">
+        <label for='dialog-time-comment'>Comment</label>
+        <input type='text' class="submit-time-comment text full-width-field" id='dialog-time-comment'
+               name="time-comment" value=''>
+    </div>
+    <div id="dialog-error-container" class="field-group form-element-container"></div>
+    <div class="custom-buttons-container form-element-container">
+        <input class="button submit-time-button" type="button" value="Submit" id="dialog-submit-time-button">
+        <div id="dialog-update-description" class="update-description"></div>
+    </div>
+</form>
+    </div>
+</div>
+</body>
+</html>
+
