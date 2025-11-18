@@ -1,0 +1,578 @@
+{
+  "version": "6.9.2-20251009",
+  "input_parameters": [
+    {
+      "display_name": "Enter Client Id",
+      "name": "custom_client_id",
+      "placeholder": "client id",
+      "html_form_field_type": "text"
+    },
+    {
+      "display_name": "Enter Client Secret",
+      "name": "custom_client_secret",
+      "placeholder": "client secret",
+      "html_form_field_type": "password"
+    }
+  ],
+  "caches": {
+    "user_email_cache": {
+      "input": [
+        "login_name"
+      ],
+      "loader": "json_path(http('get_user_details', #login_name), '$.body.email')"
+    }
+  },
+  "oauth_config": {
+    "client_id": "#shn_oauth_flow == 'customOauth' ? #custom_client_id : #shn_client_id",
+    "client_secret": "#shn_oauth_flow == 'customOauth' ? #custom_client_secret : #shn_client_secret",
+    "authorize_url": "'https://github.com/login/oauth/authorize'",
+    "response_type": "code",
+    "scope": "#shn_oauth_flow == 'customOauth' ? '' : 'read:org admin:org_hook repo' ",
+    "token_url": "'https://github.com/login/oauth/access_token'",
+    "credential_access_method": "AuthorizationHeader",
+    "token_request_method": "POST",
+    "authorize_params": null,
+    "grant_type": "authorization_code",
+    "token_request_params": null,
+    "refresh_token_request_params": null,
+    "token_refresh_supported": false
+  },
+  "methods": {
+    "current_user": {
+      "url": "'https://api.github.com/user'",
+      "http_method": "GET",
+      "headers": {},
+      "query_parameters": {},
+      "body": {}
+    },
+    "get_user_details": {
+      "input": [
+        "login_name"
+      ],
+      "url": "'https://api.github.com/users/' + #login_name",
+      "http_method": "GET",
+      "headers": {},
+      "query_parameters": {},
+      "body": {}
+    },
+    "get_orgs_for_current_user": {
+      "url": "'https://api.github.com/user/memberships/orgs'",
+      "http_method": "GET",
+      "headers": {},
+      "query_parameters": {},
+      "body": {}
+    },
+    "register_web_hooks": {
+      "input": [
+        "org_id"
+      ],
+      "url": "'https://api.github.com/orgs/' + #org_id + '/hooks'",
+      "http_method": "POST",
+      "headers": {},
+      "query_parameters": {},
+      "body": {
+        "name": "'web'",
+        "active": true,
+        "events": [
+          "'*'"
+        ],
+        "config": {
+          "url": "#shn_webhook_url + '/spec/webhooks/' + #cspId + '/' + #tenantId + '/' + #instanceId",
+          "content_type": "'json'"
+        }
+      }
+    },
+    "deregister_web_hooks": {
+      "input": [
+        "webhook_url"
+      ],
+      "url": "#webhook_url",
+      "http_method": "DELETE",
+      "headers": {},
+      "query_parameters": {},
+      "body": {}
+    },
+    "get_file": {
+      "input": [
+        "repo_name",
+        "file_name",
+        "branch_name"
+      ],
+      "url": "'https://api.github.com/repos/' + #repo_name + '/contents/' + #file_name",
+      "http_method": "GET",
+      "headers": {},
+      "query_parameters": {
+        "ref": "#branch_name"
+      },
+      "body": {}
+    }
+  },
+  "admin_context": {
+    "variables": {
+      "admin": "http('current_user')",
+      "org_ids": []
+    },
+    "admin_id": "json_path(#admin, '$.body.id')",
+    "admin_name": "json_path(#admin, '$.body.name')",
+    "admin_email": "json_path(#admin, '$.body.email')",
+    "tenant_identifiers": {
+      "for_each": {
+        "array": "json_path(http('get_orgs_for_current_user'), '$.body[?(@.role==\"admin\")]')",
+        "add_to_array": {
+          "array": "org_ids",
+          "value": "json_path(#element, '$.organization.login')"
+        }
+      }
+    }
+  },
+  "events": {
+    "event_listener_type": "webhooks",
+    "event_webhooks": {
+      "variables": {
+        "webhook_ids": [],
+        "org_ids": []
+      },
+      "webhook_registration_steps": {
+        "for_each": {
+          "array": "#org_ids",
+          "add_to_array": {
+            "array": "webhook_ids",
+            "value": "json_path(http('register_web_hooks', #element),'$.body.url')"
+          }
+        }
+      },
+      "webhook_deregistration_steps": {
+        "for_each": {
+          "array": "#webhook_ids",
+          "deregister_webhooks": "http('deregister_web_hooks', #element)"
+        }
+      }
+    },
+    "event_handler": {
+      "tenant_identifier": "json_path(#payload,'$.body.organization.login')",
+      "apply_event_mapping": "event_mapping_github"
+    },
+    "event_mapping_logic": {
+      "event_mapping_github": {
+        "variables": {
+          "sender_login": "json_path('$.body.sender.login')",
+          "actor_user_email": "#sender_login != null ? lookup_cache('user_email_cache', null, #sender_login, #sender_login) : null",
+          "action": "$.body.action",
+          "github_event": "$.headers.X-GitHub-Event",
+          "event_id": "$.headers.X-GitHub-Delivery"
+        },
+        "include_metadata": [
+          "$.body.action",
+          "$.body.alert.affected_package_name",
+          "$.body.alert.id",
+          "$.body.blocked_user.html_url",
+          "$.body.blocked_user.login",
+          "$.body.blocked_user.site_admin",
+          "$.body.blocked_user.type",
+          "$.body.build.pusher.login",
+          "$.body.build.status",
+          "$.body.build.url",
+          "$.body.changes.permission.from",
+          "$.body.check_run.html_url",
+          "$.body.check_run.status",
+          "$.body.check_suite.app.html_url",
+          "$.body.check_suite.app.name",
+          "$.body.check_suite.status",
+          "$.body.check_suite.url",
+          "$.body.comment.html_url",
+          "$.body.commit.html_url",
+          "$.body.context",
+          "$.body.created",
+          "$.body.deleted",
+          "$.body.deployment_status.state",
+          "$.body.deployment_status.url",
+          "$.body.deployment.environment",
+          "$.body.deployment.task",
+          "$.body.deployment.url",
+          "$.body.description",
+          "$.body.description",
+          "$.body.forced",
+          "$.body.forkee.html_url",
+          "$.body.forkee.id",
+          "$.body.forkee.name",
+          "$.body.forkee.private",
+          "$.body.forkee.public",
+          "$.body.id",
+          "$.body.installation.html_url",
+          "$.body.issue.assignee",
+          "$.body.issue.html_url",
+          "$.body.issue.number",
+          "$.body.issue.title",
+          "$.body.label.name",
+          "$.body.marketplace_purchase.plan.description",
+          "$.body.marketplace_purchase.plan.name",
+          "$.body.member.html_url",
+          "$.body.member.login",
+          "$.body.member.site_admin",
+          "$.body.member.type",
+          "$.body.membership.role",
+          "$.body.membership.state",
+          "$.body.membership.user.html_url",
+          "$.body.membership.user.login",
+          "$.body.membership.user.site_admin",
+          "$.body.membership.user.type",
+          "$.body.milestone.description",
+          "$.body.milestone.html_url",
+          "$.body.milestone.title",
+          "$.body.name",
+          "$.body.pages.action",
+          "$.body.pages.html_url",
+          "$.body.pages.page_name",
+          "$.body.pages.summary",
+          "$.body.pages.title",
+          "$.body.project_card.url",
+          "$.body.project_column.name",
+          "$.body.project.html_url",
+          "$.body.project.name",
+          "$.body.project.state",
+          "$.body.pull_request.html_url",
+          "$.body.pull_request.state",
+          "$.body.pull_request.title",
+          "$.body.pusher_type",
+          "$.body.pusher.email",
+          "$.body.pusher.name",
+          "$.body.ref",
+          "$.body.ref_type",
+          "$.body.release.html_url",
+          "$.body.release.name",
+          "$.body.repository.html_url",
+          "$.body.repository.id",
+          "$.body.repository.name",
+          "$.body.repository.private",
+          "$.body.review.html_url",
+          "$.body.review.id",
+          "$.body.scope",
+          "$.body.sender.html_url",
+          "$.body.sender.id",
+          "$.body.sender.login",
+          "$.body.sender.type",
+          "$.body.state",
+          "$.body.team.description",
+          "$.body.team.id",
+          "$.body.team.name",
+          "$.body.team.permission",
+          "$.body.team.privacy",
+          "$.body.team.slug"
+        ],
+        "default": {
+          "event_id": "#event_id",
+          "event_name": "#github_event",
+          "timestamp": "now('UTC').toString()",
+          "actor": {
+            "id": "json_path('$.body.sender.id')",
+            "name": "json_path('$.body.sender.login')",
+            "email": "#actor_user_email == '' || #actor_user_email == null ? json_path('$.body.sender.login') : #actor_user_email"
+          }
+        },
+        "if": {
+          "priority": 1,
+          "criteria": "@.body.comment && !@.body.issue && !@.body.pull_request && @.body.action == 'created'",
+          "category": "Data Upload",
+          "event_name": "#github_event + '_' + #action",
+          "timestamp": "$.body.comment.updated_at",
+          "is_folder": false,
+          "scan_content_for_dlp": {
+            "content": "$.body.comment.body",
+            "file_download_url": "$.body.comment.url",
+            "object_name": "'CommitComment'",
+            "object_id": "$.body.comment.id",
+            "object_path": "json_path('$.body.repository.full_name') + '/' + json_path('$.body.comment.commit_id')",
+            "ignore_spec_event_properties": "action,content_path"
+          }
+        },
+        "if": {
+          "priority": 1,
+          "criteria": "@.body.issue && @.body.comment && @.body.action == 'created'",
+          "category": "Data Upload",
+          "event_name": "#github_event + '_' + #action",
+          "timestamp": "$.body.comment.updated_at",
+          "is_folder": false,
+          "scan_content_for_dlp": {
+            "content": "$.body.comment.body",
+            "file_download_url": "$.body.comment.url",
+            "object_name": "'IssueComment'",
+            "object_id": "$.body.comment.id",
+            "object_path": "json_path('$.body.repository.full_name') + '/' + json_path('$.body.issue.id')",
+            "ignore_spec_event_properties": "action,content_path"
+          }
+        },
+        "if": {
+          "priority": 1,
+          "criteria": "@.body.issue && @.body.action in ['assigned', 'labeled', 'opened', 'edited', 'milestoned', 'reopened']",
+          "category": "Data Upload",
+          "event_name": "#github_event + '_' + #action",
+          "timestamp": "$.body.issue.updated_at",
+          "is_folder": false,
+          "scan_content_for_dlp": {
+            "content": "$.body.issue.body",
+            "file_download_url": "$.body.issue.url",
+            "object_name": "'Issue'",
+            "object_id": "$.body.issue.id",
+            "object_path": "$.body.repository.full_name",
+            "ignore_spec_event_properties": "action,content_path"
+          }
+        },
+        "if": {
+          "priority": 1,
+          "criteria": "@.body.pull_request && @.body.action in ['assigned', 'review_requested', 'labeled', 'opened', 'edited', 'reopened']",
+          "category": "Data Upload",
+          "event_name": "#github_event + '_' + #action",
+          "timestamp": "$.body.pull_request.updated_at",
+          "is_folder": false,
+          "scan_content_for_dlp": {
+            "content": "$.body.pull_request.body",
+            "file_download_url": "$.body.pull_request.url",
+            "object_name": "'PullRequest'",
+            "object_id": "$.body.pull_request.id",
+            "object_path": "$.body.repository.full_name",
+            "ignore_spec_event_properties": "action,content_path"
+          }
+        },
+        "if": {
+          "priority": 1,
+          "criteria": "@.body.pull_request && @.body.review && @.body.action in ['submitted', 'edited']",
+          "category": "Data Upload",
+          "event_name": "#github_event + '_' + #action",
+          "timestamp": "$.body.review.submitted_at",
+          "is_folder": false,
+          "scan_content_for_dlp": {
+            "content": "$.body.review.body",
+            "file_download_url": "$.body.review.pull_request_url",
+            "object_name": "'PullRequestReview'",
+            "object_id": "$.body.review.id",
+            "object_path": "json_path('$.body.repository.full_name') + '/' + json_path('$.body.pull_request.id')",
+            "ignore_spec_event_properties": "action,content_path"
+          }
+        },
+        "if": {
+          "priority": 1,
+          "criteria": "@.body.pull_request && @.body.comment && @.body.action in ['created', 'edited']",
+          "category": "Data Upload",
+          "event_name": "#github_event + '_' + #action",
+          "timestamp": "$.body.comment.updated_at",
+          "is_folder": false,
+          "scan_content_for_dlp": {
+            "content": "$.body.comment.body",
+            "file_download_url": "$.body.comment.url",
+            "object_name": "'PullRequestReviewComment'",
+            "object_id": "$.body.comment.id",
+            "object_path": "json_path('$.body.repository.full_name') + '/' + json_path('$.body.pull_request.id')",
+            "ignore_spec_event_properties": "action,content_path"
+          }
+        },
+        "if": {
+          "priority": 1,
+          "criteria": "@.body.head_commit && ($.body.commits[*].added[*] != [] || $.body.commits[*].modified[*] != [])",
+          "category": "Data Upload",
+          "variables": {
+            "repo_name": "$.body.repository.full_name",
+            "branch_name": "$.body.ref"
+          },
+          "timestamp": "$.body.head_commit.timestamp",
+          "is_folder": false,
+          "for_each": {
+            "array": "get_unique_elements(json_path('$.body.commits[*].added[*]'))",
+            "scan_content_for_dlp": {
+              "event_id": "#event_id + ':' + sha_256(#element)",
+              "object_id": "#element",
+              "file_download_url": "'https://raw.githubusercontent.com/' + #repo_name + '/' + regex('(?!.*\/).+', '$.body.ref') + '/' + #element",
+              "object_name": "#element",
+              "object_path": "#repo_name",
+              "object_size": "json_path(http('get_file', #repo_name, #element, #branch_name), '$.body.size')",
+              "ignore_spec_event_properties": "repo_name,branch_name"
+            }
+          },
+          "for_each": {
+            "array": "get_unique_elements(json_path('$.body.commits[*].modified[*]'))",
+            "scan_content_for_dlp": {
+              "event_id": "#event_id + ':' + sha_256(#element)",
+              "object_id": "#element",
+              "file_download_url": "'https://raw.githubusercontent.com/' + #repo_name + '/' + regex('(?!.*\/).+', '$.body.ref') + '/' + #element",
+              "object_name": "#element",
+              "object_path": "#repo_name",
+              "object_size": "json_path(http('get_file', #repo_name, #element, #branch_name), '$.body.size')",
+              "ignore_spec_event_properties": "repo_name,branch_name"
+            }
+          }
+        },
+        "if": {
+          "priority": 1,
+          "criteria": "@.headers.X-GitHub-Event == 'check_run'",
+          "timestamp": "$.body.check_run.completed_at",
+          "scan_content_for_dlp": {
+            "object_name": "$.body.check_run.name",
+            "object_path": "$.body.repository.full_name"
+          }
+        },
+        "if": {
+          "priority": 1,
+          "criteria": "@.headers.X-GitHub-Event == 'check_suite'",
+          "timestamp": "$.body.check_suite.updated_at",
+          "scan_content_for_dlp": {
+            "object_name": "$.body.check_suite.name",
+            "object_path": "$.body.repository.full_name"
+          }
+        },
+        "if": {
+          "priority": 1,
+          "criteria": "@.headers.X-GitHub-Event == 'deployment'",
+          "timestamp": "$.body.deployment.updated_at",
+          "scan_content_for_dlp": {
+            "object_name": "'Deployment'",
+            "object_path": "$.body.repository.full_name"
+          }
+        },
+        "if": {
+          "priority": 1,
+          "criteria": "@.headers.X-GitHub-Event == 'deployment_status'",
+          "timestamp": "$.body.deployment_status.updated_at",
+          "scan_content_for_dlp": {
+            "object_name": "'Deployment'",
+            "object_path": "$.body.repository.full_name"
+          }
+        },
+        "if": {
+          "priority": 1,
+          "criteria": "@.headers.X-GitHub-Event == 'fork'",
+          "timestamp": "$.body.forkee.updated_at",
+          "scan_content_for_dlp": {
+            "object_name": "$.body.forkee.name",
+            "object_path": "$.body.repository.full_name"
+          }
+        },
+        "if": {
+          "priority": 1,
+          "criteria": "@.headers.X-GitHub-Event == 'installation'",
+          "timestamp": "$.body.installation.updated_at"
+        },
+        "if": {
+          "priority": 1,
+          "criteria": "@.headers.X-GitHub-Event == 'installation_repositories'",
+          "timestamp": "$.body.installation.updated_at"
+        },
+        "if": {
+          "priority": 1,
+          "criteria": "@.headers.X-GitHub-Event == 'marketplace_purchase'",
+          "timestamp": "$.body.effective_date"
+        },
+        "if": {
+          "priority": 1,
+          "criteria": "@.headers.X-GitHub-Event == 'milestone'",
+          "timestamp": "$.body.milestone.updated_at",
+          "scan_content_for_dlp": {
+            "object_name": "'Milestone'",
+            "object_path": "$.body.repository.full_name"
+          }
+        },
+        "if": {
+          "priority": 1,
+          "criteria": "@.headers.X-GitHub-Event == 'page_build'",
+          "timestamp": "$.body.build.updated_at",
+          "scan_content_for_dlp": {
+            "object_name": "'PageBuild'",
+            "object_path": "$.body.repository.full_name"
+          }
+        },
+        "if": {
+          "priority": 1,
+          "criteria": "@.headers.X-GitHub-Event == 'project_card'",
+          "timestamp": "$.body.project_card.updated_at",
+          "scan_content_for_dlp": {
+            "object_name": "'ProjectCard'",
+            "object_path": "$.body.repository.full_name"
+          }
+        },
+        "if": {
+          "priority": 1,
+          "criteria": "@.headers.X-GitHub-Event == 'project_column'",
+          "timestamp": "$.body.project_column.updated_at",
+          "scan_content_for_dlp": {
+            "object_name": "$.body.project_column.name",
+            "object_path": "$.body.repository.full_name"
+          }
+        },
+        "if": {
+          "priority": 1,
+          "criteria": "@.headers.X-GitHub-Event == 'project'",
+          "timestamp": "$. body.project.updated_at",
+          "scan_content_for_dlp": {
+            "object_name": "$.body.project.name",
+            "object_path": "$.body.repository.full_name"
+          }
+        },
+        "if": {
+          "priority": 1,
+          "criteria": "@.headers.X-GitHub-Event == 'public'",
+          "timestamp": "$.body.repository.updated_at",
+          "scan_content_for_dlp": {
+            "object_name": "$.body.repository.full_name",
+            "object_path": "$.body.repository.full_name"
+          }
+        },
+        "if": {
+          "priority": 1,
+          "criteria": "@.headers.X-GitHub-Event == 'release'",
+          "timestamp": "$.body.release.published_at",
+          "scan_content_for_dlp": {
+            "object_name": "$.body.release.name",
+            "object_path": "$.body.repository.full_name"
+          }
+        },
+        "if": {
+          "priority": 1,
+          "criteria": "@.headers.X-GitHub-Event == 'status'",
+          "timestamp": "$.body.updated_at",
+          "scan_content_for_dlp": {
+            "object_name": "'Commit'",
+            "object_path": "$.body.commit.repository.full_name"
+          }
+        },
+        "if": {
+          "priority": 1,
+          "criteria": "@.headers.X-GitHub-Event == 'watch'",
+          "timestamp": "$.body.repository.updated_at",
+          "scan_content_for_dlp": {
+            "object_name": "'Repository'",
+            "object_path": "$.body.repository.full_name"
+          }
+        },
+        "if": {
+          "priority": 1,
+          "criteria": "@.headers.X-GitHub-Event == 'team_add' || @.headers.X-GitHub-Event == 'team'",
+          "scan_content_for_dlp": {
+            "object_name": "$.body.team.name",
+            "object_path": "$.body.repository.full_name"
+          }
+        },
+        "if": {
+          "priority": 1,
+          "criteria": "@.headers.X-GitHub-Event == 'repository_import'",
+          "scan_content_for_dlp": {
+            "object_name": "$.body.repository.name",
+            "object_path": "$.body.repository.full_name"
+          }
+        },
+        "if": {
+          "priority": 1,
+          "criteria": "@.headers.X-GitHub-Event == 'label'",
+          "scan_content_for_dlp": {
+            "object_name": "$.body.label.name",
+            "object_path": "$.body.repository.full_name"
+          }
+        },
+        "if": {
+          "priority": 1,
+          "criteria": "@.headers.X-Github-Event == 'repository'",
+          "category": "Administration",
+          "timestamp": "$.body.repository.updated_at",
+          "event_name": "'Repository-' + json_path('$.body.action')"
+        }
+      }
+    }
+  }
+}
