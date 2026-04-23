@@ -1,4 +1,4 @@
-ansible==2.7.10
+ansible==7.0.0
 argparse==1.4.0
 avro-python3==1.9.1
 bcrypt==3.1.7
