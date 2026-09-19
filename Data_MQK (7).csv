@@ -1,0 +1,200 @@
+﻿Business Role ID;Change Category;Attribute/Object;Action;Value Changed From;Value Changed To;Changed On;Changed By;Changed by User ID
+BGT67UJHJ;Access Restrictions;Value Help;Access Category: Value Help is created;;Unrestricted;"15.05.2025, 12:44:58 PM";Sanjeev Neelarapu;CB9980000000
+BGT67UJHJ;Access Restrictions;Write;Access Category: Write is created;;No access;"15.05.2025, 12:44:58 PM";Sanjeev Neelarapu;CB9980000000
+BGT67UJHJ;Access Restrictions;Read;Access Category: Read is created;;Unrestricted;"15.05.2025, 12:44:58 PM";Sanjeev Neelarapu;CB9980000000
+BGT67UJHJ;General;Inherit Spaces in Derived Bus. Roles;Value changed;;X;"15.05.2025, 12:44:58 PM";Sanjeev Neelarapu;CB9980000000
+BGT67UJHJ;General;ID;Business role ID changed;;BGT67UJHJ;"15.05.2025, 12:44:58 PM";Sanjeev Neelarapu;CB9980000000
+BGT67UJHJ;General;Leading Business Role;Value changed;;X;"15.05.2025, 12:44:58 PM";Sanjeev Neelarapu;CB9980000000
+BGT67UJHJ;General;Description;Business role description created;;bhgt6y7uhb;"15.05.2025, 12:44:58 PM";Sanjeev Neelarapu;CB9980000000
+BGT67UJHJ;General;Long Text;Business role Long Text created;;;"15.05.2025, 12:44:58 PM";Sanjeev Neelarapu;CB9980000000
+CA103;Assigned Business Users;CB9980000000;Business user removed;CB9980000000;;"12.05.2025, 02:25:07 AM";Sanjeev Neelarapu;CB9980000000
+CS112;Assigned Business Users;CB9980000000;Business user added;;CB9980000000;"12.05.2025, 02:25:05 AM";Sanjeev Neelarapu;CB9980000000
+CA110;Assigned Business Users;CB9980000000;Business user added;;CB9980000000;"12.05.2025, 02:25:05 AM";Sanjeev Neelarapu;CB9980000000
+FR567YUGFRTYUH_567YHGFRTYH;Access Restrictions;Read;Access Category: Read is created;;Unrestricted;"12.05.2025, 02:22:14 AM";Sanjeev Neelarapu;CB9980000000
+FR567YUGFRTYUH_567YHGFRTYH;Access Restrictions;Write;Access Category: Write is created;;No access;"12.05.2025, 02:22:14 AM";Sanjeev Neelarapu;CB9980000000
+FR567YUGFRTYUH_567YHGFRTYH;Access Restrictions;Value Help;Access Category: Value Help is created;;Unrestricted;"12.05.2025, 02:22:14 AM";Sanjeev Neelarapu;CB9980000000
+FR567YUGFRTYUH_567YHGFRTYH;General;Long Text;Business role Long Text created;;;"12.05.2025, 02:22:14 AM";Sanjeev Neelarapu;CB9980000000
+FR567YUGFRTYUH_567YHGFRTYH;General;Description;Business role description created;;bgft67yuhb_gft67yu7uj;"12.05.2025, 02:22:14 AM";Sanjeev Neelarapu;CB9980000000
+FR567YUGFRTYUH_567YHGFRTYH;General;ID;Business role ID changed;;FR567YUGFRTYUH_567YHGFRTYH;"12.05.2025, 02:22:14 AM";Sanjeev Neelarapu;CB9980000000
+FR567YUGFRTYUH;Access Restrictions;Read;Access Category: Read is created;;Unrestricted;"12.05.2025, 02:20:59 AM";Sanjeev Neelarapu;CB9980000000
+FR567YUGFRTYUH;Access Restrictions;Write;Access Category: Write is created;;No access;"12.05.2025, 02:20:59 AM";Sanjeev Neelarapu;CB9980000000
+FR567YUGFRTYUH;Access Restrictions;Value Help;Access Category: Value Help is created;;Unrestricted;"12.05.2025, 02:20:59 AM";Sanjeev Neelarapu;CB9980000000
+FR567YUGFRTYUH;General;Inherit Spaces in Derived Bus. Roles;Value changed;;X;"12.05.2025, 02:20:59 AM";Sanjeev Neelarapu;CB9980000000
+FR567YUGFRTYUH;General;ID;Business role ID changed;;FR567YUGFRTYUH;"12.05.2025, 02:20:59 AM";Sanjeev Neelarapu;CB9980000000
+FR567YUGFRTYUH;General;Leading Business Role;Value changed;;X;"12.05.2025, 02:20:59 AM";Sanjeev Neelarapu;CB9980000000
+FR567YUGFRTYUH;General;Description;Business role description created;;bgft67yuhb;"12.05.2025, 02:20:59 AM";Sanjeev Neelarapu;CB9980000000
+FR567YUGFRTYUH;General;Long Text;Business role Long Text created;;;"12.05.2025, 02:20:59 AM";Sanjeev Neelarapu;CB9980000000
+TYJG678;General;Description;Business role description created;;677544en;"19.03.2025, 01:33:49 PM";Sanjeev Neelarapu;CB9980000000
+TYJG678;General;Long Text;Business role Long Text created;;;"19.03.2025, 01:33:49 PM";Sanjeev Neelarapu;CB9980000000
+TYJG678;General;Leading Business Role;Value changed;;X;"19.03.2025, 01:33:49 PM";Sanjeev Neelarapu;CB9980000000
+TYJG678;General;ID;Business role ID changed;;TYJG678;"19.03.2025, 01:33:49 PM";Sanjeev Neelarapu;CB9980000000
+TYJG678;General;Inherit Spaces in Derived Bus. Roles;Value changed;;X;"19.03.2025, 01:33:49 PM";Sanjeev Neelarapu;CB9980000000
+TYJG678;Access Restrictions;Read;Access Category: Read is created;;Unrestricted;"19.03.2025, 01:33:49 PM";Sanjeev Neelarapu;CB9980000000
+TYJG678;Access Restrictions;Write;Access Category: Write is created;;No access;"19.03.2025, 01:33:49 PM";Sanjeev Neelarapu;CB9980000000
+TYJG678;Access Restrictions;Value Help;Access Category: Value Help is created;;Unrestricted;"19.03.2025, 01:33:49 PM";Sanjeev Neelarapu;CB9980000000
+CS112;Access Restrictions;Read;Access Category: Read is created;;Unrestricted;"19.02.2025, 07:50:04 AM";Sanjeev Neelarapu;CB9980000000
+CS112;Access Restrictions;Write;Access Category: Write is created;;No access;"19.02.2025, 07:50:04 AM";Sanjeev Neelarapu;CB9980000000
+CS112;Access Restrictions;Value Help;Access Category: Value Help is created;;Unrestricted;"19.02.2025, 07:50:04 AM";Sanjeev Neelarapu;CB9980000000
+CS112;General;Long Text;Business role Long Text created;;;"19.02.2025, 07:50:04 AM";Sanjeev Neelarapu;CB9980000000
+CS112;General;Description;Business role description created;;Compute;"19.02.2025, 07:50:04 AM";Sanjeev Neelarapu;CB9980000000
+CS112;General;Leading Business Role;Value changed;;X;"19.02.2025, 07:50:04 AM";Sanjeev Neelarapu;CB9980000000
+CS112;General;ID;Business role ID changed;;CS112;"19.02.2025, 07:50:04 AM";Sanjeev Neelarapu;CB9980000000
+CS112;General;Inherit Spaces in Derived Bus. Roles;Value changed;;X;"19.02.2025, 07:50:04 AM";Sanjeev Neelarapu;CB9980000000
+CA110;General;Long Text;Business role Long Text created;;;"04.02.2025, 06:32:52 AM";Sanjeev Neelarapu;CB9980000000
+CA110;General;Description;Business role description created;;Count110;"04.02.2025, 06:32:52 AM";Sanjeev Neelarapu;CB9980000000
+CA110;General;ID;Business role ID changed;;CA110;"04.02.2025, 06:32:52 AM";Sanjeev Neelarapu;CB9980000000
+CA110;Access Restrictions;Read;Access Category: Read is created;;Unrestricted;"04.02.2025, 06:32:52 AM";Sanjeev Neelarapu;CB9980000000
+CA110;Access Restrictions;Value Help;Access Category: Value Help is created;;Unrestricted;"04.02.2025, 06:32:52 AM";Sanjeev Neelarapu;CB9980000000
+CA110;Access Restrictions;Write;Access Category: Write is created;;No access;"04.02.2025, 06:32:52 AM";Sanjeev Neelarapu;CB9980000000
+QD108;General;Long Text;Business role Long Text created;;;"03.02.2025, 08:17:20 AM";Sanjeev Neelarapu;CB9980000000
+QD108;General;Description;Business role description created;;Asset;"03.02.2025, 08:17:20 AM";Sanjeev Neelarapu;CB9980000000
+QD108;General;ID;Business role ID changed;;QD108;"03.02.2025, 08:17:20 AM";Sanjeev Neelarapu;CB9980000000
+QD108;Access Restrictions;Read;Access Category: Read is created;;Unrestricted;"03.02.2025, 08:17:20 AM";Sanjeev Neelarapu;CB9980000000
+QD108;Access Restrictions;Write;Access Category: Write is created;;No access;"03.02.2025, 08:17:20 AM";Sanjeev Neelarapu;CB9980000000
+QD108;Access Restrictions;Value Help;Access Category: Value Help is created;;Unrestricted;"03.02.2025, 08:17:20 AM";Sanjeev Neelarapu;CB9980000000
+CA103_107;Access Restrictions;Read;Access Category: Read is created;;Unrestricted;"03.02.2025, 08:16:20 AM";Sanjeev Neelarapu;CB9980000000
+CA103_107;Access Restrictions;Write;Access Category: Write is created;;No access;"03.02.2025, 08:16:20 AM";Sanjeev Neelarapu;CB9980000000
+CA103_107;Access Restrictions;Value Help;Access Category: Value Help is created;;Unrestricted;"03.02.2025, 08:16:20 AM";Sanjeev Neelarapu;CB9980000000
+CA103_107;General;ID;Business role ID changed;;CA103_107;"03.02.2025, 08:16:20 AM";Sanjeev Neelarapu;CB9980000000
+CA103_107;General;Description;Business role description created;;count103;"03.02.2025, 08:16:20 AM";Sanjeev Neelarapu;CB9980000000
+CA103_107;General;Long Text;Business role Long Text created;;;"03.02.2025, 08:16:20 AM";Sanjeev Neelarapu;CB9980000000
+CA106;Access Restrictions;Value Help;Access Category: Value Help is created;;Unrestricted;"03.02.2025, 08:13:17 AM";Sanjeev Neelarapu;CB9980000000
+CA106;Access Restrictions;Write;Access Category: Write is created;;No access;"03.02.2025, 08:13:17 AM";Sanjeev Neelarapu;CB9980000000
+CA106;Access Restrictions;Read;Access Category: Read is created;;Unrestricted;"03.02.2025, 08:13:17 AM";Sanjeev Neelarapu;CB9980000000
+CA106;General;Inherit Spaces in Derived Bus. Roles;Value changed;;X;"03.02.2025, 08:13:17 AM";Sanjeev Neelarapu;CB9980000000
+CA106;General;ID;Business role ID changed;;CA106;"03.02.2025, 08:13:17 AM";Sanjeev Neelarapu;CB9980000000
+CA106;General;Leading Business Role;Value changed;;X;"03.02.2025, 08:13:17 AM";Sanjeev Neelarapu;CB9980000000
+CA106;General;Description;Business role description created;;count6;"03.02.2025, 08:13:17 AM";Sanjeev Neelarapu;CB9980000000
+CA106;General;Long Text;Business role Long Text created;;;"03.02.2025, 08:13:17 AM";Sanjeev Neelarapu;CB9980000000
+BR_AA_ACCOUNTANT;Assigned Business Users;CB9980000000;Business user added;;CB9980000000;"03.02.2025, 08:12:21 AM";Sanjeev Neelarapu;CB9980000000
+CA104;Assigned Business Users;CB9980000000;Business user added;;CB9980000000;"03.02.2025, 07:43:25 AM";Sanjeev Neelarapu;CB9980000000
+CA103;Assigned Business Users;CB9980000000;Business user added;;CB9980000000;"03.02.2025, 07:43:25 AM";Sanjeev Neelarapu;CB9980000000
+BR_AA_ACCOUNTANT;App Authorization Variants;BUB6_TRAN;App Authorization Variant added inactive;;BUB6_TRAN;"03.02.2025, 07:41:20 AM";Sanjeev Neelarapu;CB9980000000
+BR_AA_ACCOUNTANT;App Authorization Variants;BUB3_TRAN;App Authorization Variant added inactive;;BUB3_TRAN;"03.02.2025, 07:41:20 AM";Sanjeev Neelarapu;CB9980000000
+BR_AA_ACCOUNTANT;Assigned Business Catalogs;SAP_CMD_BC_BP_DISP_PC;Business catalog added;;SAP_CMD_BC_BP_DISP_PC;"03.02.2025, 07:41:20 AM";Sanjeev Neelarapu;CB9980000000
+BR_AA_ACCOUNTANT;Assigned Business Catalogs;SAP_CMD_BC_CUSTOMER_DSP_PC;Business catalog added;;SAP_CMD_BC_CUSTOMER_DSP_PC;"03.02.2025, 07:41:20 AM";Sanjeev Neelarapu;CB9980000000
+BR_AA_ACCOUNTANT;App Authorization Variants;F0046A_03_TRAN;App Authorization Variant added inactive;;F0046A_03_TRAN;"03.02.2025, 07:41:20 AM";Sanjeev Neelarapu;CB9980000000
+BR_AA_ACCOUNTANT;App Authorization Variants;F0046A_F4_TRAN;App Authorization Variant added inactive;;F0046A_F4_TRAN;"03.02.2025, 07:41:20 AM";Sanjeev Neelarapu;CB9980000000
+BR_AA_ACCOUNTANT;App Authorization Variants;F0354_03_TRAN;App Authorization Variant added inactive;;F0354_03_TRAN;"03.02.2025, 07:41:20 AM";Sanjeev Neelarapu;CB9980000000
+BR_AA_ACCOUNTANT;App Authorization Variants;F0354_F4_TRAN;App Authorization Variant added inactive;;F0354_F4_TRAN;"03.02.2025, 07:41:20 AM";Sanjeev Neelarapu;CB9980000000
+BR_AA_ACCOUNTANT;Assigned Launchpad Spaces;SAP_BR_AA_ACCOUNTANT;Launchpad Space added;;SAP_BR_AA_ACCOUNTANT;"03.02.2025, 07:41:20 AM";Sanjeev Neelarapu;CB9980000000
+BR_AA_ACCOUNTANT;App Authorization Variants;F5794_03_TRAN;App Authorization Variant added inactive;;F5794_03_TRAN;"03.02.2025, 07:41:20 AM";Sanjeev Neelarapu;CB9980000000
+BR_AA_ACCOUNTANT;App Authorization Variants;F5794_F4_TRAN;App Authorization Variant added inactive;;F5794_F4_TRAN;"03.02.2025, 07:41:20 AM";Sanjeev Neelarapu;CB9980000000
+BR_AA_ACCOUNTANT;App Authorization Variants;FD03_TRAN;App Authorization Variant added inactive;;FD03_TRAN;"03.02.2025, 07:41:20 AM";Sanjeev Neelarapu;CB9980000000
+BR_AA_ACCOUNTANT;App Authorization Variants;FK03_TRAN;App Authorization Variant added inactive;;FK03_TRAN;"03.02.2025, 07:41:20 AM";Sanjeev Neelarapu;CB9980000000
+BR_AA_ACCOUNTANT;App Authorization Variants;MK03_TRAN;App Authorization Variant added inactive;;MK03_TRAN;"03.02.2025, 07:41:20 AM";Sanjeev Neelarapu;CB9980000000
+BR_AA_ACCOUNTANT;App Authorization Variants;XK03_TRAN;App Authorization Variant added inactive;;XK03_TRAN;"03.02.2025, 07:41:20 AM";Sanjeev Neelarapu;CB9980000000
+BR_AA_ACCOUNTANT;App Authorization Variants;XD03_TRAN;App Authorization Variant added inactive;;XD03_TRAN;"03.02.2025, 07:41:20 AM";Sanjeev Neelarapu;CB9980000000
+BR_AA_ACCOUNTANT;App Authorization Variants;VDH2N_TRAN;App Authorization Variant added inactive;;VDH2N_TRAN;"03.02.2025, 07:41:20 AM";Sanjeev Neelarapu;CB9980000000
+BR_AA_ACCOUNTANT;App Authorization Variants;VD03_TRAN;App Authorization Variant added inactive;;VD03_TRAN;"03.02.2025, 07:41:20 AM";Sanjeev Neelarapu;CB9980000000
+BR_AA_ACCOUNTANT;Assigned Business Catalogs;SAP_CMD_BC_SUPPLIER_DSP_PC;Business catalog added;;SAP_CMD_BC_SUPPLIER_DSP_PC;"03.02.2025, 07:41:20 AM";Sanjeev Neelarapu;CB9980000000
+BR_AA_ACCOUNTANT;Access Restrictions;Read;Access Category: Read is created;;Unrestricted;"03.02.2025, 07:41:20 AM";Sanjeev Neelarapu;CB9980000000
+BR_AA_ACCOUNTANT;Access Restrictions;Write;Access Category: Write is created;;No access;"03.02.2025, 07:41:20 AM";Sanjeev Neelarapu;CB9980000000
+BR_AA_ACCOUNTANT;Access Restrictions;Value Help;Access Category: Value Help is created;;Unrestricted;"03.02.2025, 07:41:20 AM";Sanjeev Neelarapu;CB9980000000
+BR_AA_ACCOUNTANT;App Authorization Variants;BP_03_TRAN;App Authorization Variant added inactive;;BP_03_TRAN;"03.02.2025, 07:41:20 AM";Sanjeev Neelarapu;CB9980000000
+BR_AA_ACCOUNTANT;App Authorization Variants;BP_CUSTACCTG_03_TRAN;App Authorization Variant added inactive;;BP_CUSTACCTG_03_TRAN;"03.02.2025, 07:41:20 AM";Sanjeev Neelarapu;CB9980000000
+BR_AA_ACCOUNTANT;App Authorization Variants;BP_CUSTHIER_03_TRAN;App Authorization Variant added inactive;;BP_CUSTHIER_03_TRAN;"03.02.2025, 07:41:20 AM";Sanjeev Neelarapu;CB9980000000
+BR_AA_ACCOUNTANT;App Authorization Variants;BP_CUSTSLS_03_TRAN;App Authorization Variant added inactive;;BP_CUSTSLS_03_TRAN;"03.02.2025, 07:41:20 AM";Sanjeev Neelarapu;CB9980000000
+BR_AA_ACCOUNTANT;App Authorization Variants;BP_CUST_03_TRAN;App Authorization Variant added inactive;;BP_CUST_03_TRAN;"03.02.2025, 07:41:20 AM";Sanjeev Neelarapu;CB9980000000
+BR_AA_ACCOUNTANT;App Authorization Variants;BP_CUST_F4_TRAN;App Authorization Variant added inactive;;BP_CUST_F4_TRAN;"03.02.2025, 07:41:20 AM";Sanjeev Neelarapu;CB9980000000
+BR_AA_ACCOUNTANT;App Authorization Variants;BP_F4_TRAN;App Authorization Variant added inactive;;BP_F4_TRAN;"03.02.2025, 07:41:20 AM";Sanjeev Neelarapu;CB9980000000
+BR_AA_ACCOUNTANT;App Authorization Variants;BP_SUPLRACCTG_03_TRAN;App Authorization Variant added inactive;;BP_SUPLRACCTG_03_TRAN;"03.02.2025, 07:41:20 AM";Sanjeev Neelarapu;CB9980000000
+BR_AA_ACCOUNTANT;App Authorization Variants;BP_SUPLRPUR_03_TRAN;App Authorization Variant added inactive;;BP_SUPLRPUR_03_TRAN;"03.02.2025, 07:41:20 AM";Sanjeev Neelarapu;CB9980000000
+BR_AA_ACCOUNTANT;App Authorization Variants;BP_SUPLR_03_TRAN;App Authorization Variant added inactive;;BP_SUPLR_03_TRAN;"03.02.2025, 07:41:20 AM";Sanjeev Neelarapu;CB9980000000
+BR_AA_ACCOUNTANT;General;ID;Business role ID changed;;BR_AA_ACCOUNTANT;"03.02.2025, 07:41:20 AM";Sanjeev Neelarapu;CB9980000000
+BR_AA_ACCOUNTANT;General;Description;Business role description created;;Asset Accountant;"03.02.2025, 07:41:20 AM";Sanjeev Neelarapu;CB9980000000
+BR_AA_ACCOUNTANT;General;Long Text;Business role Long Text created;;;"03.02.2025, 07:41:20 AM";Sanjeev Neelarapu;CB9980000000
+BR_AA_ACCOUNTANT;App Authorization Variants;BP_SUPLR_F4_TRAN;App Authorization Variant added inactive;;BP_SUPLR_F4_TRAN;"03.02.2025, 07:41:20 AM";Sanjeev Neelarapu;CB9980000000
+CA104;General;Long Text;Business role Long Text created;;;"03.02.2025, 07:39:13 AM";Sanjeev Neelarapu;CB9980000000
+CA104;General;Description;Business role description created;;Count104;"03.02.2025, 07:39:13 AM";Sanjeev Neelarapu;CB9980000000
+CA104;General;Leading Business Role;Value changed;;X;"03.02.2025, 07:39:13 AM";Sanjeev Neelarapu;CB9980000000
+CA104;General;ID;Business role ID changed;;CA104;"03.02.2025, 07:39:13 AM";Sanjeev Neelarapu;CB9980000000
+CA104;General;Inherit Spaces in Derived Bus. Roles;Value changed;;X;"03.02.2025, 07:39:13 AM";Sanjeev Neelarapu;CB9980000000
+CA104;Access Restrictions;Value Help;Access Category: Value Help is created;;Unrestricted;"03.02.2025, 07:39:13 AM";Sanjeev Neelarapu;CB9980000000
+CA104;Access Restrictions;Write;Access Category: Write is created;;No access;"03.02.2025, 07:39:13 AM";Sanjeev Neelarapu;CB9980000000
+CA104;Access Restrictions;Read;Access Category: Read is created;;Unrestricted;"03.02.2025, 07:39:13 AM";Sanjeev Neelarapu;CB9980000000
+SAP_BR_ADMINISTRATOR;App Authorization Variants;U0102_TRAN;App Authorization Variant added active;;U0102_TRAN;"02.02.2025, 12:36:54 AM";SAP Lifecycle Management Administrator;SAP_LMADM
+SAP_BR_ADMINISTRATOR;App Authorization Variants;F8420_TRAN;App Authorization Variant added active;;F8420_TRAN;"02.02.2025, 12:36:54 AM";SAP Lifecycle Management Administrator;SAP_LMADM
+SAP_BR_ADMINISTRATOR;App Authorization Variants;F7503_TRAN;App Authorization Variant added active;;F7503_TRAN;"02.02.2025, 12:36:54 AM";SAP Lifecycle Management Administrator;SAP_LMADM
+SAP_BR_ADMINISTRATOR;App Authorization Variants;F7285_TRAN;App Authorization Variant added active;;F7285_TRAN;"02.02.2025, 12:36:54 AM";SAP Lifecycle Management Administrator;SAP_LMADM
+SAP_BR_ADMINISTRATOR;Assigned Business Catalogs;SAP_CORE_BC_XBE_EBR_PC;Business catalog added;;SAP_CORE_BC_XBE_EBR_PC;"02.02.2025, 12:36:54 AM";SAP Lifecycle Management Administrator;SAP_LMADM
+SAP_BR_ADMINISTRATOR;Assigned Business Catalogs;SAP_CORE_BC_SEC_GAF_USR_PC;Business catalog added;;SAP_CORE_BC_SEC_GAF_USR_PC;"02.02.2025, 12:36:54 AM";SAP Lifecycle Management Administrator;SAP_LMADM
+SAP_BR_ADMINISTRATOR;Assigned Business Catalogs;SAP_CORE_BC_SEC_GAF_FLT_PC;Business catalog added;;SAP_CORE_BC_SEC_GAF_FLT_PC;"02.02.2025, 12:36:54 AM";SAP Lifecycle Management Administrator;SAP_LMADM
+SAP_BR_ADMINISTRATOR;Assigned Business Catalogs;SAP_CORE_BC_COL_ADM_PC;Business catalog added;;SAP_CORE_BC_COL_ADM_PC;"02.02.2025, 12:36:54 AM";SAP Lifecycle Management Administrator;SAP_LMADM
+CA103;Access Restrictions;Value Help;Access Category: Value Help is created;;Unrestricted;"30.01.2025, 06:53:15 AM";Sanjeev Neelarapu;CB9980000000
+CA103;Access Restrictions;Write;Access Category: Write is created;;No access;"30.01.2025, 06:53:15 AM";Sanjeev Neelarapu;CB9980000000
+CA103;Access Restrictions;Read;Access Category: Read is created;;Unrestricted;"30.01.2025, 06:53:15 AM";Sanjeev Neelarapu;CB9980000000
+CA103;General;Inherit Spaces in Derived Bus. Roles;Value changed;;X;"30.01.2025, 06:53:15 AM";Sanjeev Neelarapu;CB9980000000
+CA103;General;ID;Business role ID changed;;CA103;"30.01.2025, 06:53:15 AM";Sanjeev Neelarapu;CB9980000000
+CA103;General;Leading Business Role;Value changed;;X;"30.01.2025, 06:53:15 AM";Sanjeev Neelarapu;CB9980000000
+CA103;General;Description;Business role description created;;count103;"30.01.2025, 06:53:15 AM";Sanjeev Neelarapu;CB9980000000
+CA103;General;Long Text;Business role Long Text created;;;"30.01.2025, 06:53:15 AM";Sanjeev Neelarapu;CB9980000000
+SAP_BR_ADMINISTRATOR;Assigned Business Users;CB9980000000;Business user added;;CB9980000000;"03.01.2025, 04:51:23 PM";;SAP_SPC
+SAP_BR_ADMINISTRATOR;Access Restrictions;Value Help;Access Category: Value Help is created;;Unrestricted;"03.01.2025, 02:45:59 PM";;SAP_SPC
+SAP_BR_ADMINISTRATOR;Access Restrictions;Write;Access Category: Write is created;;Unrestricted;"03.01.2025, 02:45:59 PM";;SAP_SPC
+SAP_BR_ADMINISTRATOR;Access Restrictions;Read;Access Category: Read is created;;Unrestricted;"03.01.2025, 02:45:59 PM";;SAP_SPC
+SAP_BR_ADMINISTRATOR;Assigned Launchpad Spaces;SAP_BR_ADMINISTRATOR;Launchpad Space added;;SAP_BR_ADMINISTRATOR;"03.01.2025, 02:45:59 PM";;SAP_SPC
+SAP_BR_ADMINISTRATOR;Assigned Launchpad Spaces;SAP_OC_SPT_ADMINISTRATION_PC;Launchpad Space added;;SAP_OC_SPT_ADMINISTRATION_PC;"03.01.2025, 02:45:59 PM";;SAP_SPC
+SAP_BR_ADMINISTRATOR;Assigned Launchpad Spaces;SAP_CA_SPT_TDR_PC;Launchpad Space added;;SAP_CA_SPT_TDR_PC;"03.01.2025, 02:45:59 PM";;SAP_SPC
+SAP_BR_ADMINISTRATOR;Assigned Launchpad Spaces;SAP_EI_SPT_ADM_LC_PC;Launchpad Space added;;SAP_EI_SPT_ADM_LC_PC;"03.01.2025, 02:45:59 PM";;SAP_SPC
+SAP_BR_ADMINISTRATOR;Assigned Launchpad Spaces;SAP_BUM_SPT_ADMINISTRATION_PC;Launchpad Space added;;SAP_BUM_SPT_ADMINISTRATION_PC;"03.01.2025, 02:45:59 PM";;SAP_SPC
+SAP_BR_ADMINISTRATOR;Assigned Business Catalogs;SAP_CORE_BC_IAM_RM;Business catalog added;;SAP_CORE_BC_IAM_RM;"03.01.2025, 02:45:59 PM";;SAP_SPC
+SAP_BR_ADMINISTRATOR;Assigned Business Catalogs;SAP_CORE_BC_IAM_RA;Business catalog added;;SAP_CORE_BC_IAM_RA;"03.01.2025, 02:45:59 PM";;SAP_SPC
+SAP_BR_ADMINISTRATOR;Assigned Business Catalogs;SAP_CORE_BC_IAM_GRP_PC;Business catalog added;;SAP_CORE_BC_IAM_GRP_PC;"03.01.2025, 02:45:59 PM";;SAP_SPC
+SAP_BR_ADMINISTRATOR;Assigned Business Catalogs;SAP_CORE_BC_I18N_LANG;Business catalog added;;SAP_CORE_BC_I18N_LANG;"03.01.2025, 02:45:59 PM";;SAP_SPC
+SAP_BR_ADMINISTRATOR;Assigned Business Catalogs;SAP_CORE_BC_ESH_ADM_PC;Business catalog added;;SAP_CORE_BC_ESH_ADM_PC;"03.01.2025, 02:45:59 PM";;SAP_SPC
+SAP_BR_ADMINISTRATOR;Assigned Business Catalogs;SAP_CORE_BC_CTS_GIT;Business catalog added;;SAP_CORE_BC_CTS_GIT;"03.01.2025, 02:45:59 PM";;SAP_SPC
+SAP_BR_ADMINISTRATOR;Assigned Business Catalogs;SAP_CORE_BC_CST_DP_MAS_PC;Business catalog added;;SAP_CORE_BC_CST_DP_MAS_PC;"03.01.2025, 02:45:59 PM";;SAP_SPC
+SAP_BR_ADMINISTRATOR;Assigned Business Catalogs;SAP_CORE_BC_COM_DISP_PC;Business catalog added;;SAP_CORE_BC_COM_DISP_PC;"03.01.2025, 02:45:59 PM";;SAP_SPC
+SAP_BR_ADMINISTRATOR;Assigned Business Catalogs;SAP_CORE_BC_COM;Business catalog added;;SAP_CORE_BC_COM;"03.01.2025, 02:45:59 PM";;SAP_SPC
+SAP_BR_ADMINISTRATOR;Assigned Business Catalogs;SAP_CORE_BC_BPM_I18N;Business catalog added;;SAP_CORE_BC_BPM_I18N;"03.01.2025, 02:45:59 PM";;SAP_SPC
+SAP_BR_ADMINISTRATOR;Assigned Business Catalogs;SAP_CORE_BC_BPM;Business catalog added;;SAP_CORE_BC_BPM;"03.01.2025, 02:45:59 PM";;SAP_SPC
+SAP_BR_ADMINISTRATOR;Assigned Business Catalogs;SAP_CORE_BC_BCT_TRN_REL_PC;Business catalog added;;SAP_CORE_BC_BCT_TRN_REL_PC;"03.01.2025, 02:45:59 PM";;SAP_SPC
+SAP_BR_ADMINISTRATOR;Assigned Business Catalogs;SAP_CORE_BC_BCT_TRN_MNG_PC;Business catalog added;;SAP_CORE_BC_BCT_TRN_MNG_PC;"03.01.2025, 02:45:59 PM";;SAP_SPC
+SAP_BR_ADMINISTRATOR;Assigned Business Catalogs;SAP_CORE_BC_BCT_TRA_PC;Business catalog added;;SAP_CORE_BC_BCT_TRA_PC;"03.01.2025, 02:45:59 PM";;SAP_SPC
+SAP_BR_ADMINISTRATOR;Assigned Business Catalogs;SAP_CORE_BC_APJ_USR_PC;Business catalog added;;SAP_CORE_BC_APJ_USR_PC;"03.01.2025, 02:45:59 PM";;SAP_SPC
+SAP_BR_ADMINISTRATOR;Assigned Business Catalogs;SAP_CORE_BC_APJ_TPL;Business catalog added;;SAP_CORE_BC_APJ_TPL;"03.01.2025, 02:45:59 PM";;SAP_SPC
+SAP_BR_ADMINISTRATOR;Assigned Business Catalogs;SAP_CORE_BC_APJ_JCE;Business catalog added;;SAP_CORE_BC_APJ_JCE;"03.01.2025, 02:45:59 PM";;SAP_SPC
+SAP_BR_ADMINISTRATOR;Assigned Business Catalogs;SAP_CORE_BC_ADS_CONF;Business catalog added;;SAP_CORE_BC_ADS_CONF;"03.01.2025, 02:45:59 PM";;SAP_SPC
+SAP_BR_ADMINISTRATOR;Assigned Business Catalogs;SAP_CORE_BC_ABA_ACC_DIS_PC;Business catalog added;;SAP_CORE_BC_ABA_ACC_DIS_PC;"03.01.2025, 02:45:59 PM";;SAP_SPC
+SAP_BR_ADMINISTRATOR;Assigned Business Catalogs;SAP_CORE_BC_ABA_ACC_CON_PC;Business catalog added;;SAP_CORE_BC_ABA_ACC_CON_PC;"03.01.2025, 02:45:59 PM";;SAP_SPC
+SAP_BR_ADMINISTRATOR;Assigned Business Catalogs;SAP_CORE_BC_A4C_DIC;Business catalog added;;SAP_CORE_BC_A4C_DIC;"03.01.2025, 02:45:59 PM";;SAP_SPC
+SAP_BR_ADMINISTRATOR;Assigned Business Catalogs;SAP_CA_BC_OC_PC;Business catalog added;;SAP_CA_BC_OC_PC;"03.01.2025, 02:45:59 PM";;SAP_SPC
+SAP_BR_ADMINISTRATOR;Assigned Business Catalogs;SAP_CA_BC_LICENSE_COMPL_PC;Business catalog added;;SAP_CA_BC_LICENSE_COMPL_PC;"03.01.2025, 02:45:59 PM";;SAP_SPC
+SAP_BR_ADMINISTRATOR;Assigned Business Catalogs;SAP_CA_BC_CNV1_PC;Business catalog added;;SAP_CA_BC_CNV1_PC;"03.01.2025, 02:45:59 PM";;SAP_SPC
+SAP_BR_ADMINISTRATOR;Assigned Business Catalogs;SAP_CA_BC_CDR_EXT_PC;Business catalog added;;SAP_CA_BC_CDR_EXT_PC;"03.01.2025, 02:45:59 PM";;SAP_SPC
+SAP_BR_ADMINISTRATOR;Assigned Business Catalogs;SAP_BUM_BC_MNG_WORKFORCE_PC;Business catalog added;;SAP_BUM_BC_MNG_WORKFORCE_PC;"03.01.2025, 02:45:59 PM";;SAP_SPC
+SAP_BR_ADMINISTRATOR;Assigned Business Catalogs;SAP_A4C_BC_MSCL_PC;Business catalog added;;SAP_A4C_BC_MSCL_PC;"03.01.2025, 02:45:59 PM";;SAP_SPC
+SAP_BR_ADMINISTRATOR;General;Long Text;Business role Long Text created;;;"03.01.2025, 02:45:59 PM";;SAP_SPC
+SAP_BR_ADMINISTRATOR;General;Description;Business role description created;;Administrator;"03.01.2025, 02:45:59 PM";;SAP_SPC
+SAP_BR_ADMINISTRATOR;General;ID;Business role ID changed;;SAP_BR_ADMINISTRATOR;"03.01.2025, 02:45:59 PM";;SAP_SPC
+SAP_BR_ADMINISTRATOR;Assigned Business Catalogs;SAP_MM_BC_PUR_ANA_OPERN_PC;Business catalog added;;SAP_MM_BC_PUR_ANA_OPERN_PC;"03.01.2025, 02:45:59 PM";;SAP_SPC
+SAP_BR_ADMINISTRATOR;Assigned Business Catalogs;SAP_FIN_BC_SRF_CONF_PC;Business catalog added;;SAP_FIN_BC_SRF_CONF_PC;"03.01.2025, 02:45:59 PM";;SAP_SPC
+SAP_BR_ADMINISTRATOR;Assigned Business Catalogs;SAP_CORE_BC_UI_SHARE_PC;Business catalog added;;SAP_CORE_BC_UI_SHARE_PC;"03.01.2025, 02:45:59 PM";;SAP_SPC
+SAP_BR_ADMINISTRATOR;Assigned Business Catalogs;SAP_CORE_BC_UI_PER_DSG_PC;Business catalog added;;SAP_CORE_BC_UI_PER_DSG_PC;"03.01.2025, 02:45:59 PM";;SAP_SPC
+SAP_BR_ADMINISTRATOR;Assigned Business Catalogs;SAP_CORE_BC_UI_PER_ADM_PC;Business catalog added;;SAP_CORE_BC_UI_PER_ADM_PC;"03.01.2025, 02:45:59 PM";;SAP_SPC
+SAP_BR_ADMINISTRATOR;Assigned Business Catalogs;SAP_CORE_BC_UI_MON;Business catalog added;;SAP_CORE_BC_UI_MON;"03.01.2025, 02:45:59 PM";;SAP_SPC
+SAP_BR_ADMINISTRATOR;Assigned Business Catalogs;SAP_CORE_BC_UI_FLD;Business catalog added;;SAP_CORE_BC_UI_FLD;"03.01.2025, 02:45:59 PM";;SAP_SPC
+SAP_BR_ADMINISTRATOR;Assigned Business Catalogs;SAP_CORE_BC_UI;Business catalog added;;SAP_CORE_BC_UI;"03.01.2025, 02:45:59 PM";;SAP_SPC
+SAP_BR_ADMINISTRATOR;Assigned Business Catalogs;SAP_CORE_BC_TMC_MON_PC;Business catalog added;;SAP_CORE_BC_TMC_MON_PC;"03.01.2025, 02:45:59 PM";;SAP_SPC
+SAP_BR_ADMINISTRATOR;Assigned Business Catalogs;SAP_CORE_BC_SL_IMP_LOG_PC;Business catalog added;;SAP_CORE_BC_SL_IMP_LOG_PC;"03.01.2025, 02:45:59 PM";;SAP_SPC
+SAP_BR_ADMINISTRATOR;Assigned Business Catalogs;SAP_CORE_BC_SL_IMP;Business catalog added;;SAP_CORE_BC_SL_IMP;"03.01.2025, 02:45:59 PM";;SAP_SPC
+SAP_BR_ADMINISTRATOR;Assigned Business Catalogs;SAP_CORE_BC_SL_EXP;Business catalog added;;SAP_CORE_BC_SL_EXP;"03.01.2025, 02:45:59 PM";;SAP_SPC
+SAP_BR_ADMINISTRATOR;Assigned Business Catalogs;SAP_CORE_BC_SEC_SAL;Business catalog added;;SAP_CORE_BC_SEC_SAL;"03.01.2025, 02:45:59 PM";;SAP_SPC
+SAP_BR_ADMINISTRATOR;Assigned Business Catalogs;SAP_CORE_BC_SEC_IDP_PC;Business catalog added;;SAP_CORE_BC_SEC_IDP_PC;"03.01.2025, 02:45:59 PM";;SAP_SPC
+SAP_BR_ADMINISTRATOR;Assigned Business Catalogs;SAP_CORE_BC_SEC;Business catalog added;;SAP_CORE_BC_SEC;"03.01.2025, 02:45:59 PM";;SAP_SPC
+SAP_BR_ADMINISTRATOR;Assigned Business Catalogs;SAP_CORE_BC_RAL_CONF;Business catalog added;;SAP_CORE_BC_RAL_CONF;"03.01.2025, 02:45:59 PM";;SAP_SPC
+SAP_BR_ADMINISTRATOR;Assigned Business Catalogs;SAP_CORE_BC_OVY_PC;Business catalog added;;SAP_CORE_BC_OVY_PC;"03.01.2025, 02:45:59 PM";;SAP_SPC
+SAP_BR_ADMINISTRATOR;Assigned Business Catalogs;SAP_CORE_BC_OVY_FSI_PC;Business catalog added;;SAP_CORE_BC_OVY_FSI_PC;"03.01.2025, 02:45:59 PM";;SAP_SPC
+SAP_BR_ADMINISTRATOR;Assigned Business Catalogs;SAP_CORE_BC_OM_TEXT;Business catalog added;;SAP_CORE_BC_OM_TEXT;"03.01.2025, 02:45:59 PM";;SAP_SPC
+SAP_BR_ADMINISTRATOR;Assigned Business Catalogs;SAP_CORE_BC_OM_PRT;Business catalog added;;SAP_CORE_BC_OM_PRT;"03.01.2025, 02:45:59 PM";;SAP_SPC
+SAP_BR_ADMINISTRATOR;Assigned Business Catalogs;SAP_CORE_BC_OM_OUT_PC;Business catalog added;;SAP_CORE_BC_OM_OUT_PC;"03.01.2025, 02:45:59 PM";;SAP_SPC
+SAP_BR_ADMINISTRATOR;Assigned Business Catalogs;SAP_CORE_BC_OM_EQM_PC;Business catalog added;;SAP_CORE_BC_OM_EQM_PC;"03.01.2025, 02:45:59 PM";;SAP_SPC
+SAP_BR_ADMINISTRATOR;Assigned Business Catalogs;SAP_CORE_BC_MCM_ADMIN_PC;Business catalog added;;SAP_CORE_BC_MCM_ADMIN_PC;"03.01.2025, 02:45:59 PM";;SAP_SPC
+SAP_BR_ADMINISTRATOR;Assigned Business Catalogs;SAP_CORE_BC_ILM_ADV_PC;Business catalog added;;SAP_CORE_BC_ILM_ADV_PC;"03.01.2025, 02:45:59 PM";;SAP_SPC
+SAP_BR_ADMINISTRATOR;Assigned Business Catalogs;SAP_CORE_BC_IAS;Business catalog added;;SAP_CORE_BC_IAS;"03.01.2025, 02:45:59 PM";;SAP_SPC
+SAP_BR_ADMINISTRATOR;Assigned Business Catalogs;SAP_CORE_BC_IAM_UPGRADE;Business catalog added;;SAP_CORE_BC_IAM_UPGRADE;"03.01.2025, 02:45:59 PM";;SAP_SPC
+SAP_BR_ADMINISTRATOR;Assigned Business Catalogs;SAP_CORE_BC_IAM_UM_DISP_PC;Business catalog added;;SAP_CORE_BC_IAM_UM_DISP_PC;"03.01.2025, 02:45:59 PM";;SAP_SPC
+SAP_BR_ADMINISTRATOR;Assigned Business Catalogs;SAP_CORE_BC_IAM_UMD;Business catalog added;;SAP_CORE_BC_IAM_UMD;"03.01.2025, 02:45:59 PM";;SAP_SPC
+SAP_BR_ADMINISTRATOR;Assigned Business Catalogs;SAP_CORE_BC_IAM_UM;Business catalog added;;SAP_CORE_BC_IAM_UM;"03.01.2025, 02:45:59 PM";;SAP_SPC
+SAP_BR_ADMINISTRATOR;Assigned Business Catalogs;SAP_CORE_BC_IAM_RM_DISP_PC;Business catalog added;;SAP_CORE_BC_IAM_RM_DISP_PC;"03.01.2025, 02:45:59 PM";;SAP_SPC
