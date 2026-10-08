@@ -1,0 +1,1097 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+
+
+
+
+
+
+
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+<meta name="application-name" content="JIRA" data-name="jira" data-version="8.2.3"><meta name="ajs-server-scheme" content="https">
+<meta name="ajs-server-port" content="443">
+<meta name="ajs-server-name" content="jira.myshn.net">
+<meta name="ajs-behind-proxy" content="null">
+<meta name="ajs-base-url" content="https://jira.myshn.net">
+<meta name="ajs-viewissue-use-history-api" content="false">
+<meta name="ajs-jira-base-url" content="https://jira.myshn.net">
+<meta name="ajs-serverRenderedViewIssue" content="true">
+<meta name="ajs-dev-mode" content="false">
+<meta name="ajs-context-path" content="">
+<meta name="ajs-version-number" content="8.2.3">
+<meta name="ajs-build-number" content="802003">
+<meta name="ajs-is-beta" content="false">
+<meta name="ajs-is-rc" content="false">
+<meta name="ajs-is-snapshot" content="false">
+<meta name="ajs-is-milestone" content="false">
+<meta name="ajs-remote-user" content="stirumal">
+<meta name="ajs-remote-user-fullname" content="Sudhamini Tirumalagari">
+<meta name="ajs-user-locale" content="en">
+<meta name="ajs-user-locale-group-separator" content=",">
+<meta name="ajs-app-title" content="JIRA">
+<meta name="ajs-keyboard-shortcuts-enabled" content="true">
+<meta name="ajs-keyboard-accesskey-modifier" content="Ctrl+Alt">
+<meta name="ajs-enabled-dark-features" content="[&quot;com.atlassian.jira.agile.darkfeature.editable.detailsview&quot;,&quot;ka.AJAX_PREFETCH&quot;,&quot;nps.survey.inline.dialog&quot;,&quot;heatmapper.disabled&quot;,&quot;jira.plugin.devstatus.phasetwo&quot;,&quot;jira.frother.reporter.field&quot;,&quot;com.atlassian.jira.jira-feedback-plugin&quot;,&quot;atlassian.rest.xsrf.legacy.enabled&quot;,&quot;jira.issue.status.lozenge&quot;,&quot;com.atlassian.jira.config.BIG_PIPE&quot;,&quot;com.atlassian.jira.projects.issuenavigator&quot;,&quot;jira.product-growth-issue-view&quot;,&quot;com.atlassian.jira.config.PDL&quot;,&quot;jira.plugin.devstatus.phasetwo.enabled&quot;,&quot;atlassian.aui.raphael.disabled&quot;,&quot;app-switcher.new&quot;,&quot;frother.assignee.field&quot;,&quot;com.atlassian.jira.projects.ProjectCentricNavigation.Switch&quot;,&quot;jira.onboarding.cyoa&quot;,&quot;com.atlassian.jira.config.ProjectConfig.MENU&quot;,&quot;com.atlassian.jira.projects.sidebar.DEFER_RESOURCES&quot;,&quot;jira.zdu.admin-updates-ui&quot;,&quot;jira.zdu.jmx-monitoring&quot;,&quot;ka.STABLE_SEARCH&quot;,&quot;sd.new.settings.sidebar.location.disabled&quot;,&quot;jira.zdu.cluster-upgrade-state&quot;,&quot;ka.SPLIT_VIEW&quot;,&quot;com.atlassian.jira.config.CoreFeatures.LICENSE_ROLES_ENABLED&quot;,&quot;jira.export.csv.enabled&quot;,&quot;ka.AJAX_VIEW_ISSUE&quot;]">
+<meta name="ajs-in-admin-mode" content="false">
+<meta name="ajs-is-sysadmin" content="false">
+<meta name="ajs-is-admin" content="false">
+<meta name="ajs-outgoing-mail-enabled" content="true">
+<meta name="ajs-archiving-enabled" content="false">
+<meta name="ajs-date-relativize" content="true">
+<meta name="ajs-date-time" content="h:mm a">
+<meta name="ajs-date-day" content="EEEE h:mm a">
+<meta name="ajs-date-dmy" content="dd/MMM/yy">
+<meta name="ajs-date-complete" content="dd/MMM/yy h:mm a">
+<script type="text/javascript">var AJS=AJS||{};AJS.debug=true;</script>
+
+
+    
+<meta id="atlassian-token" name="atlassian-token" content="BG0G-V4MY-9805-LB37_66a352b2cd400c905274b9f374e7a24def3f8ff4_lin">
+
+
+
+<link rel="shortcut icon" href="/s/-1t8urs/802003/4a32d4cfcad1aecd53f58c8f8bf1a5e3/_/images/64jira.png">
+
+
+    
+
+
+
+<!--[if IE]><![endif]-->
+<script type="text/javascript">
+    (function() {
+        var contextPath = '';
+        var eventBuffer = [];
+
+        function printDeprecatedMsg() {
+            if (console && console.warn) {
+                console.warn('DEPRECATED JS - contextPath global variable has been deprecated since 7.4.0. Use `wrm/context-path` module instead.');
+            }
+        }
+
+        function sendEvent(analytics, postfix) {
+            analytics.send({
+                name: 'js.globals.contextPath.' + postfix
+            });
+        }
+
+        function sendDeprecatedEvent(postfix) {
+            try {
+                var analytics = require('jira/analytics');
+                if (eventBuffer.length) {
+                    eventBuffer.forEach(function(value) {
+                        sendEvent(analytics, value);
+                    });
+                    eventBuffer = [];
+                }
+
+                if (postfix) {
+                    sendEvent(analytics, postfix);
+                }
+            } catch(ex) {
+                eventBuffer.push(postfix);
+                setTimeout(sendDeprecatedEvent, 1000);
+            }
+        }
+
+        Object.defineProperty(window, 'contextPath', {
+            get: function() {
+                printDeprecatedMsg();
+                sendDeprecatedEvent('get');
+                return contextPath;
+            },
+            set: function(value) {
+                printDeprecatedMsg();
+                sendDeprecatedEvent('set');
+                contextPath = value;
+            }
+        });
+    })();
+
+</script>
+<script>
+window.WRM=window.WRM||{};window.WRM._unparsedData=window.WRM._unparsedData||{};window.WRM._unparsedErrors=window.WRM._unparsedErrors||{};
+WRM._unparsedData["com.atlassian.plugins.atlassian-plugins-webresource-plugin:context-path.context-path"]="\"\"";
+WRM._unparsedData["jira.core:feature-flags-data.feature-flag-data"]="{\"enabled-feature-keys\":[\"com.atlassian.jira.agile.darkfeature.editable.detailsview\",\"ka.AJAX_PREFETCH\",\"nps.survey.inline.dialog\",\"heatmapper.disabled\",\"jira.plugin.devstatus.phasetwo\",\"jira.frother.reporter.field\",\"com.atlassian.jira.jira-feedback-plugin\",\"atlassian.rest.xsrf.legacy.enabled\",\"jira.issue.status.lozenge\",\"com.atlassian.jira.config.BIG_PIPE\",\"com.atlassian.jira.projects.issuenavigator\",\"jira.product-growth-issue-view\",\"com.atlassian.jira.config.PDL\",\"jira.plugin.devstatus.phasetwo.enabled\",\"atlassian.aui.raphael.disabled\",\"app-switcher.new\",\"frother.assignee.field\",\"com.atlassian.jira.projects.ProjectCentricNavigation.Switch\",\"jira.onboarding.cyoa\",\"com.atlassian.jira.config.ProjectConfig.MENU\",\"com.atlassian.jira.projects.sidebar.DEFER_RESOURCES\",\"jira.zdu.admin-updates-ui\",\"jira.zdu.jmx-monitoring\",\"ka.STABLE_SEARCH\",\"sd.new.settings.sidebar.location.disabled\",\"jira.zdu.cluster-upgrade-state\",\"ka.SPLIT_VIEW\",\"com.atlassian.jira.config.CoreFeatures.LICENSE_ROLES_ENABLED\",\"jira.export.csv.enabled\",\"ka.AJAX_VIEW_ISSUE\"],\"feature-flag-states\":{\"mail.batching.override.core\":true,\"com.atlassian.jira.issues.archiving.filters\":false,\"jira.spectrum.m1\":true,\"com.atlassian.jira.issuetable.draggable\":true,\"mail.batching\":false,\"com.atlassian.jira.agile.darkfeature.kanban.hide.old.done.issues\":true,\"jira.jql.suggestrecentfields\":false,\"com.atlassian.jira.agile.darkfeature.backlog.showmore\":true,\"jira.priorities.per.project.edit.default\":false,\"com.atlassian.jira.agile.darkfeature.optimistic.transitions\":true,\"com.atlassian.jira.issuetable.move.links.hidden\":true,\"jira.renderer.consider.variable.format\":true,\"com.atlassian.jira.user.dbIdBasedKeyGenerationStrategy\":false,\"com.atlassian.jira.agile.darkfeature.kanplan\":false,\"jira.priorities.per.project.jsd\":true,\"com.atlassian.jira.issues.archiving.browse\":false,\"jira.instrumentation.laas\":false,\"com.atlassian.jira.agile.darkfeature.rapid.boards.bands\":true,\"com.atlassian.jira.sharedEntityEditRights\":true,\"jira.customfields.paginated.ui\":true,\"com.atlassian.jira.agile.darkfeature.flexible.boards\":true,\"com.atlassian.jira.agile.darkfeature.edit.closed.sprint\":false,\"jira.create.linked.issue\":true,\"mail.batching.user.notification\":true,\"com.atlassian.jira.agile.darkfeature.sprint.goal\":false,\"com.atlassian.jira.agile.darkfeature.dataonpageload\":true,\"mail.batching.create.section.cf\":true,\"jira.sal.host.connect.accessor.existing.transaction.will.create.transactions\":true,\"com.atlassian.jira.custom.csv.escaper\":true,\"com.atlassian.jira.plugin.issuenavigator.filtersUxImprovment\":true,\"com.atlassian.jira.agile.darkfeature.kanplan.epics.and.versions\":false,\"jira.quick.search\":true,\"jira.jql.smartautoselectfirst\":false,\"com.atlassian.jira.projects.per.project.permission.query\":true,\"com.atlassian.jira.issues.archiving\":true,\"com.atlassian.jira.projects.archiving\":true,\"index.use.snappy\":true,\"jira.priorities.per.project\":true,\"com.atlassian.jira.upgrade.startup.fix.index\":true}}";
+WRM._unparsedData["jira.core:default-comment-security-level-data.DefaultCommentSecurityLevelHelpLink"]="{\"extraClasses\":\"default-comment-level-help\",\"title\":\"Commenting on an Issue\",\"url\":\"https://docs.atlassian.com/jira/jsw-docs-082/Editing+and+collaborating+on+issues#Editingandcollaboratingonissues-restrictacomment\",\"isLocal\":false}";
+WRM._unparsedData["jira.core:dateFormatProvider.allFormats"]="{\"dateFormats\":{\"meridiem\":[\"AM\",\"PM\"],\"eras\":[\"BC\",\"AD\"],\"months\":[\"January\",\"February\",\"March\",\"April\",\"May\",\"June\",\"July\",\"August\",\"September\",\"October\",\"November\",\"December\"],\"monthsShort\":[\"Jan\",\"Feb\",\"Mar\",\"Apr\",\"May\",\"Jun\",\"Jul\",\"Aug\",\"Sep\",\"Oct\",\"Nov\",\"Dec\"],\"weekdaysShort\":[\"Sun\",\"Mon\",\"Tue\",\"Wed\",\"Thu\",\"Fri\",\"Sat\"],\"weekdays\":[\"Sunday\",\"Monday\",\"Tuesday\",\"Wednesday\",\"Thursday\",\"Friday\",\"Saturday\"]},\"lookAndFeelFormats\":{\"relativize\":\"true\",\"time\":\"h:mm a\",\"day\":\"EEEE h:mm a\",\"dmy\":\"dd/MMM/yy\",\"complete\":\"dd/MMM/yy h:mm a\"}}";
+WRM._unparsedData["com.atlassian.jira.jira-issue-nav-components:issueviewer.features"]="{\"rteEnabled\":true}";
+WRM._unparsedData["com.atlassian.jira.plugins.jira-dnd-attachment-plugin:dnd-issue-drop-zone.thumbnail-mime-types"]="\"image/png,image/vnd.wap.wbmp,image/x-png,image/jpeg,image/bmp,image/gif\"";
+WRM._unparsedData["com.atlassian.jira.plugins.jira-dnd-attachment-plugin:dnd-issue-drop-zone.upload-limit"]="\"52428800\"";
+WRM._unparsedData["com.atlassian.plugins.helptips.jira-help-tips:help-tip-manager.JiraHelpTipData"]="{\"dismissed\":[\"automaticTransitionDevSummaryTooltip\",\"newsletter-signup-tip\",\"qs-onboarding-tip\"],\"anonymous\":false}";
+WRM._unparsedData["com.atlassian.jira.jira-view-issue-plugin:controller-subtasks.controller.subtasks.parameters"]="{\"url\":\"/rest/api/2/issue/{issueId}/subtask/move\"}";
+WRM._unparsedData["com.atlassian.jira.plugins.jira-wiki-editor:wiki-editor-thumbnails.thumbnails-allowed"]="true";
+WRM._unparsedData["com.atlassian.jira.plugins.jira-wiki-editor:wiki-editor-resources.help-data"]="{\"showHelp\":true,\"editorDocumentationUrl\":[\"https://docs.atlassian.com/jira/jsw-docs-082/Visual+editing\"],\"editorDocumentationTitle\":[\"Show me documentation for the visual editor\"]}";
+WRM._unparsedData["com.atlassian.analytics.analytics-client:policy-update-init.policy-update-data-provider"]="false";
+WRM._unparsedData["com.atlassian.analytics.analytics-client:programmatic-analytics-init.programmatic-analytics-data-provider"]="false";
+WRM._unparsedData["com.onresolve.jira.groovy.groovyrunner:web-item-response-renderer.web-item-actions-data-provider"]="[]";
+WRM._unparsedData["jira.core:avatar-picker-data.data"]="{}";
+WRM._unparsedData["com.atlassian.jira.jira-header-plugin:dismissedFlags.flags"]="{\"dismissed\":[\"com.atlassian.jira.tzdetect.19800000,19800000\"]}";
+WRM._unparsedData["com.atlassian.jira.jira-header-plugin:newsletter-signup-tip-init.newsletterSignup"]="{\"signupDescription\":\"Get updates, inspiration and best practices from the team behind Jira.\",\"formUrl\":\"https://www.atlassian.com/apis/exact-target/{0}/subscribe?mailingListId=1401671\",\"userEmail\":\"sudhamini.tirumalagari@skyhighsecurity.com\",\"signupTitle\":\"Sign up!\",\"signupId\":\"newsletter-signup-tip\",\"showNewsletterTip\":true}";
+WRM._unparsedData["com.atlassian.jira.project-templates-plugin:project-templates-plugin-resources.ptAnalyticsData"]="{\"instanceCreatedDate\":\"2012-12-02\"}";
+WRM._unparsedData["jira.core:user-message-flags-data.adminLockout"]="{}";
+WRM._unparsedData["jira.request.correlation-id"]="\"dbbac1eff0e39\"";
+WRM._unparsedData["tzdetect.pref.auto.detect"]="true";
+WRM._unparsedData["tzdetect.pref.tzid"]="\"America/Los_Angeles\"";
+WRM._unparsedData["tzdetect.pref.tzname"]="\"(GMT-08:00) Los Angeles\"";
+WRM._unparsedData["tzdetect.pref.janOffset"]="-28800000";
+WRM._unparsedData["tzdetect.pref.julyOffset"]="-25200000";
+WRM._unparsedData["project-id"]="11600";
+WRM._unparsedData["project-key"]="\"OF\"";
+WRM._unparsedData["project-name"]="\"OfflineDLP\"";
+WRM._unparsedData["project-type"]="\"software\"";
+WRM._unparsedData["com.atlassian.jira.jira-projects-issue-navigator:generic-filters"]="[{\"id\":\"myopenissues\",\"jql\":\"project = \\\"{0}\\\" AND assignee = currentUser() AND resolution = Unresolved ORDER BY {1}\",\"defaultOrderby\":\"updated DESC\",\"label\":\"My open issues\",\"requiresUser\":true,\"supportsInlineIssueCreate\":true,\"fields\":[\"assignee\",\"resolution\"]},{\"id\":\"reportedbyme\",\"jql\":\"project = \\\"{0}\\\" AND reporter = currentUser() ORDER BY {1}\",\"defaultOrderby\":\"created DESC\",\"label\":\"Reported by me\",\"requiresUser\":true,\"supportsInlineIssueCreate\":true,\"fields\":[\"reporter\"]},{\"id\":\"allissues\",\"jql\":\"project = \\\"{0}\\\" ORDER BY {1}\",\"defaultOrderby\":\"created DESC\",\"label\":\"All issues\",\"requiresUser\":false,\"supportsInlineIssueCreate\":true,\"fields\":[]},{\"id\":\"allopenissues\",\"jql\":\"project = \\\"{0}\\\" AND resolution = Unresolved ORDER BY {1}\",\"defaultOrderby\":\"priority DESC, updated DESC\",\"label\":\"Open issues\",\"requiresUser\":false,\"supportsInlineIssueCreate\":true,\"fields\":[\"resolution\"]},{\"id\":\"doneissues\",\"jql\":\"project = \\\"{0}\\\" AND statusCategory = Done ORDER BY {1}\",\"defaultOrderby\":\"updated DESC\",\"label\":\"Done issues\",\"requiresUser\":false,\"supportsInlineIssueCreate\":false,\"fields\":[\"status\"]},{\"id\":\"recentlyviewed\",\"jql\":\"project = \\\"{0}\\\" AND issuekey in issueHistory() ORDER BY {1}\",\"defaultOrderby\":\"lastViewed DESC\",\"label\":\"Viewed recently\",\"requiresUser\":false,\"supportsInlineIssueCreate\":true,\"fields\":[\"issuekey\"]},{\"id\":\"addedrecently\",\"jql\":\"project = \\\"{0}\\\" AND created \u003e= -1w ORDER BY {1}\",\"defaultOrderby\":\"created DESC\",\"label\":\"Created recently\",\"requiresUser\":false,\"supportsInlineIssueCreate\":true,\"fields\":[\"created\"]},{\"id\":\"resolvedrecently\",\"jql\":\"project = \\\"{0}\\\" AND resolutiondate \u003e= -1w ORDER BY {1}\",\"defaultOrderby\":\"updated DESC\",\"label\":\"Resolved recently\",\"requiresUser\":false,\"supportsInlineIssueCreate\":false,\"fields\":[\"resolutiondate\"]},{\"id\":\"updatedrecently\",\"jql\":\"project = \\\"{0}\\\" AND updated \u003e= -1w ORDER BY {1}\",\"defaultOrderby\":\"updated DESC\",\"label\":\"Updated recently\",\"requiresUser\":false,\"supportsInlineIssueCreate\":true,\"fields\":[\"updated\"]}]";
+WRM._unparsedData["com.atlassian.jira.jira-projects-issue-navigator:default-filter-priority"]="[\"allopenissues\",\"allissues\"]";
+WRM._unparsedData["com.atlassian.jira.jira-projects-issue-navigator:can-manage-filters"]="false";
+WRM._unparsedData["com.atlassian.jira.jira-projects-issue-navigator:project-filters"]="[]";
+WRM._unparsedData["com.atlassian.jira.jira-projects-issue-navigator:can-create-issues"]="true";
+WRM._unparsedData["projectId"]="11600";
+WRM._unparsedData["projectKey"]="\"OF\"";
+WRM._unparsedData["projectType"]="\"software\"";
+WRM._unparsedData["com.atlassian.jira.jira-projects-issue-navigator:server-rendered"]="true";
+WRM._unparsedData["archivingProjectHelpUrl"]="\"https://docs.atlassian.com/jira/jadm-docs-082/Archiving+a+project\"";
+WRM._unparsedData["archivingIssueHelpUrl"]="\"https://docs.atlassian.com/jira/jsw-docs-082/Archiving+an+issue\"";
+if(window.WRM._dataArrived)window.WRM._dataArrived();</script>
+<link type="text/css" rel="stylesheet" href="/s/b6ae48fafb0d87f930e6ed30eeec8fb9-CDN/-1t8urs/802003/4a32d4cfcad1aecd53f58c8f8bf1a5e3/2215ce00ef54a85f6638f0246e6582bf/_/download/contextbatch/css/_super/batch.css" data-wrm-key="_super" data-wrm-batch-type="context" media="all">
+<link type="text/css" rel="stylesheet" href="/s/bfca3b57bd5eeceb3fbe8f31dfb772c7-CDN/-1t8urs/802003/4a32d4cfcad1aecd53f58c8f8bf1a5e3/159875b8a8d83c5f2ea224f915501b69/_/download/contextbatch/css/jira.browse.project,jira.view.issue,atl.general,jira.general,project.issue.navigator,jira.global,-_super/batch.css?agile_global_admin_condition=true&amp;jag=true&amp;jaguser=true&amp;jira.create.linked.issue=true&amp;richediton=true" data-wrm-key="jira.browse.project,jira.view.issue,atl.general,jira.general,project.issue.navigator,jira.global,-_super" data-wrm-batch-type="context" media="all">
+<link type="text/css" rel="stylesheet" href="/s/d41d8cd98f00b204e9800998ecf8427e-CDN/-1t8urs/802003/4a32d4cfcad1aecd53f58c8f8bf1a5e3/1.9.4/_/download/resources/com.lucidchart.jira.plugins.lucid-jira:lucid-viewer-general/viewer.css?batch=false" data-wrm-key="com.lucidchart.jira.plugins.lucid-jira:lucid-viewer-general" data-wrm-batch-type="resource" media="all">
+<link type="text/css" rel="stylesheet" href="/s/d41d8cd98f00b204e9800998ecf8427e-CDN/-1t8urs/802003/4a32d4cfcad1aecd53f58c8f8bf1a5e3/8.0.3/_/download/batch/com.atlassian.auiplugin:split_aui.pattern.label/com.atlassian.auiplugin:split_aui.pattern.label.css" data-wrm-key="com.atlassian.auiplugin:split_aui.pattern.label" data-wrm-batch-type="resource" media="all">
+<link type="text/css" rel="stylesheet" href="/s/6845c3788937a414539e5f6228fde726-CDN/-1t8urs/802003/4a32d4cfcad1aecd53f58c8f8bf1a5e3/1.0/_/download/batch/jira.webresources:global-static-adgs/jira.webresources:global-static-adgs.css" data-wrm-key="jira.webresources:global-static-adgs" data-wrm-batch-type="resource" media="all">
+<link type="text/css" rel="stylesheet" href="/s/d4766c46ba602f2e9f7c2d6b89a2f533-CDN/-1t8urs/802003/4a32d4cfcad1aecd53f58c8f8bf1a5e3/1.0/_/download/batch/jira.webresources:global-static/jira.webresources:global-static.css" data-wrm-key="jira.webresources:global-static" data-wrm-batch-type="resource" media="all">
+<script type="text/javascript" src="/s/ee3fce1369d75766e333b954e671b897-CDN/-1t8urs/802003/4a32d4cfcad1aecd53f58c8f8bf1a5e3/2215ce00ef54a85f6638f0246e6582bf/_/download/contextbatch/js/_super/batch.js?locale=en" data-wrm-key="_super" data-wrm-batch-type="context" data-initially-rendered></script>
+<script type="text/javascript" src="/s/b70a09dd98fecdbe0323f66ab5a1b957-CDN/-1t8urs/802003/4a32d4cfcad1aecd53f58c8f8bf1a5e3/159875b8a8d83c5f2ea224f915501b69/_/download/contextbatch/js/jira.browse.project,jira.view.issue,atl.general,jira.general,project.issue.navigator,jira.global,-_super/batch.js?agile_global_admin_condition=true&amp;content-type=text%2Fjavascript&amp;jag=true&amp;jaguser=true&amp;jira.create.linked.issue=true&amp;locale=en&amp;richediton=true" data-wrm-key="jira.browse.project,jira.view.issue,atl.general,jira.general,project.issue.navigator,jira.global,-_super" data-wrm-batch-type="context" data-initially-rendered></script>
+<script type="text/javascript" src="/s/b70a09dd98fecdbe0323f66ab5a1b957-CDN/-1t8urs/802003/4a32d4cfcad1aecd53f58c8f8bf1a5e3/159875b8a8d83c5f2ea224f915501b69/_/download/contextbatch/js/jira.browse.project,jira.view.issue,atl.general,jira.general,project.issue.navigator,jira.global,-_super/batch.js?agile_global_admin_condition=true&amp;jag=true&amp;jaguser=true&amp;jira.create.linked.issue=true&amp;locale=en&amp;richediton=true" data-wrm-key="jira.browse.project,jira.view.issue,atl.general,jira.general,project.issue.navigator,jira.global,-_super" data-wrm-batch-type="context" data-initially-rendered></script>
+<script type="text/javascript" src="/s/d41d8cd98f00b204e9800998ecf8427e-CDN/-1t8urs/802003/4a32d4cfcad1aecd53f58c8f8bf1a5e3/1.9.4/_/download/resources/com.lucidchart.jira.plugins.lucid-jira:lucid-viewer-general/viewer.js?batch=false" data-wrm-key="com.lucidchart.jira.plugins.lucid-jira:lucid-viewer-general" data-wrm-batch-type="resource" data-initially-rendered></script>
+<script type="text/javascript" src="/s/a313e43e3a56d62b3324f95062d5cfaf-CDN/-1t8urs/802003/4a32d4cfcad1aecd53f58c8f8bf1a5e3/aae1242f5fc81cc6a5bb8bc963ccda29/_/download/contextbatch/js/atl.global,-_super/batch.js?locale=en" data-wrm-key="atl.global,-_super" data-wrm-batch-type="context" data-initially-rendered></script>
+<script type="text/javascript" src="/s/dc9847165192ca411287784971db3151-CDN/-1t8urs/802003/4a32d4cfcad1aecd53f58c8f8bf1a5e3/3.0.3/_/download/batch/com.atlassian.jira.jira-tzdetect-plugin:tzdetect-banner-component/com.atlassian.jira.jira-tzdetect-plugin:tzdetect-banner-component.js?locale=en" data-wrm-key="com.atlassian.jira.jira-tzdetect-plugin:tzdetect-banner-component" data-wrm-batch-type="resource" data-initially-rendered></script>
+<script type="text/javascript" src="/s/d41d8cd98f00b204e9800998ecf8427e-CDN/-1t8urs/802003/4a32d4cfcad1aecd53f58c8f8bf1a5e3/3.0.3/_/download/batch/com.atlassian.jira.jira-tzdetect-plugin:tzdetect-lib/com.atlassian.jira.jira-tzdetect-plugin:tzdetect-lib.js" data-wrm-key="com.atlassian.jira.jira-tzdetect-plugin:tzdetect-lib" data-wrm-batch-type="resource" data-initially-rendered></script>
+<script type="text/javascript" src="/s/d41d8cd98f00b204e9800998ecf8427e-CDN/-1t8urs/802003/4a32d4cfcad1aecd53f58c8f8bf1a5e3/1.0/_/download/batch/jira.webresources:calendar-localisation-moment/jira.webresources:calendar-localisation-moment.js" data-wrm-key="jira.webresources:calendar-localisation-moment" data-wrm-batch-type="resource" data-initially-rendered></script>
+<script type="text/javascript" src="/s/607b71dd9d5ccf796edcee21bdb03dfd-CDN/-1t8urs/802003/4a32d4cfcad1aecd53f58c8f8bf1a5e3/8.0.3/_/download/batch/com.atlassian.auiplugin:split_aui.pattern.label/com.atlassian.auiplugin:split_aui.pattern.label.js?locale=en" data-wrm-key="com.atlassian.auiplugin:split_aui.pattern.label" data-wrm-batch-type="resource" data-initially-rendered></script>
+<link type="text/css" rel="stylesheet" href="/s/ff39be88110ffe35f45f0576a8aac241-CDN/-1t8urs/802003/4a32d4cfcad1aecd53f58c8f8bf1a5e3/6bbc27b1057fdbc751fdc538cd95a2f8/_/download/contextbatch/css/jira.global.look-and-feel,-_super/batch.css" data-wrm-key="jira.global.look-and-feel,-_super" data-wrm-batch-type="context" media="all">
+
+<script type="text/javascript" src="/rest/api/1.0/shortcuts/802003/5f977d43a7664ab6f0b74c8b3b427089/shortcuts.js?context=issuenavigation&amp;context=issueaction"></script>
+
+
+<script>
+window.WRM=window.WRM||{};window.WRM._unparsedData=window.WRM._unparsedData||{};window.WRM._unparsedErrors=window.WRM._unparsedErrors||{};
+WRM._unparsedData["com.atlassian.jira.jira-issue-nav-components:inline-edit-enabled"]="true";
+WRM._unparsedData["should-display-chaperone"]="false";
+if(window.WRM._dataArrived)window.WRM._dataArrived();</script>
+<link type="text/css" rel="stylesheet" href="/s/20300bcd484d4a8b4e38d39c8c763e2b-CDN/-1t8urs/802003/4a32d4cfcad1aecd53f58c8f8bf1a5e3/58f2bd89c39b12c8bb770360a7df5074/_/download/contextbatch/css/com.atlassian.jira.projects.sidebar.init,-_super,-jira.view.issue,-project.issue.navigator/batch.css?jira.create.linked.issue=true&amp;richediton=true" data-wrm-key="com.atlassian.jira.projects.sidebar.init,-_super,-jira.view.issue,-project.issue.navigator" data-wrm-batch-type="context" media="all">
+<script type="text/javascript" src="/s/a77787b358dafe376613adbc102efede-CDN/-1t8urs/802003/4a32d4cfcad1aecd53f58c8f8bf1a5e3/58f2bd89c39b12c8bb770360a7df5074/_/download/contextbatch/js/com.atlassian.jira.projects.sidebar.init,-_super,-jira.view.issue,-project.issue.navigator/batch.js?jira.create.linked.issue=true&amp;locale=en&amp;richediton=true" data-wrm-key="com.atlassian.jira.projects.sidebar.init,-_super,-jira.view.issue,-project.issue.navigator" data-wrm-batch-type="context" data-initially-rendered></script>
+
+
+
+    
+
+
+
+
+
+
+<meta name="ajs-can-search-users" content="true">
+<meta name="ajs-can-edit-watchers" content="true">
+<meta name="ajs-default-avatar-url" content="https://jira.myshn.net/secure/useravatar?size=xsmall&amp;avatarId=10123">
+<meta name="ajs-issue-project-type" content="software">
+<meta name="ajs-issue-key" content="OF-39108">
+<meta name="ajs-server-view-issue-is-editable" content="true">
+
+<title>[OF-39108] CLONE - validate  the cspspec eventMapVariables when some activity performed at okta csp- - JIRA</title>
+<link rel="search" type="application/opensearchdescription+xml" href="/osd.jsp" title="[OF-39108] CLONE - validate  the cspspec eventMapVariables when some activity performed at okta csp- - JIRA"/>
+
+
+</head>
+
+
+
+
+
+<body id="jira" class="aui-layout aui-theme-default " data-version="8.2.3">
+<div id="page">
+    <header id="header" role="banner">
+        
+
+
+
+
+
+
+<script>
+require(["jquery", "jira/license-banner"], function ($, licenseBanner) {
+    $(function () {
+        licenseBanner.showLicenseBanner("");
+        licenseBanner.showLicenseFlag("");
+    });
+});
+</script>
+
+
+
+        
+
+
+
+
+        
+
+
+<script type="text/javascript">
+		var zEncKeyFld = "AO-7DEABF";
+		var zEncKeyVal = "8bhs944ExCAJa6O0GEpPWIe/a6PqJmYHIl5qBvmwC1opExR1iSlMPBQNAegFHsh0Lr8i4hOTqTDqpA2NKIZUpQ==";
+        var zshowWF = false
+		</script>		<nav class="aui-header aui-dropdown2-trigger-group" role="navigation"><div class="aui-header-inner"><div class="aui-header-before"><a class=" aui-dropdown2-trigger app-switcher-trigger" aria-controls="app-switcher" aria-haspopup="true" role="button" tabindex="0" data-aui-trigger href="#app-switcher"><span class="aui-icon aui-icon-small aui-iconfont-appswitcher">Linked Applications</span></a><div id="app-switcher" class="aui-dropdown2 aui-style-default" role="menu" aria-hidden="true" data-is-switcher="true" data-environment="{&quot;isUserAdmin&quot;:false,&quot;isAppSuggestionAvailable&quot;:false,&quot;isSiteAdminUser&quot;:false}"><div role="application"><div class="app-switcher-loading">Loading&hellip;</div></div></div></div><div class="aui-header-primary"><h1 id="logo" class="aui-header-logo aui-header-logo-custom"><a href="https://jira.myshn.net/secure/MyJiraHome.jspa"><img src="/s/-1t8urs/802003/4a32d4cfcad1aecd53f58c8f8bf1a5e3/_/jira-logo-scaled.png" alt="JIRA" /></a></h1><ul class='aui-nav'><li><a href="/secure/Dashboard.jspa" class=" aui-nav-link aui-dropdown2-trigger aui-dropdown2-ajax" id="home_link" aria-haspopup="true" aria-controls="home_link-content" title="View and manage your dashboards" accesskey="d">Dashboards</a><div class="aui-dropdown2 aui-style-default" id="home_link-content" data-aui-dropdown2-ajax-key="home_link"></div></li><li><a href="/browse/OF" class=" aui-nav-link aui-dropdown2-trigger aui-dropdown2-ajax" id="browse_link" aria-haspopup="true" aria-controls="browse_link-content" title="View recent projects and browse a list of projects" accesskey="p">Projects</a><div class="aui-dropdown2 aui-style-default" id="browse_link-content" data-aui-dropdown2-ajax-key="browse_link"></div></li><li><a href="/issues/" class=" aui-nav-link aui-dropdown2-trigger aui-dropdown2-ajax" id="find_link" aria-haspopup="true" aria-controls="find_link-content" title="Search for issues and view recent issues" accesskey="i">Issues</a><div class="aui-dropdown2 aui-style-default" id="find_link-content" data-aui-dropdown2-ajax-key="find_link"></div></li><li><a href="/secure/RapidBoard.jspa" class=" aui-nav-link aui-dropdown2-trigger aui-dropdown2-ajax" id="greenhopper_menu" aria-haspopup="true" aria-controls="greenhopper_menu-content" title="Manage your project with Jira Software">Boards</a><div class="aui-dropdown2 aui-style-default" id="greenhopper_menu-content" data-aui-dropdown2-ajax-key="greenhopper_menu"></div></li><li><a href="/secure/ZephyrWelcome.jspa" class=" aui-nav-link aui-dropdown2-trigger" id="zephyr_je.topnav.tests" aria-haspopup="true" aria-controls="zephyr_je.topnav.tests-content" title="Zephyr Test Management and Execution">Tests</a><div class="aui-dropdown2 aui-style-default" id="zephyr_je.topnav.tests-content"><div id="zephyr-je.topnav.manage.section" class="aui-dropdown2-section" ><ul class="aui-list-truncate"><li id="zephyr-je.topnav.tests.test.search"><a href="/secure/SearchTest.jspa" id="zephyr-je.topnav.tests.test.search_lnk" class="">Search Tests</a></li><li id="zephyr-je.topnav.tests.create"><a href="/secure/CreateTestIssue.jspa" id="zephyr-je.topnav.tests.create_lnk" class="">Create a Test</a></li></ul></div><div id="zephyr-je.topnav.tests.execution.section" class="aui-dropdown2-section" ><ul class="aui-list-truncate"><li id="zephyr-je.topnav.tests.plan.cycle"><a href="/secure/PlanTestCycle.jspa" id="zephyr-je.topnav.tests.plan.cycle_lnk" class="">Plan Test Cycle</a></li><li id="zephyr-je.topnav.tests.execution.search"><a href="/secure/ExecutionNavigator.jspa" id="zephyr-je.topnav.tests.execution.search_lnk" class="">Search Test Executions</a></li><li id="manage_zql_filters_link"><a href="/secure/ZQLManageFilters.jspa" id="manage_zql_filters_link_lnk" class="">Manage Execution Filters</a></li><li id="zephyr-je.topnav.tests.plan.execute"><a href="/secure/PlanExecuteTest.jspa" id="zephyr-je.topnav.tests.plan.execute_lnk" class="">Execute Tests</a></li></ul></div><div id="zephyr-je.topnav.tests.summary.section" class="aui-dropdown2-section" ><ul class="aui-list-truncate"><li id="zephyr-je.topnav.tests.test.plan.summary"><a href="/secure/TestSummary.jspa" id="zephyr-je.topnav.tests.test.plan.summary_lnk" class="">Test Summary</a></li><li id="zephyr-je.topnav.tests.test.plan.metrics"><a href="/secure/DisplayMetricsDashboard.jspa" id="zephyr-je.topnav.tests.test.plan.metrics_lnk" class="">Test Metrics</a></li><li id="zephyr-je.topnav.tests.test.plan.traceability"><a href="/secure/TraceabilityReport.jspa" id="zephyr-je.topnav.tests.test.plan.traceability_lnk" class="">Traceability</a></li></ul></div><div id="zephyr-je.topnav.tests.importer.section" class="aui-dropdown2-section" ><ul class="aui-list-truncate"><li id="zephyr-je.topnav.tests.test.importer.import"><a href="/secure/TestIssueImporter.jspa" id="zephyr-je.topnav.tests.test.importer.import_lnk" class="">Importer</a></li></ul></div><div id="zephyr-je.topnav.tests.about.section" class="aui-dropdown2-section" ><ul class="aui-list-truncate"><li id="zfj_welcome"><a href="/secure/ZephyrWelcome.jspa" id="zfj_welcome_lnk" class="">Welcome</a></li><li id="com.thed.zephyr.je:zephyr-je.topnav.tests.help"><a href="/secure/Help.jspa" id="com.thed.zephyr.je:zephyr-je.topnav.tests.help_lnk" class="">Documentation</a></li><li id="add_feedback"><a href="https://www.getzephyr.com/products/zephyr-for-jira/feedback" id="add_feedback_lnk" class="">Give Feedback</a></li><li id="support_link"><a href="https://support.smartbear.com/message/?prod=zephyr" id="support_link_lnk" class="">Support</a></li><li id="add-about"><a href="" id="add-about_lnk" class="">About Zephyr</a></li></ul></div></div></li><li><a href="/secure/StoryMappingBoards.jspa" class=" aui-nav-link" id="board-list-web-item-link" title="List of story maps">Story Mapping Boards</a></li>
+<li id="create-menu"><a  id="create_link"  class="aui-button aui-button-primary aui-style create-issue "  title="Create a new issue / bug / feature request / etc" href="/secure/CreateIssue!default.jspa" accesskey="c">Create</a></li></ul></div><div class="aui-header-secondary"><ul class='aui-nav'>
+<li id="quicksearch-menu">
+    <form action="/secure/QuickSearch.jspa" method="get" id="quicksearch" class="aui-quicksearch dont-default-focus ajs-dirty-warning-exempt">
+        <input id="quickSearchInput" autocomplete="off"  class="search" type="text" title="Search" placeholder="Search" name="searchString" accessKey="q" />
+        <input type="submit" class="hidden" value="Search">
+    </form>
+</li>
+<li><a class="jira-feedback-plugin" role="button" aria-haspopup="true" id="jira-header-feedback-link" href="#"><span class="aui-icon aui-icon-small aui-iconfont-feedback">Give feedback to Atlassian</span></a></li>
+
+
+
+
+    <li id="system-help-menu">
+                    <a class="aui-nav-link aui-dropdown2-trigger aui-dropdown2-trigger-arrowless"
+                   id="help_menu" aria-haspopup="true" aria-owns="system-help-menu-content" href="https://docs.atlassian.com/jira/jsw-docs-082/"  target="$textUtils.htmlEncode($rootHelpMenuItem.params.target)"  title="Help"><span class="aui-icon aui-icon-small aui-iconfont-question-filled">Help</span></a>
+        <div id="system-help-menu-content" class="aui-dropdown2 aui-style-default">
+                            <div class="aui-dropdown2-section">
+                                                                <ul id="jira-help" class="aui-list-truncate">
+                                                            <li>
+                                    <a id="gh_view_help" class="aui-nav-link " title="Get help online for Jira Software" href="https://docs.atlassian.com/jira/jsw-docs-082/"  target="_blank" >Jira Software help</a>
+                                </li>
+                                                            <li>
+                                    <a id="view_core_help" class="aui-nav-link " title="Go to the online documentation for Jira Core" href="https://docs.atlassian.com/jira/jcore-docs-082/"  target="_blank" >Jira Core help</a>
+                                </li>
+                                                            <li>
+                                    <a id="keyshortscuthelp" class="aui-nav-link " title="Get more information about Jira's Keyboard Shortcuts" href="/secure/ViewKeyboardShortcuts!default.jspa"  target="_blank" >Keyboard Shortcuts</a>
+                                </li>
+                                                            <li>
+                                    <a id="rem-help-item-link" class="aui-nav-link "  href="https://denizoguz.atlassian.net/wiki/spaces/REM/overview"  target="_blank" >Issue Reminders help</a>
+                                </li>
+                                                            <li>
+                                    <a id="view_about" class="aui-nav-link " title="Get more information about Jira" href="/secure/AboutPage.jspa" >About Jira</a>
+                                </li>
+                                                            <li>
+                                    <a id="view_credits" class="aui-nav-link " title="See who did what" href="/secure/credits/AroundTheWorld!default.jspa"  target="_blank" >Jira Credits</a>
+                                </li>
+                                                    </ul>
+                                    </div>
+                    </div>
+    </li>
+
+
+
+
+
+
+
+
+
+
+<li id="user-options">
+                        <a id="header-details-user-fullname" class="aui-dropdown2-trigger aui-dropdown2-trigger-arrowless" aria-haspopup="true" aria-owns="user-options-content" data-username="stirumal" data-displayname="Sudhamini Tirumalagari" href="/secure/ViewProfile.jspa" title="User profile for Sudhamini Tirumalagari">
+                    <span class="aui-avatar aui-avatar-small">
+                <span class="aui-avatar-inner">
+                    <img src="https://jira.myshn.net/secure/useravatar?size=small&avatarId=11820" alt="User profile for Sudhamini Tirumalagari"/>
+                </span>
+            </span>
+        </a>
+                <div id="user-options-content" class="aui-dropdown2 aui-style-default">
+                            <div class="aui-dropdown2-section">
+                                                                <ul id="personal" class="aui-list-truncate">
+                                                                                                                            <li>
+                                        <a  id="view_profile"   class=""  title="View and change your details and preferences" href="/secure/ViewProfile.jspa">Profile</a>
+                                    </li>
+                                                                                                                                <li>
+                                        <a  id="watch-dashboard"   class="icon-bug-watcher-bulk-trigger"  title="View and control your watches and notification preferences" href="/secure/bugwatcherWatchDashboard.jspa">Watches</a>
+                                    </li>
+                                                                                                                                <li>
+                                        <a  id="bw-notifications"   class=""  title="Open your notifications" href="/secure/bugwatcher/inappNotifications.jspa">Notifications</a>
+                                    </li>
+                                                                                    </ul>
+                                    </div>
+                            <div class="aui-dropdown2-section">
+                                            <strong>My Jira Home</strong>
+                                                                <ul id="set_my_jira_home" class="aui-list-truncate">
+                                                                                                                                                                                                                                                                    <li>
+                                        <a  id="set_my_jira_home_default"  class="aui-dropdown2-radio interactive checked    " title="Set my Jira Home to the Dashboard." href="/secure/UpdateMyJiraHome.jspa?target=com.atlassian.jira.jira-my-home-plugin%3Aset_my_jira_home_dashboard&atl_token=BG0G-V4MY-9805-LB37_66a352b2cd400c905274b9f374e7a24def3f8ff4_lin">Dashboard</a>
+                                    </li>
+                                                                                                                                <li>
+                                        <a  id="greenhopper-my-jira-home-set"  class="aui-dropdown2-radio interactive    " title="Set my Jira home page to Boards." href="/secure/UpdateMyJiraHome.jspa?target=com.pyxis.greenhopper.jira%3Agreenhopper-my-jira-home-set-51&atl_token=BG0G-V4MY-9805-LB37_66a352b2cd400c905274b9f374e7a24def3f8ff4_lin">Boards</a>
+                                    </li>
+                                                                                                                                <li>
+                                        <a  id="set_my_jira_home_issuenav"  class="aui-dropdown2-radio interactive    " title="Set my Jira Home to the Issue Navigator." href="/secure/UpdateMyJiraHome.jspa?target=com.atlassian.jira.jira-my-home-plugin%3Aset_my_jira_home_issue&atl_token=BG0G-V4MY-9805-LB37_66a352b2cd400c905274b9f374e7a24def3f8ff4_lin">Issue Navigator</a>
+                                    </li>
+                                                                                    </ul>
+                                    </div>
+                            <div class="aui-dropdown2-section">
+                                                        </div>
+                            <div class="aui-dropdown2-section">
+                                                                <ul id="system" class="aui-list-truncate">
+                                                                                                                            <li>
+                                        <a  id="log_out"   class=""  title="Log out and cancel any automatic login." href="/logout?atl_token=BG0G-V4MY-9805-LB37_66a352b2cd400c905274b9f374e7a24def3f8ff4_lin">Log Out</a>
+                                    </li>
+                                                                                    </ul>
+                                    </div>
+                    </div>
+    </li>
+</ul></div></div><!-- .aui-header-inner--></nav><!-- .aui-header -->
+    </header>
+    
+
+
+
+    <section id="content" role="main">
+<big-pipe data-id="sidebar-id" unresolved></big-pipe><div class="aui-sidebar  sidebar-placeholder" ><div class="aui-sidebar-wrapper"><div class="aui-sidebar-body"></div><div class="aui-sidebar-footer"><a class="aui-button aui-button-subtle aui-sidebar-toggle aui-sidebar-footer-tipsy" data-tooltip="Expand sidebar ( [ )" href="#"><span class="aui-icon aui-icon-small"></span></a></div></div></div><script id="projects-sidebar-events-attach">
+        (function () {
+            var scriptTag = document.getElementById('projects-sidebar-events-attach');
+            var sidebarElement = document.querySelector('big-pipe[data-id=sidebar-id]');
+            sidebarElement.addEventListener('error', function (e) {
+                require(['jira/projects/sidebar/sidebar-placeholder-initializer'], function (sidebarPlaceholderInitializer) {
+                    sidebarPlaceholderInitializer.onError(e);
+                });
+            });
+            sidebarElement.addEventListener('success', function (e) {
+                require(['jira/projects/sidebar/sidebar-placeholder-initializer'], function (sidebarPlaceholderInitializer) {
+                    sidebarPlaceholderInitializer.onSuccess(e);
+                });
+            });
+            scriptTag.parentElement.removeChild(scriptTag);
+        }())
+    </script><script id="projects-sidebar-init">
+    require(['jira/projects/sidebar/expansion-manager'], function(expansionManager) {
+        var scriptTag = document.getElementById('projects-sidebar-init');
+        var sidebar = AJS.sidebar('.aui-sidebar');
+        expansionManager(sidebar);
+        scriptTag.parentElement.removeChild(scriptTag);
+    });
+    </script><div class="aui-page-panel"><div class="aui-page-panel-inner"><div class="issue-navigator"><div class="content"><div class="issue-view"><div class="navigation-tools"><div class="pager-container"></div><div class="collapse-container"></div></div><div class="issue-container"><div id="issue-content" class="issue-edit-form"><header id="stalker" class="issue-header js-stalker"><div class="issue-header-content"><header class="aui-page-header"><div class="aui-page-header-inner"><div class="aui-page-header-image"><span id="11600" class="aui-avatar aui-avatar-large aui-avatar-project jira-system-avatar"><span class="aui-avatar-inner"><img id="project-avatar" alt="Uploaded image for project: &#39;OfflineDLP&#39;" src="https://jira.myshn.net/secure/projectavatar?pid=11600&amp;avatarId=10011" /></span></span></div><!-- .aui-page-header-image --><div class="aui-page-header-main"><ol class="aui-nav aui-nav-breadcrumbs"><li><a id="project-name-val" href="/browse/OF">OfflineDLP</a></li><li><a class="issue-link" data-issue-key="OF-39108" href="/browse/OF-39108" id="key-val" rel="612349">OF-39108</a></li></ol><h1 id="summary-val">CLONE - validate  the cspspec eventMapVariables when some activity performed at okta csp-</h1></div><!-- .aui-page-header-main --><div class="aui-page-header-actions"><div id="issue-header-pager"></div></div><!-- .aui-page-header-actions --></div><!-- .aui-page-header-inner --></header><!-- .aui-page-header --><div class="command-bar"><div class="ops-cont"><div class="ops-menus aui-toolbar2"><div class="aui-toolbar2-inner"><div class="aui-toolbar2-primary"><div id="opsbar-edit-issue_container" class="aui-buttons pluggable-ops"><a id="edit-issue"title="Edit this issue"class="aui-button toolbar-trigger issueaction-edit-issue" href="/secure/EditIssue!default.jspa?id=612349"><span class="icon aui-icon aui-icon-small aui-iconfont-edit"></span> <span class="trigger-label">Edit</span></a></div><div id="opsbar-comment-issue_container" class="aui-buttons pluggable-ops"><a id="comment-issue"title="Comment on this issue"class="aui-button toolbar-trigger issueaction-comment-issue add-issue-comment" href="/secure/AddComment!default.jspa?id=612349"><span class="icon aui-icon aui-icon-small aui-iconfont-comment icon-comment"></span> <span class="trigger-label">Comment</span></a></div><div id="opsbar-opsbar-operations" class="aui-buttons pluggable-ops"><a id="assign-issue"title="Assign this issue to someone"class="aui-button toolbar-trigger issueaction-assign-issue" href="/secure/AssignIssue!default.jspa?id=612349"><span class="trigger-label">Assign</span></a><a href="#"id="opsbar-operations_more"aria-owns="opsbar-operations_more_drop"aria-haspopup="true"class="aui-button  aui-dropdown2-trigger"><span class="dropdown-text">More</span></a></div><div id="opsbar-opsbar-transitions" class="aui-buttons pluggable-ops"><a id="action_id_4"class="aui-button toolbar-trigger issueaction-workflow-transition" href="/secure/WorkflowUIDispatcher.jspa?id=612349&amp;action=4&amp;atl_token=BG0G-V4MY-9805-LB37_66a352b2cd400c905274b9f374e7a24def3f8ff4_lin"><span class="trigger-label">Start Progress</span></a><a id="action_id_5"class="aui-button toolbar-trigger issueaction-workflow-transition" href="/secure/WorkflowUIDispatcher.jspa?id=612349&amp;action=5&amp;atl_token=BG0G-V4MY-9805-LB37_66a352b2cd400c905274b9f374e7a24def3f8ff4_lin"><span class="trigger-label">Resolve Issue</span></a><a id="action_id_2"class="aui-button toolbar-trigger issueaction-workflow-transition" href="/secure/WorkflowUIDispatcher.jspa?id=612349&amp;action=2&amp;atl_token=BG0G-V4MY-9805-LB37_66a352b2cd400c905274b9f374e7a24def3f8ff4_lin"><span class="trigger-label">Close Issue</span></a></div><div id="opsbar-opsbar-admin" class="aui-buttons pluggable-ops"></div><div id="opsbar-opsbar-zephyr-je-manage-plan-top" class="aui-buttons pluggable-ops"><a id="zfj-clone-issue"title="Clone this issue"class="aui-button toolbar-trigger issueaction-clone-issue" href="/secure/CloneIssueDetails!default.jspa?id=612349"><span class="trigger-label">Clone</span></a><a href="#"id="opsbar-zephyr-je-manage-plan-top_more"aria-owns="opsbar-zephyr-je-manage-plan-top_more_drop"aria-haspopup="true"class="aui-button  aui-dropdown2-trigger"><span class="dropdown-text">More Actions</span></a></div><div id="opsbar-opsbar-restore" class="aui-buttons pluggable-ops"></div><div id="opsbar-opsbar-zephyr-je-manage-top" class="aui-buttons pluggable-ops"><a id="zephyr-je-add-execute"title="Execute Test"class="aui-button toolbar-trigger viewissue-add-execute" href="/secure/AddExecute!AddExecute.jspa?id=612349"><span class="trigger-label">Execute</span></a><div class="aui-buttons pluggable-ops"></div></div></div><div class="aui-toolbar2-secondary"><div id="opsbar-jira.issue.tools" class="aui-buttons pluggable-ops"><a id="jira-share-trigger"title="Share this issue by emailing other users"class="aui-button toolbar-trigger viewissue-share" href="#"><span class="icon aui-icon aui-icon-small aui-iconfont-share"></span> <span class="trigger-label"></span></a><a href="#"id="viewissue-export"aria-owns="viewissue-export_drop"aria-haspopup="true"title="Export this issue in another format"class="aui-button  aui-dropdown2-trigger"><span class="icon icon-default aui-icon aui-icon-small aui-iconfont-export"></span> <span class="dropdown-text">Export</span></a></div></div></div></div><aui-dropdown-menu id="opsbar-operations_more_drop"><aui-section><aui-item-link href="/secure/AddNewReminderAction!default.jspa?issueId=612349"id="add-reminder-link"class="add-reminder-link"title="Add Reminder"><span class="trigger-label">Add Reminder</span></aui-item-link></aui-section><aui-section><aui-item-link href="/secure/CreateWorklog!default.jspa?id=612349"id="log-work"class="issueaction-log-work"title="Log work against this issue"><span class="trigger-label">Log work</span></aui-item-link></aui-section><aui-section><aui-item-link href="/secure/GHGoToBoard.jspa?issueId=612349"id="greenhopper-rapidboard-operation"class="issueaction-greenhopper-rapidboard-operation js-rapidboard-operation-issue"title="View this issue on an Agile board"><span class="trigger-label">Agile Board</span></aui-item-link><aui-item-link href="/secure/RankTop.jspa?issueId=612349"id="greenhopper-rank-top-operation"class="issueaction-greenhopper-rank-top-operation"><span class="trigger-label">Rank to Top</span></aui-item-link><aui-item-link href="/secure/RankBottom.jspa?issueId=612349"id="greenhopper-rank-bottom-operation"class="issueaction-greenhopper-rank-bottom-operation"><span class="trigger-label">Rank to Bottom</span></aui-item-link></aui-section><aui-section><aui-item-link href="/secure/AttachFile!default.jspa?id=612349"id="attach-file"class="unified-attach-file"title="Attach one or more files to this issue"><span class="trigger-label">Attach files</span></aui-item-link><aui-item-link href="/secure/ShowAttachScreenshotFormAction!default.jspa?id=612349"id="attach-screenshot-html5"class="issueaction-attach-screenshot-html5"><span class="trigger-label">Attach Screenshot</span></aui-item-link><aui-item-link href="/secure/insertDiagram.jspa?issueId=OF-39108"id="com.lucidchart.jira.plugins.lucid-jira:lucid-insert-menu-item"><span class="trigger-label">Insert Lucidchart Diagram</span></aui-item-link></aui-section><aui-section><aui-item-link href="/secure/ViewVoters!default.jspa?id=612349"id="view-voters"class="issueaction-view-voters"title="View voters for this issue"><span class="trigger-label">Voters</span></aui-item-link><aui-item-link href="/secure/VoteOrWatchIssue.jspa?atl_token=BG0G-V4MY-9805-LB37_66a352b2cd400c905274b9f374e7a24def3f8ff4_lin&amp;id=612349&amp;watch=unwatch"id="toggle-watch-issue"class="issueaction-unwatch-issue"title="Stop watching this issue"><span class="trigger-label">Stop watching</span></aui-item-link><aui-item-link href="/secure/ManageWatchers!default.jspa?id=612349"id="manage-watchers"class="issueaction-manage-watchers"title="Manage the watchers of this issue"><span class="trigger-label">Watchers</span></aui-item-link></aui-section><aui-section><aui-item-link href="/secure/CreateSubTaskIssue!default.jspa?parentIssueId=612349"id="create-subtask"class="issueaction-create-subtask"title="Create sub-task for this issue"><span class="trigger-label">Create sub-task</span></aui-item-link><aui-item-link href="/secure/ConvertIssue.jspa?id=612349"id="issue-to-subtask"class="issueaction-issue-to-subtask"title="Convert this issue to sub-task"><span class="trigger-label">Convert to sub-task</span></aui-item-link></aui-section><aui-section><aui-item-link href="/secure/MoveIssue!default.jspa?id=612349"id="move-issue"class="issueaction-move-issue"title="Move this issue to another project or issue type."><span class="trigger-label">Move</span></aui-item-link><aui-item-link href="/secure/LinkJiraIssue!default.jspa?id=612349"id="link-issue"class="issueaction-link-issue"title="Link this issue to another issue or item"><span class="trigger-label">Link</span></aui-item-link><aui-item-link href="/secure/CloneIssueDetails!default.jspa?id=612349"id="clone-issue"class="issueaction-clone-issue"title="Clone this issue"><span class="trigger-label">Clone</span></aui-item-link><aui-item-link href="/secure/ClonePlusDetails!default.jspa?id=612349"id="clone-issue-plus"class="issueaction-clone-issue"title="Clone issue to the same project after editing issue fields"><span class="trigger-label">Clone+</span></aui-item-link><aui-item-link href="/secure/ClonePlusStart!default.jspa?id=612349"id="clone-issue-plus-plus"class="issueaction-clone-issue"title="Clone issue after editing issue fields including project and issue type"><span class="trigger-label">Clone++</span></aui-item-link><aui-item-link href="/secure/EditLabels!default.jspa?id=612349"id="edit-labels"class="issueaction-edit-labels"title="Edit this issue&#39;s labels"><span class="trigger-label">Labels</span></aui-item-link><aui-item-link href="/secure/CloneAndMoveIssueDetails!default.jspa?id=612349"id="clone_and_move_issue"title="Make a copy of an issue into another project."><span class="trigger-label">Clone and move this issue</span></aui-item-link></aui-section><aui-section><aui-item-link href="/secure/DeleteIssue!default.jspa?id=612349"id="delete-issue"class="issueaction-delete-issue"title="Delete this issue"><span class="trigger-label">Delete</span></aui-item-link></aui-section></aui-dropdown-menu><aui-dropdown-menu id="opsbar-zephyr-je-manage-plan-top_more_drop"><aui-section><aui-item-link href="/secure/LinkJiraIssue!default.jspa?id=612349"id="zfj-link-issue"class="issueaction-link-issue"title="Link this issue to another issue or item"><span class="trigger-label">Link</span></aui-item-link></aui-section><aui-section><aui-item-link href="/secure/AddToCycle!AddToCycle.jspa?id=612349"id="viewissue-add-cycle"class="add-cycle-dialog"title="Add to Cycle"><span class="trigger-label">Add to Test Cycle/Folder</span></aui-item-link><aui-item-link href="/secure/CreateSubTaskIssue!default.jspa?parentIssueId=612349"id="zfj-create-subtask"class="issueaction-create-subtask"title="Create Sub-Task"><span class="trigger-label">Create sub-task</span></aui-item-link></aui-section><aui-section><aui-item-link href="/secure/AttachFile!default.jspa?id=612349"id="zfj-attach-file"class="issueaction-attach-file"title="Attach one or more files to this issue"><span class="trigger-label">Attach Files</span></aui-item-link><aui-item-link href="/secure/ShowAttachScreenshotFormAction!default.jspa?id=612349"id="zfj-attach-screenshot-html5"class="issueaction-attach-screenshot-html5"title="Attach a screenshot to this issue"><span class="trigger-label">Attach Screenshot</span></aui-item-link></aui-section><aui-section><aui-item-link href="/secure/DeleteIssue!default.jspa?id=612349"id="zfj-delete-defect"class="issueaction-delete-issue"title="Delete this issue"><span class="trigger-label">Delete</span></aui-item-link></aui-section><aui-section><aui-item-link href="/secure/CopyTestStep!default.jspa?id=612349"id="zfj-copy-test-steps"class="issueaction-copy-test-steps"title="Copy Zephyr Test Steps"><span class="trigger-label">Copy Zephyr Test Steps</span></aui-item-link></aui-section></aui-dropdown-menu><aui-dropdown-menu id="viewissue-export_drop"><ul><aui-item-link href="/si/jira.issueviews:issue-xml/OF-39108/OF-39108.xml"id="jira.issueviews:issue-xml"><span class="trigger-label">XML</span></aui-item-link><aui-item-link href="/si/jira.issueviews:issue-word/OF-39108/OF-39108.doc"id="jira.issueviews:issue-word"><span class="trigger-label">Word</span></aui-item-link><aui-item-link href="/si/jira.issueviews:issue-html/OF-39108/OF-39108.html"id="jira.issueviews:issue-html"><span class="trigger-label">Printable</span></aui-item-link></ul></aui-dropdown-menu></div></div></div></header><div class="issue-body-content"><div class="aui-group issue-body"><div class="aui-item issue-main-column"><div id=details-module class="module toggle-wrap"><div id="details-module_heading" class="mod-header"><ul class="ops"></ul><a href="#" class="aui-button toggle-title"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"><g fill="none" fill-rule="evenodd"><path d="M3.29175 4.793c-.389.392-.389 1.027 0 1.419l2.939 2.965c.218.215.5.322.779.322s.556-.107.769-.322l2.93-2.955c.388-.392.388-1.027 0-1.419-.389-.392-1.018-.392-1.406 0l-2.298 2.317-2.307-2.327c-.194-.195-.449-.293-.703-.293-.255 0-.51.098-.703.293z" fill="#344563"/></g></svg></a><h4 class="toggle-title">Details</h4></div><div class="mod-content">
+
+
+
+
+
+
+
+
+
+
+<ul id="issuedetails" class="property-list two-cols">
+                
+<li class="item">
+    <div class="wrap">
+        <strong class="name">Type:</strong>
+        <span id="type-val" class="value">
+                        <img  alt="" height="16" src="/download/resources/com.thed.zephyr.je/images/icons/ico_zephyr_issuetype.png" title="Test - This Issue Type is used to create Zephyr Test within Jira." width="16" /> Test
+        </span>
+    </div>
+</li>                    <li class="item item-right">
+    <div class="wrap">
+        <strong class="name">Status:</strong>
+            <span id="status-val" class="value">
+                                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-blue-gray jira-issue-status-lozenge-new jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;Open&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;jira-issue-status-tooltip-desc&quot;&gt;The issue is open and ready for the assignee to start work on it.&lt;/span&gt;">Open</span>            </span>
+                    <span class="status-view">(<a href="/browse/OF-39108?workflowName=Eng+Workflow%2Bcr+%28Resolved+change%29&amp;stepId=1" class="issueaction-viewworkflow jira-workflow-designer-link" title="Eng Workflow+cr (Resolved change): OF-39108" data-track-click="issue.viewworkflow">View Workflow</a>)</span>
+            </div>
+</li>
+    
+                        <li class="item new">
+    <div class="wrap">
+        <strong class="name">Priority:</strong>
+        <span id="priority-val" class="value">
+                                        <img  alt="" height="16" src="/images/icons/priorities/major.svg" title="Major - Major loss of function." width="16" />  Major                     </span>
+    </div>
+</li>                                
+<li class="item item-right">
+    <div class="wrap">
+        <strong class="name">Resolution:</strong>
+        <span id="resolution-val" class="value unresolved" >
+                            Unresolved
+                    </span>
+    </div>
+</li>                                
+
+<li class="item">
+    <div class="wrap">
+        <strong class="name">Affects Version/s:</strong>
+        <span id="versions-val" class="value">
+                                        <span class="shorten" id="versions-field">
+                                            <span title="6.9.1 ">6.9.1</span>                                    </span>
+                    </span>
+    </div>
+</li>                                
+<li class="item item-right">
+    <div class="wrap">
+        <strong class="name">Fix Version/s:</strong>
+        <span id="fixfor-val" class="value">
+                                        <span class="shorten" id="fixVersions-field">
+                                            <a href="/issues/?jql=project+%3D+%22OF%22+AND+fixVersion+%3D+NA" title="NA ">NA</a>                                    </span>
+                    </span>
+    </div>
+</li>                                
+
+<li class="item">
+    <div class="wrap">
+        <strong class="name">Component/s:</strong>
+        <span id="components-val" class="value">
+                                        <span class="shorten" id="components-field">
+                                            <a href="/issues/?jql=project+%3D+%22OF%22+AND+component+%3D+%22Provider+API%22" title="Provider API ">Provider API</a>                                    </span>
+                    </span>
+    </div>
+</li>                                    
+
+
+<li class="item full-width">
+    <div class="wrap" id="wrap-labels">
+        <strong class="name">Labels:</strong>
+                <div class="labels-wrap value">
+            <span class="labels" id="labels-612349-value">None</span>
+            </div>
+    </div>
+</li>            </ul>
+
+<div id="customfieldmodule">
+    <div class="aui-tabs horizontal-tabs" id="customfield-tabs">
+                    <div id="customfield-panel-1" class=" active-pane">
+                        <ul class="property-list">
+                                                    <li id="rowForcustomfield_11600" class="item">
+        <div class="wrap">
+            <strong title="Active" class="name">Active:</strong>
+            <div id="customfield_11600-val" class="value type-select" data-fieldtype="select" data-fieldtypecompletekey="com.atlassian.jira.plugin.system.customfieldtypes:select">
+                                        Yes
+
+                            </div>
+        </div>
+    </li>
+                                                                    <li id="rowForcustomfield_10428" class="item">
+        <div class="wrap">
+            <strong title="Category" class="name">Category:</strong>
+            <div id="customfield_10428-val" class="value type-multiselect" data-fieldtype="multiselect" data-fieldtypecompletekey="com.atlassian.jira.plugin.system.customfieldtypes:multiselect">
+                                    
+
+
+    <div class="shorten" id="customfield_10428-field">
+        							<span>Regression</span>			            </div>
+
+                            </div>
+        </div>
+    </li>
+                                                                    <li id="rowForcustomfield_12001" class="item">
+        <div class="wrap">
+            <strong title="Features (OF)" class="name">Features (OF):</strong>
+            <div id="customfield_12001-val" class="value type-multiselect" data-fieldtype="multiselect" data-fieldtypecompletekey="com.atlassian.jira.plugin.system.customfieldtypes:multiselect">
+                                    
+
+
+    <div class="shorten" id="customfield_12001-field">
+        							<span>policy</span>			            </div>
+
+                            </div>
+        </div>
+    </li>
+                                                                    <li id="rowForcustomfield_11302" class="item">
+        <div class="wrap">
+            <strong title="Automated" class="name">Automated:</strong>
+            <div id="customfield_11302-val" class="value type-radiobuttons" data-fieldtype="radiobuttons" data-fieldtypecompletekey="com.atlassian.jira.plugin.system.customfieldtypes:radiobuttons">
+                                        No
+
+                            </div>
+        </div>
+    </li>
+                                                                    <li id="rowForcustomfield_11301" class="item">
+        <div class="wrap">
+            <strong title="Reviewed" class="name">Reviewed:</strong>
+            <div id="customfield_11301-val" class="value type-select" data-fieldtype="select" data-fieldtypecompletekey="com.atlassian.jira.plugin.system.customfieldtypes:select">
+                                        No
+
+                            </div>
+        </div>
+    </li>
+                                                                    <li id="rowForcustomfield_11300" class="item">
+        <div class="wrap">
+            <strong title="CCB Approval 1" class="name">CCB Approval 1:</strong>
+            <div id="customfield_11300-val" class="value type-select" data-fieldtype="select" data-fieldtypecompletekey="com.atlassian.jira.plugin.system.customfieldtypes:select">
+                                        Open
+
+                            </div>
+        </div>
+    </li>
+                                                                    <li id="rowForcustomfield_11700" class="item">
+        <div class="wrap">
+            <strong title="Service" class="name">Service:</strong>
+            <div id="customfield_11700-val" class="value type-multiselect" data-fieldtype="multiselect" data-fieldtypecompletekey="com.atlassian.jira.plugin.system.customfieldtypes:multiselect">
+                                    
+
+
+    <div class="shorten" id="customfield_11700-field">
+        							<span>Okta</span>			            </div>
+
+                            </div>
+        </div>
+    </li>
+                                                                    <li id="rowForcustomfield_12212" class="item">
+        <div class="wrap">
+            <strong title="Response Types (OF)" class="name">Response Types (OF):</strong>
+            <div id="customfield_12212-val" class="value type-multiselect" data-fieldtype="multiselect" data-fieldtypecompletekey="com.atlassian.jira.plugin.system.customfieldtypes:multiselect">
+                                    
+
+
+    <div class="shorten" id="customfield_12212-field">
+        							<span>incident</span>			            </div>
+
+                            </div>
+        </div>
+    </li>
+                                                                    <li id="rowForcustomfield_12800" class="item">
+        <div class="wrap">
+            <strong title="Severity" class="name">Severity:</strong>
+            <div id="customfield_12800-val" class="value type-multiselect" data-fieldtype="multiselect" data-fieldtypecompletekey="com.atlassian.jira.plugin.system.customfieldtypes:multiselect">
+                                    
+
+
+    <div class="shorten" id="customfield_12800-field">
+        							<span>S1</span>			            </div>
+
+                            </div>
+        </div>
+    </li>
+                                        </ul>
+        </div>
+        </div></div>
+</div></div><div id=descriptionmodule class="module toggle-wrap"><div id="descriptionmodule_heading" class="mod-header"><ul class="ops"></ul><a href="#" class="aui-button toggle-title"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"><g fill="none" fill-rule="evenodd"><path d="M3.29175 4.793c-.389.392-.389 1.027 0 1.419l2.939 2.965c.218.215.5.322.779.322s.556-.107.769-.322l2.93-2.955c.388-.392.388-1.027 0-1.419-.389-.392-1.018-.392-1.406 0l-2.298 2.317-2.307-2.327c-.194-.195-.449-.293-.703-.293-.255 0-.51.098-.703.293z" fill="#344563"/></g></svg></a><h4 class="toggle-title">Description</h4></div><div class="mod-content"><div id="description-val" class="field-ignore-highlight">
+    <div class="user-content-block">
+                    <p>CLONE - validate the cspspec eventMapVariables when some activity performed at okta csp-</p>
+            </div>
+</div>
+</div></div><div id=view_issue_steps_section class="module toggle-wrap"><div id="view_issue_steps_section_heading" class="mod-header"><ul class="ops"></ul><a href="#" class="aui-button toggle-title"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"><g fill="none" fill-rule="evenodd"><path d="M3.29175 4.793c-.389.392-.389 1.027 0 1.419l2.939 2.965c.218.215.5.322.779.322s.556-.107.769-.322l2.93-2.955c.388-.392.388-1.027 0-1.419-.389-.392-1.018-.392-1.406 0l-2.298 2.317-2.307-2.327c-.194-.195-.449-.293-.703-.293-.255 0-.51.098-.703.293z" fill="#344563"/></g></svg></a><h4 class="toggle-title">Test Details</h4></div><div class="mod-content">
+
+
+
+<input type="hidden" id="zephyr-issue-teststeps-placeholder" />
+<div id="project-config-panel-versions" class="project-config-panel">
+    <div class="zephyr-aui-message-bar" id="zephyr-aui-message-bar"></div>
+    <div class='gridComponentTesting'>
+        <a href="" id="zephyr-file-dialog" style="display:none"></a>
+        <input type="text" id="date-picker" />
+    </div>
+	
+        <div id="currentIndex" style="display: none">
+            {$currentIndex-1}
+        </div>
+
+        <form id="project-config-versions-add" class="aui" action="#">
+            <div id="stepsGridComponentContainer" class="gridComponent"></div>
+        </form>
+        <div class="issueViewPopover">
+            <div class="gridComponentOuterContainer">
+                <div class="closePopup">
+                    <span class="aui-icon aui-icon-small aui-iconfont-remove-label close-icon" id="close-test-details-popup"></span>
+                </div>
+                <div class="issueViewPopoverWrapper">
+                    <div id="issuePopoverGridWrapper" class="gridComponent" class="gridComponent">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="project-config-error-console">
+        </div>
+	</div></div></div><div id=view_issue_execution_section class="module toggle-wrap"><div id="view_issue_execution_section_heading" class="mod-header"><ul class="ops"></ul><a href="#" class="aui-button toggle-title"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"><g fill="none" fill-rule="evenodd"><path d="M3.29175 4.793c-.389.392-.389 1.027 0 1.419l2.939 2.965c.218.215.5.322.779.322s.556-.107.769-.322l2.93-2.955c.388-.392.388-1.027 0-1.419-.389-.392-1.018-.392-1.406 0l-2.298 2.317-2.307-2.327c-.194-.195-.449-.293-.703-.293-.255 0-.51.098-.703.293z" fill="#344563"/></g></svg></a><h4 class="toggle-title">Test Executions</h4></div><div class="mod-content">
+    <input type="hidden" id="zephyr-issue-testexecution-placeholder" />
+    <div id="zfj-permission-message-bar-issue-executions-detail"></div>
+		<div id="testExecutionGridContainer" class="testExecutionGridWrapper">
+		</div>
+		<div id="noExecutions"></div>
+	 <!-- <table id="ztestSchedulesTable" class="aui KeyTable ztable" width="50%">
+       	<thead>
+            <tr>
+                <th>Version</th>
+    			<th>Test Cycle</th>
+                <th>Folder</th>
+                <th style='width: 150px;'>Status</th>
+                <th>Defects</th>
+    			<th>Executed By</th>
+                <th>Executed On</th>
+                <th class="executionColumnCustomisation"><a id="executionColumnChooser-inlineDialog" aria-controls="columnCustomisation-inlineDialog-1"><div class="contextMenuIcon aui-icon aui-icon-small aui-iconfont-handle-horizontal"></div></a></th>
+            </tr>
+        </thead>
+    	<tbody id="zephyr-je-execution-body">
+
+    	</tbody>
+	</table> -->
+</div></div><div id=dnd-metadata class="module toggle-wrap"><div id="dnd-metadata_heading" class="mod-header"><ul class="ops"></ul><a href="#" class="aui-button toggle-title"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"><g fill="none" fill-rule="evenodd"><path d="M3.29175 4.793c-.389.392-.389 1.027 0 1.419l2.939 2.965c.218.215.5.322.779.322s.556-.107.769-.322l2.93-2.955c.388-.392.388-1.027 0-1.419-.389-.392-1.018-.392-1.406 0l-2.298 2.317-2.307-2.327c-.194-.195-.449-.293-.703-.293-.255 0-.51.098-.703.293z" fill="#344563"/></g></svg></a><h4 class="toggle-title">Attachments</h4></div><div class="mod-content"><div id="dnd-metadata-webpanel" data-can-attach="true" data-project-type="software" data-upload-limit="52428800" data-thumbnails-allowed="true"></div></div></div><div id=attachmentmodule class="module toggle-wrap"><div id="attachmentmodule_heading" class="mod-header"><ul class="ops"><li><a id="add-attachments-link"href="/secure/AttachFile!default.jspa?id=612349"class="issueaction-attach-file aui-icon aui-icon-small aui-iconfont-add issueaction-aui-icon"title="Attach one or more files to this issue"><span>Attach one or more files to this issue</span></a></li><li class="drop"><div class="aui-dd-parent"><div class="aui-button aui-button-compact aui-button-subtle js-default-dropdown" title="Options"><span class="aui-icon aui-icon-small aui-iconfont-more">Options</span></div><div class="aui-dropdown-content aui-list"><ul id="attachment-sorting-options"class="aui-list-section aui-first"><li class="aui-list-item"><a id="attachment-sort-key-name"href="/browse/OF-39108?attachmentSortBy=fileName#attachmentmodule"class="aui-list-checked aui-checked aui-list-item-link"title="viewissue.subtasks.tab.show.all.name"><span>Sort By Name</span></a></li><li class="aui-list-item"><a id="attachment-sort-key-date"href="/browse/OF-39108?attachmentSortBy=dateTime#attachmentmodule"class="aui-list-checked aui-list-item-link"title="Sort By Date"><span>Sort By Date</span></a></li></ul><ul id="attachment-sorting-order-options"class="aui-list-section"><li class="aui-list-item"><a id="attachment-sort-direction-asc"href="/browse/OF-39108?attachmentOrder=asc#attachmentmodule"class="aui-list-checked aui-checked aui-list-item-link"title="Ascending"><span>Ascending</span></a></li><li class="aui-list-item"><a id="attachment-sort-direction-desc"href="/browse/OF-39108?attachmentOrder=desc#attachmentmodule"class="aui-list-checked aui-list-item-link"title="Descending"><span>Descending</span></a></li></ul><ul id="attachment-view-mode-options"class="aui-list-section"><li class="aui-list-item"><a id="attachment-view-mode-gallery"href="/browse/OF-39108?attachmentViewMode=gallery#attachmentmodule"class="aui-list-checked aui-checked aui-list-item-link"title="Thumbnails"><span>Thumbnails</span></a></li><li class="aui-list-item"><a id="attachment-view-mode-list"href="/browse/OF-39108?attachmentViewMode=list#attachmentmodule"class="aui-list-checked aui-list-item-link"title="List"><span>List</span></a></li></ul><ul id="attachment-manage-options"class="aui-list-section aui-last"><li class="aui-list-item"><a id="aszip"href="/secure/attachmentzip/612349.zip"class="aui-list-checked aui-list-item-link"title="Download all attachments as a ZIP file"><span>Download All</span></a></li><li class="aui-list-item"><a id="manage-attachment-link"href="/secure/ManageAttachments.jspa?id=612349"class="aui-list-checked aui-list-item-link"title="Manage and delete attachments"><span>Manage Attachments</span></a></li></ul></div></div></li></ul><a href="#" class="aui-button toggle-title"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"><g fill="none" fill-rule="evenodd"><path d="M3.29175 4.793c-.389.392-.389 1.027 0 1.419l2.939 2.965c.218.215.5.322.779.322s.556-.107.769-.322l2.93-2.955c.388-.392.388-1.027 0-1.419-.389-.392-1.018-.392-1.406 0l-2.298 2.317-2.307-2.327c-.194-.195-.449-.293-.703-.293-.255 0-.51.098-.703.293z" fill="#344563"/></g></svg></a><h4 class="toggle-title">Attachments</h4></div><div class="mod-content"><ol id="attachment_thumbnails" class="item-attachments" data-sort-key="fileName" data-sort-order="asc"></ol></div></div><div id=linkingmodule class="module toggle-wrap"><div id="linkingmodule_heading" class="mod-header"><ul class="ops"><li><a id="add-links-link"href="/secure/LinkJiraIssue!default.jspa?id=612349"class="issueaction-link-issue aui-icon aui-icon-small aui-iconfont-add issueaction-aui-icon"title="Add Link"><span>Add Link</span></a></li></ul><a href="#" class="aui-button toggle-title"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"><g fill="none" fill-rule="evenodd"><path d="M3.29175 4.793c-.389.392-.389 1.027 0 1.419l2.939 2.965c.218.215.5.322.779.322s.556-.107.769-.322l2.93-2.955c.388-.392.388-1.027 0-1.419-.389-.392-1.018-.392-1.406 0l-2.298 2.317-2.307-2.327c-.194-.195-.449-.293-.703-.293-.255 0-.51.098-.703.293z" fill="#344563"/></g></svg></a><h4 class="toggle-title">Issue Links</h4></div><div class="mod-content">
+
+
+
+
+
+
+<div class="links-container" data-default-link-icon="/images/icons/generic_link_16.png">
+                <dl class="links-list ">
+            <dt title="clones">clones</dt>
+                            <dd id="internal-612348_10001"
+                                                                            >
+                    <div class="link-content">
+                                                    
+
+
+
+<p>
+            <img src="/download/resources/com.thed.zephyr.je/images/icons/ico_zephyr_issuetype.png" width="16" height="16" title="Test - This Issue Type is used to create Zephyr Test within Jira." alt="Test - This Issue Type is used to create Zephyr Test within Jira." />
+        <span title="OF-39107: validate  the cspspec eventMapVariables when some activity performed at workday csp-">
+        <a href="/browse/OF-39107" data-issue-key="OF-39107" class="issue-link link-title">OF-39107</a>
+        <span class="link-summary">validate  the cspspec eventMapVariables when some activity performed at workday csp-</span>
+    </span>
+</p>
+<ul class="link-snapshot">
+        <li class="priority">        <img src="/images/icons/priorities/major.svg" width="16" height="16" title="Major - Major loss of function." alt="Major - Major loss of function." />
+    </li>
+                <li class="status">
+                        <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-blue-gray jira-issue-status-lozenge-new aui-lozenge-subtle jira-issue-status-lozenge-max-width-short" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;Open&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;jira-issue-status-tooltip-desc&quot;&gt;The issue is open and ready for the assignee to start work on it.&lt;/span&gt;">Open</span>
+                    </li>
+    </ul>
+                                            </div>
+                                            <div class="delete-link" id="delete_internal-612348_10001">
+                            <a title="Delete this link" id="delete-link_internal-612348_10001" href="/secure/DeleteLink.jspa?id=612349&amp;destId=612348&amp;linkType=10001&atl_token=BG0G-V4MY-9805-LB37_66a352b2cd400c905274b9f374e7a24def3f8ff4_lin">
+                                                                    <span class="icon-default aui-icon aui-icon-small aui-iconfont-cross">Delete this link</span>
+                                                            </a>
+                        </div>
+                                    </dd>
+                    </dl>
+            <dl class="links-list ">
+            <dt title="is cloned by">is cloned by</dt>
+                            <dd id="internal-612350_10001"
+                                                                            >
+                    <div class="link-content">
+                                                    
+
+
+
+<p>
+            <img src="/download/resources/com.thed.zephyr.je/images/icons/ico_zephyr_issuetype.png" width="16" height="16" title="Test - This Issue Type is used to create Zephyr Test within Jira." alt="Test - This Issue Type is used to create Zephyr Test within Jira." />
+        <span title="OF-39109:  validate  the cspspec eventMapVariables when some activity performed at jira csp-">
+        <a href="/browse/OF-39109" data-issue-key="OF-39109" class="issue-link link-title">OF-39109</a>
+        <span class="link-summary"> validate  the cspspec eventMapVariables when some activity performed at jira csp-</span>
+    </span>
+</p>
+<ul class="link-snapshot">
+        <li class="priority">        <img src="/images/icons/priorities/major.svg" width="16" height="16" title="Major - Major loss of function." alt="Major - Major loss of function." />
+    </li>
+                <li class="status">
+                        <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-blue-gray jira-issue-status-lozenge-new aui-lozenge-subtle jira-issue-status-lozenge-max-width-short" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;Open&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;jira-issue-status-tooltip-desc&quot;&gt;The issue is open and ready for the assignee to start work on it.&lt;/span&gt;">Open</span>
+                    </li>
+    </ul>
+                                            </div>
+                                            <div class="delete-link" id="delete_internal-612350_10001">
+                            <a title="Delete this link" id="delete-link_internal-612350_10001" href="/secure/DeleteLink.jspa?id=612349&amp;sourceId=612350&amp;linkType=10001&atl_token=BG0G-V4MY-9805-LB37_66a352b2cd400c905274b9f374e7a24def3f8ff4_lin">
+                                                                    <span class="icon-default aui-icon aui-icon-small aui-iconfont-cross">Delete this link</span>
+                                                            </a>
+                        </div>
+                                    </dd>
+                            <dd id="internal-612351_10001"
+                                                                            >
+                    <div class="link-content">
+                                                    
+
+
+
+<p>
+            <img src="/download/resources/com.thed.zephyr.je/images/icons/ico_zephyr_issuetype.png" width="16" height="16" title="Test - This Issue Type is used to create Zephyr Test within Jira." alt="Test - This Issue Type is used to create Zephyr Test within Jira." />
+        <span title="OF-39110: validate  the cspspec eventMapVariables when some activity performed at okta csp-">
+        <a href="/browse/OF-39110" data-issue-key="OF-39110" class="issue-link link-title">OF-39110</a>
+        <span class="link-summary">validate  the cspspec eventMapVariables when some activity performed at okta csp-</span>
+    </span>
+</p>
+<ul class="link-snapshot">
+        <li class="priority">        <img src="/images/icons/priorities/major.svg" width="16" height="16" title="Major - Major loss of function." alt="Major - Major loss of function." />
+    </li>
+                <li class="status">
+                        <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-blue-gray jira-issue-status-lozenge-new aui-lozenge-subtle jira-issue-status-lozenge-max-width-short" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;Open&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;jira-issue-status-tooltip-desc&quot;&gt;The issue is open and ready for the assignee to start work on it.&lt;/span&gt;">Open</span>
+                    </li>
+    </ul>
+                                            </div>
+                                            <div class="delete-link" id="delete_internal-612351_10001">
+                            <a title="Delete this link" id="delete-link_internal-612351_10001" href="/secure/DeleteLink.jspa?id=612349&amp;sourceId=612351&amp;linkType=10001&atl_token=BG0G-V4MY-9805-LB37_66a352b2cd400c905274b9f374e7a24def3f8ff4_lin">
+                                                                    <span class="icon-default aui-icon aui-icon-small aui-iconfont-cross">Delete this link</span>
+                                                            </a>
+                        </div>
+                                    </dd>
+                    </dl>
+        </div>
+</div></div><div id=activitymodule class="module toggle-wrap"><div id="activitymodule_heading" class="mod-header"><ul class="ops"></ul><a href="#" class="aui-button toggle-title"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"><g fill="none" fill-rule="evenodd"><path d="M3.29175 4.793c-.389.392-.389 1.027 0 1.419l2.939 2.965c.218.215.5.322.779.322s.556-.107.769-.322l2.93-2.955c.388-.392.388-1.027 0-1.419-.389-.392-1.018-.392-1.406 0l-2.298 2.317-2.307-2.327c-.194-.195-.449-.293-.703-.293-.255 0-.51.098-.703.293z" fill="#344563"/></g></svg></a><h4 class="toggle-title">Activity</h4></div><div class="mod-content">
+<big-pipe data-id="activity-panel-pipe-id" style="height: 70px">
+    <div></div>
+</big-pipe>
+</div></div><div id="addcomment" class="module">
+    <div id="addcomment" class="module">
+    <div class="mod-content">
+        <form action="/secure/AddComment.jspa?atl_token=BG0G-V4MY-9805-LB37_66a352b2cd400c905274b9f374e7a24def3f8ff4_lin" class="aui top-label ajs-dirty-warning-exempt" id="issue-comment-add" method="post">
+            <div class="form-body">
+                <div class="hidden">
+                    <input name="atl_token" type="hidden" value="BG0G-V4MY-9805-LB37_66a352b2cd400c905274b9f374e7a24def3f8ff4_lin">
+                    <input name="id" type="hidden" value="612349">
+                </div>
+
+                                
+
+
+    
+            
+                
+    
+
+        
+    
+                            <div class="field-group aui-field-wikiedit comment-input" >
+                                                                        <label for="comment">Comment</label>
+                
+    
+    
+<div class="jira-wikifield" field-id="comment" renderer-type="atlassian-wiki-renderer" issue-key="OF-39108">
+    <div class="wiki-edit">
+        <div id="comment-wiki-edit" class="wiki-edit-content">
+                                             <textarea  class="textarea long-field wiki-textfield mentionable" cols="60" id="comment"  name="comment" rows="10" wrap="virtual" data-projectkey="OF" data-issuekey="OF-39108"></textarea>
+                <div class="rte-container"><rich-editor contenteditable="true" data-issue-key="OF-39108" data-content-present="true" tabindex="-1"></rich-editor></div>
+                        <div class="content-inner">
+            </div>
+        </div>
+    </div>
+    <div class="field-tools">
+        <dl id="wiki-prefs" class="wiki-js-prefs" style="display:none">
+            <dt>trigger</dt>
+            <dd>comment-preview_link</dd>
+            <dt>fieldId</dt>
+            <dd>comment</dd>
+            <dt>fieldName</dt>
+            <dd>Comment</dd>
+            <dt>rendererType</dt>
+            <dd>atlassian-wiki-renderer</dd>
+            <dt>issueKey</dt>
+            <dd>OF-39108</dd>
+        </dl>
+        <button class="jira-icon-button fullscreen wiki-preview" id="comment-preview_link" type="button">
+            <span class="aui-icon wiki-renderer-icon">Preview comment</span>
+        </button>
+        <a class="help-lnk" id="viewHelp" href="/secure/WikiRendererHelpAction.jspa?section=texteffects" title="Get local help about wiki markup help" data-helplink="local"><span class="aui-icon aui-icon-small aui-iconfont-help"></span></a>
+    </div>
+</div>
+<div class="save-options wiki-button-bar">
+                                                                <div class="security-level">
+        <fieldset class="hidden parameters">
+            <input type="hidden" title="securityLevelViewableByAll" value="Viewable by All Users">
+            <input type="hidden" title="securityLevelViewableRestrictedTo" value="Restricted to <span class='redText'>{0}</span>">
+        </fieldset>
+        <a class="drop" href="#">
+            <span class="security-level-drop-icon aui-icon aui-icon-small  aui-iconfont-unlocked">
+                $i18n.getText('security.level.explanation', $currentSelection)
+            </span>
+            <span class="icon drop-menu"></span>
+        </a>
+        <select name="commentLevel" id="commentLevel" data-enable-default="true" data-apply-default="true">
+            <option value="">All Users</option>
+                            <optgroup label="Project Roles">
+                                            <option value="role:10001" >Developers</option>
+                                             <option value="role:10000" >Users</option>
+                                     </optgroup>
+                                </select>
+        <span class="current-level">Viewable by All Users</span>
+        <span class="default-comment-level" data-project-id="11600"></span>
+    </div>
+    <span class="security-level-inline-error"></span>
+<input accesskey="s" class="aui-button aui-button-primary" id="issue-comment-add-submit" name="Add" title="Press Ctrl+Alt+s to submit this form" type="submit" value="Add"><a accesskey="`" class="aui-button aui-button-link cancel" href="#" id="issue-comment-add-cancel" title="Press Ctrl+Alt+` to cancel">Cancel</a></div>
+
+                                    </div>
+    
+            </div>
+                    </form>
+    </div>
+    <div class="mod-footer">
+        <ul class="ops">
+            <li>
+                <a href="/secure/AddComment!default.jspa?id=612349" id="footer-comment-button" name="add-comment" class="aui-button">
+                    <span class="aui-icon aui-icon-small aui-iconfont-comment icon-comment"></span>
+                    <span>Comment</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+</div>
+</div><div id="viewissuesidebar" class="aui-item issue-side-column"><div id=peoplemodule class="module toggle-wrap"><div id="peoplemodule_heading" class="mod-header"><ul class="ops"></ul><a href="#" class="aui-button toggle-title"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"><g fill="none" fill-rule="evenodd"><path d="M3.29175 4.793c-.389.392-.389 1.027 0 1.419l2.939 2.965c.218.215.5.322.779.322s.556-.107.769-.322l2.93-2.955c.388-.392.388-1.027 0-1.419-.389-.392-1.018-.392-1.406 0l-2.298 2.317-2.307-2.327c-.194-.195-.449-.293-.703-.293-.255 0-.51.098-.703.293z" fill="#344563"/></g></svg></a><h4 class="toggle-title">People</h4></div><div class="mod-content">
+
+
+
+
+
+<ul class="item-details" id="peopledetails">
+    <li class="people-details">
+                                
+<dl>
+    <dt>Assignee:</dt>
+    <dd>
+        <span id="assignee-val" class="view-issue-field">
+
+            <span class="user-hover" id="issue_summary_assignee_stirumal" rel="stirumal">
+            
+
+    <span class="aui-avatar aui-avatar-small"><span class="aui-avatar-inner"><img src="https://jira.myshn.net/secure/useravatar?size=small&amp;avatarId=11820" alt="stirumal" /></span></span>
+            Sudhamini Tirumalagari
+        </span>
+    </span>
+            </dd>
+</dl>                                            
+<dl>
+    <dt>Reporter:</dt>
+    <dd>
+        <span id="reporter-val" class="view-issue-field">
+
+            <span class="user-hover" id="issue_summary_reporter_stirumal" rel="stirumal">
+            
+
+    <span class="aui-avatar aui-avatar-small"><span class="aui-avatar-inner"><img src="https://jira.myshn.net/secure/useravatar?size=small&amp;avatarId=11820" alt="stirumal" /></span></span>
+            Sudhamini Tirumalagari
+        </span>
+    </span>
+    </dd>
+</dl>                        </li>
+</ul>
+    <ul class="item-details">
+        <li>
+                            <dl>
+        <dt>Votes:</dt>
+        <dd>
+                                <a id="view-voter-list" href="/secure/ViewVoters!default.jspa?id=612349" title="View Voters">
+                        <aui-badge id="vote-data" class="">0</aui-badge>
+                        </a>
+            
+                            </dd>
+    </dl>
+                                <dl>
+        <dt>Watchers:</dt>
+        <dd>
+                                
+                                
+                            <a id="view-watcher-list" href="/secure/ManageWatchers!default.jspa?id=612349" title="View Watchers"
+                   aria-controls="inline-dialog-watchers">
+                            <aui-badge id="watcher-data" class="jira-badge__primary">1</aui-badge>
+                            </a>
+                <aui-inline-dialog id="inline-dialog-watchers" alignment="right middle" persistent="true"></aui-inline-dialog>
+            
+                                                <a id="watching-toggle" class="watch-state-on" href="/secure/VoteOrWatchIssue.jspa?atl_token=BG0G-V4MY-9805-LB37_66a352b2cd400c905274b9f374e7a24def3f8ff4_lin&id=612349&watch=unwatch" rel="612349">Stop watching this issue</a> <span class="icon"></span>
+                                    </dd>
+    </dl>
+            </li>
+    </ul>
+</div></div><div id=datesmodule class="module toggle-wrap"><div id="datesmodule_heading" class="mod-header"><ul class="ops"></ul><a href="#" class="aui-button toggle-title"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"><g fill="none" fill-rule="evenodd"><path d="M3.29175 4.793c-.389.392-.389 1.027 0 1.419l2.939 2.965c.218.215.5.322.779.322s.556-.107.769-.322l2.93-2.955c.388-.392.388-1.027 0-1.419-.389-.392-1.018-.392-1.406 0l-2.298 2.317-2.307-2.327c-.194-.195-.449-.293-.703-.293-.255 0-.51.098-.703.293z" fill="#344563"/></g></svg></a><h4 class="toggle-title">Dates</h4></div><div class="mod-content">
+<ul class="item-details">
+    <li>
+            <dl class="dates">
+            <dt>Created:</dt>
+            <dd class="date user-tz"  title="07/Aug/25 12:18 PM" >
+                <span data-name="Created" id="created-val"  data-fieldtype="datetime"  >
+                                                                                                        <time class="livestamp" datetime="2025-08-07T12:18:47-0700">07/Aug/25 12:18 PM</time>                                                                                         </span>
+            </dd>
+        </dl>
+            <dl class="dates">
+            <dt>Updated:</dt>
+            <dd class="date user-tz"  title="07/Aug/25 12:20 PM" >
+                <span data-name="Updated" id="updated-val"  data-fieldtype="datetime"  >
+                                                                                                        <time class="livestamp" datetime="2025-08-07T12:20:25-0700">07/Aug/25 12:20 PM</time>                                                                                         </span>
+            </dd>
+        </dl>
+        </li>
+</ul>
+</div></div><div id=reminders-web-panel class="module toggle-wrap"><div id="reminders-web-panel_heading" class="mod-header"><ul class="ops"></ul><a href="#" class="aui-button toggle-title"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"><g fill="none" fill-rule="evenodd"><path d="M3.29175 4.793c-.389.392-.389 1.027 0 1.419l2.939 2.965c.218.215.5.322.779.322s.556-.107.769-.322l2.93-2.955c.388-.392.388-1.027 0-1.419-.389-.392-1.018-.392-1.406 0l-2.298 2.317-2.307-2.327c-.194-.195-.449-.293-.703-.293-.255 0-.51.098-.703.293z" fill="#344563"/></g></svg></a><h4 class="toggle-title">Issue Reminders</h4></div><div class="mod-content">
+
+
+
+
+
+
+
+<input type="hidden" id="javascript-date-time-format" value="%e/%b/%y %I:%M %p">
+
+<section id="rem-delete-confirmation-dialog" class="aui-dialog2 aui-dialog2-small aui-layer" role="dialog" aria-hidden="true">
+    <div class="aui-dialog2-header">
+        <h2>Delete Reminder</h2>
+    </div>
+    <div class="aui-dialog2-content">
+        <p>Please Confirm that you wish to delete this reminder. Notification will not be send if you delete the reminder.</p>
+    </div>
+    <footer class="aui-dialog2-footer">
+        <div class="aui-dialog2-footer-actions">
+            <button id="rem-delete-confirm" type="button" class="aui-button">Delete</button>
+            <button id="rem-delete-cancel" class="aui-button aui-button-link">Cancel</button>
+        </div>
+    </footer>
+</section>
+
+<div id="reminders-for-jira">
+    <div id="add-reminders-for-jira">
+        <div class="reminder-actions aui-buttons">
+                            <button id="add-reminder-for-jira-link" class="aui-button aui-button-split-main">Add New Reminder</button>
+                        <button class="aui-button aui-dropdown2-trigger aui-button-split-more" aria-haspopup="true" aria-owns="split-reminder-menu-dropdown">Split more</button>
+            <div id="split-reminder-menu-dropdown" class="aui-dropdown2 aui-style-default"
+                 role="menu" aria-hidden="true">
+                <ul class="aui-list-truncate">
+                                            <li><a id="com-deniz-reminders-tomorrow" href="#">Tomorrow</a></li>
+                        <li><a id="com-deniz-reminders-in-a-week" href="">Next Week</a></li>
+                        <li><a id="com-deniz-reminders-show-my-reminders" href="#">Issues with My Reminders</a></li>
+                                                                                             <li><a id="com-deniz-reminders-for-me" href="#">Issues with Reminders for Me</a></li>
+                                                <li><a id="com-deniz-reminders-my-reminders" href="#">My Reminders</a></li>
+                                    </ul>
+            </div>
+        </div>
+    </div>
+    <a href="/secure/AddNewReminderAction!default.jspa" style="display: none;" id="add-reminder-link-web-panel">Add Reminder</a>
+    <a href="/secure/AddNewReminderAction!default.jspa" style="display: none;" id="edit-reminder-link-web-panel">Edit Reminder</a>
+    <table id="reminders-for-jira-table">
+            </table>
+</div></div></div><div id=viewissue-devstatus-panel class="module toggle-wrap"><div id="viewissue-devstatus-panel_heading" class="mod-header"><ul class="ops"></ul><a href="#" class="aui-button toggle-title"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"><g fill="none" fill-rule="evenodd"><path d="M3.29175 4.793c-.389.392-.389 1.027 0 1.419l2.939 2.965c.218.215.5.322.779.322s.556-.107.769-.322l2.93-2.955c.388-.392.388-1.027 0-1.419-.389-.392-1.018-.392-1.406 0l-2.298 2.317-2.307-2.327c-.194-.195-.449-.293-.703-.293-.255 0-.51.098-.703.293z" fill="#344563"/></g></svg></a><h4 class="toggle-title">Development</h4></div><div class="mod-content"><ul id="devstatus-container" class="item-details dev-status-container" data-labs-json="{&quot;allowed&quot;:false,&quot;optedIn&quot;:true,&quot;optedInByAdmin&quot;:true,&quot;dismissed&quot;:false,&quot;id&quot;:1}" data-show-contact-admin-form="false" data-issue-type="Test" data-issue-status="Open" data-is-assignable="true" data-is-assignee="true" data-ait-help-url-json="{&quot;url&quot;:&quot;https://docs.atlassian.com/jira/jadm-docs-082/Advanced+workflow+configuration&quot;,&quot;alt&quot;:&quot;Get help!&quot;,&quot;description&quot;:null,&quot;key&quot;:&quot;workflow.auto.triggers&quot;,&quot;local&quot;:false,&quot;title&quot;:&quot;Advanced workflow configuration&quot;}" data-issue-id="612349" data-issue-key="OF-39108" ><div class="hidden dev-summary json-blob" data-json="{&quot;cachedValue&quot;:{&quot;errors&quot;:[],&quot;configErrors&quot;:[],&quot;summary&quot;:{&quot;pullrequest&quot;:{&quot;overall&quot;:{&quot;count&quot;:0,&quot;lastUpdated&quot;:null,&quot;stateCount&quot;:0,&quot;state&quot;:&quot;OPEN&quot;,&quot;details&quot;:{&quot;openCount&quot;:0,&quot;mergedCount&quot;:0,&quot;declinedCount&quot;:0,&quot;total&quot;:0},&quot;open&quot;:true},&quot;byInstanceType&quot;:{}},&quot;build&quot;:{&quot;overall&quot;:{&quot;count&quot;:0,&quot;lastUpdated&quot;:null,&quot;failedBuildCount&quot;:0,&quot;successfulBuildCount&quot;:0,&quot;unknownBuildCount&quot;:0},&quot;byInstanceType&quot;:{}},&quot;review&quot;:{&quot;overall&quot;:{&quot;count&quot;:0,&quot;lastUpdated&quot;:null,&quot;stateCount&quot;:0,&quot;state&quot;:null,&quot;dueDate&quot;:null,&quot;overDue&quot;:false,&quot;completed&quot;:false},&quot;byInstanceType&quot;:{}},&quot;deployment-environment&quot;:{&quot;overall&quot;:{&quot;count&quot;:0,&quot;lastUpdated&quot;:null,&quot;topEnvironments&quot;:[],&quot;showProjects&quot;:false,&quot;successfulCount&quot;:0},&quot;byInstanceType&quot;:{}},&quot;repository&quot;:{&quot;overall&quot;:{&quot;count&quot;:0,&quot;lastUpdated&quot;:null},&quot;byInstanceType&quot;:{}},&quot;branch&quot;:{&quot;overall&quot;:{&quot;count&quot;:0,&quot;lastUpdated&quot;:null},&quot;byInstanceType&quot;:{}}}},&quot;isStale&quot;:true}"></div><ul class="item-details status-panels devstatus-entry"><li class="status-panel hidden" id="branch-status-panel" data-module="BranchModule"></li><li class="status-panel hidden" id="commit-status-panel" data-module="CommitModule"></li><li class="status-panel hidden" id="pullrequest-status-panel" data-module="PullRequestModule"></li><li class="status-panel hidden" id="review-status-panel" data-module="ReviewModule"></li><li class="status-panel hidden" id="build-status-panel" data-module="BuildModule" data-issue-type="Test" data-issue-status="Open" data-is-assignee="true"></li><li class="status-panel deployment-summary hidden" id="deployment-status-panel" data-module="DeploymentModule" data-issue-type="Test" data-issue-status="Open" data-is-assignee="true"></li></ul><li class="call-to-actions devstatus-entry hidden"></li><li class="message-panel hidden"></li><li class="labs-on-off-container hidden"></li></ul></div></div><div id=greenhopper-agile-issue-web-panel class="module toggle-wrap"><div id="greenhopper-agile-issue-web-panel_heading" class="mod-header"><ul class="ops"></ul><a href="#" class="aui-button toggle-title"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"><g fill="none" fill-rule="evenodd"><path d="M3.29175 4.793c-.389.392-.389 1.027 0 1.419l2.939 2.965c.218.215.5.322.779.322s.556-.107.769-.322l2.93-2.955c.388-.392.388-1.027 0-1.419-.389-.392-1.018-.392-1.406 0l-2.298 2.317-2.307-2.327c-.194-.195-.449-.293-.703-.293-.255 0-.51.098-.703.293z" fill="#344563"/></g></svg></a><h4 class="toggle-title">Agile</h4></div><div class="mod-content">
+
+<ul class="item-details ghx-separated">
+    <li>
+        <a class="issueaction-greenhopper-rapidboard-operation js-rapidboard-operation-issue"
+           href="/secure/GHGoToBoard.jspa?issueId=612349"
+           title="View this issue on an Agile board">
+            View on Board
+        </a>
+    </li>
+</ul>
+</div></div><div id=bamboo-deployment-projects-right class="module toggle-wrap"><div id="bamboo-deployment-projects-right_heading" class="mod-header"><ul class="ops"></ul><a href="#" class="aui-button toggle-title"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"><g fill="none" fill-rule="evenodd"><path d="M3.29175 4.793c-.389.392-.389 1.027 0 1.419l2.939 2.965c.218.215.5.322.779.322s.556-.107.769-.322l2.93-2.955c.388-.392.388-1.027 0-1.419-.389-.392-1.018-.392-1.406 0l-2.298 2.317-2.307-2.327c-.194-.195-.449-.293-.703-.293-.255 0-.51.098-.703.293z" fill="#344563"/></g></svg></a><h4 class="toggle-title">Issue deployment</h4></div><div class="mod-content"><div
+    class="jbp-deployments-panel"
+    data-fetch-url="/rest/bamboo/latest/deploy/OF/OF-39108"
+    data-oauth-dance-return-url="/browse/OF-39108"
+    data-issue-id="612349"
+></div>
+</div></div><div id=story-mapping-issue-panel class="module toggle-wrap"><div id="story-mapping-issue-panel_heading" class="mod-header"><ul class="ops"></ul><a href="#" class="aui-button toggle-title"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"><g fill="none" fill-rule="evenodd"><path d="M3.29175 4.793c-.389.392-.389 1.027 0 1.419l2.939 2.965c.218.215.5.322.779.322s.556-.107.769-.322l2.93-2.955c.388-.392.388-1.027 0-1.419-.389-.392-1.018-.392-1.406 0l-2.298 2.317-2.307-2.327c-.194-.195-.449-.293-.703-.293-.255 0-.51.098-.703.293z" fill="#344563"/></g></svg></a><h4 class="toggle-title">Story Mapping Board</h4></div><div class="mod-content">
+
+<div id="smb-root"></div>
+<script>
+   jiraContext={
+    issueKey:"OF-39108",
+    projectKey:"OF",
+    projectId:"11600"
+   }
+
+</script>
+</div></div></div></div></div></div></div></div></div></div></div><!-- .aui-page-panel-inner --></div><!-- .aui-page-panel --><div class="issue-navigator-init"></div>
+    </section>
+    <footer id="footer" role="contentinfo">
+        
+
+<section class="footer-body">
+<ul class="atlassian-footer">
+    <li>
+        Atlassian Jira <a class="seo-link" rel="nofollow" href="https://www.atlassian.com/software/jira">Project Management Software</a>
+                                            <span id="footer-build-information">(v8.2.3#802003-<span title='5986657bbb45d2d15e7e179e83f09254924a6523' data-commit-id='5986657bbb45d2d15e7e179e83f09254924a6523}'>sha1:5986657</span>)</span>
+    </li>
+    <li>
+        <a id="about-link" rel="nofollow" href="/secure/AboutPage.jspa/secure/AboutPage.jspa">About Jira</a>
+    </li>
+    <li>
+        <a id="footer-report-problem-link" rel="nofollow" href="/secure/CreateIssue!default.jspa">Report a problem</a>
+    </li>
+</ul>
+    <ul class="atlassian-footer">
+        <li class="licensemessage">
+            
+        </li>
+    </ul>
+
+    <div id="footer-logo"><a rel="nofollow" href="http://www.atlassian.com/">Atlassian</a></div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+<fieldset class="hidden parameters">
+    <input type="hidden" title="loggedInUser" value="stirumal">
+    <input type="hidden" title="ajaxTimeout" value="The call to the Jira server did not complete within the timeout period.  We are unsure of the result of this operation.">
+    <input type="hidden" title="JiraVersion" value="8.2.3" />
+    <input type="hidden" title="ajaxUnauthorised" value="You are not authorised to perform this operation. Please log in.">
+    <input type="hidden" title="baseURL" value="https://jira.myshn.net" />
+    <input type="hidden" title="ajaxCommsError" value="The Jira server could not be contacted. This may be a temporary glitch or the server may be down. ">
+    <input type="hidden" title="ajaxServerError" value="The Jira server was contacted but has returned an error response. We are unsure of the result of this operation.">
+    <input type="hidden" title="ajaxErrorCloseDialog" value="Close this dialog and press refresh in your browser">
+    <input type="hidden" title="ajaxErrorDialogHeading" value="Communications Breakdown">
+
+    <input type="hidden" title="dirtyMessage" value="You have entered new data on this page. If you navigate away from this page without first saving your data, the changes will be lost.">
+    <input type="hidden" title="dirtyDialogMessage" value="You have entered new data in this dialog. If you navigate away from this dialog without first saving your data, the changes will be lost. Click cancel to return to the dialog.">
+    <input type="hidden" title="keyType" value="Type">
+    <input type="hidden" title="keyThen" value="then">
+    <input type="hidden" title="dblClickToExpand" value="Double click to expand">
+    <input type="hidden" title="actions" value="Actions">
+    <input type="hidden" title="removeItem" value="Remove">
+    <input type="hidden" title="workflow" value="Workflow">
+    <input type="hidden" title="labelNew" value="New Label">
+    <input type="hidden" title="issueActionsHint" value="Begin typing for available operations or press down to see all">
+    <input type="hidden" title="closelink" value="Close">
+    <input type="hidden" title="dotOperations" value="Operations">
+    <input type="hidden" title="dotLoading" value="Loading...">
+    <input type="hidden" title="frotherSuggestions" value="Suggestions">
+    <input type="hidden" title="frotherNomatches" value="No Matches">
+    <input type="hidden" title="multiselectVersionsError" value="{0} is not a valid version.">
+    <input type="hidden" title="multiselectComponentsError" value="{0} is not a valid component.">
+    <input type="hidden" title="multiselectGenericError" value="The value {0} is invalid.">
+</fieldset>
+
+    </footer>
+</div>
+
+
+<script type="text/javascript" src="/s/d41d8cd98f00b204e9800998ecf8427e-CDN/-1t8urs/802003/4a32d4cfcad1aecd53f58c8f8bf1a5e3/1.0/_/download/batch/jira.webresources:bigpipe-js/jira.webresources:bigpipe-js.js" data-wrm-key="jira.webresources:bigpipe-js" data-wrm-batch-type="resource" data-initially-rendered></script>
+<script>
+window.WRM=window.WRM||{};window.WRM._unparsedData=window.WRM._unparsedData||{};window.WRM._unparsedErrors=window.WRM._unparsedErrors||{};
+WRM._unparsedData["activity-panel-pipe-id"]="\"\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n    \u003cdiv class=\\\"tabwrap aui-tabs horizontal-tabs aui-tabs-disabled\\\"\u003e\\n\\n        \u003cul id=\\\"issue-tabs\\\" class=\\\"tabs-menu\\\"\u003e\\n                                \\n            \u003cli class=\\\"menu-item \\\"\\n                id=\\\"all-tabpanel\\\"\\n                data-id=\\\"all-tabpanel\\\"\\n                data-key=\\\"com.atlassian.jira.plugin.system.issuetabpanels:all-tabpanel\\\"\\n                data-label=\\\"All\\\"\\n                data-href=\\\"\\/browse\\/OF-39108?page=com.atlassian.jira.plugin.system.issuetabpanels:all-tabpanel\\\"\\n            \u003e\\n                                    \u003ca id=\\\"all-tabpanel\\\" href=\\\"\\/browse\\/OF-39108?page=com.atlassian.jira.plugin.system.issuetabpanels:all-tabpanel\\\" class=\\\"ajax-activity-content\\\"\u003eAll\u003c\\/a\u003e\\n                            \u003c\\/li\u003e\\n                                \\n            \u003cli class=\\\"menu-item  active-tab active \\\"\\n                id=\\\"comment-tabpanel\\\"\\n                data-id=\\\"comment-tabpanel\\\"\\n                data-key=\\\"com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel\\\"\\n                data-label=\\\"Comments\\\"\\n                data-href=\\\"\\/browse\\/OF-39108?page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel\\\"\\n            \u003e\\n                                    \u003ca tabindex=\\\"0\\\"\u003eComments\u003c\\/a\u003e\\n                            \u003c\\/li\u003e\\n                                \\n            \u003cli class=\\\"menu-item \\\"\\n                id=\\\"worklog-tabpanel\\\"\\n                data-id=\\\"worklog-tabpanel\\\"\\n                data-key=\\\"com.atlassian.jira.plugin.system.issuetabpanels:worklog-tabpanel\\\"\\n                data-label=\\\"Work Log\\\"\\n                data-href=\\\"\\/browse\\/OF-39108?page=com.atlassian.jira.plugin.system.issuetabpanels:worklog-tabpanel\\\"\\n            \u003e\\n                                    \u003ca id=\\\"worklog-tabpanel\\\" href=\\\"\\/browse\\/OF-39108?page=com.atlassian.jira.plugin.system.issuetabpanels:worklog-tabpanel\\\" class=\\\"ajax-activity-content\\\"\u003eWork Log\u003c\\/a\u003e\\n                            \u003c\\/li\u003e\\n                                \\n            \u003cli class=\\\"menu-item \\\"\\n                id=\\\"changehistory-tabpanel\\\"\\n                data-id=\\\"changehistory-tabpanel\\\"\\n                data-key=\\\"com.atlassian.jira.plugin.system.issuetabpanels:changehistory-tabpanel\\\"\\n                data-label=\\\"History\\\"\\n                data-href=\\\"\\/browse\\/OF-39108?page=com.atlassian.jira.plugin.system.issuetabpanels:changehistory-tabpanel\\\"\\n            \u003e\\n                                    \u003ca id=\\\"changehistory-tabpanel\\\" href=\\\"\\/browse\\/OF-39108?page=com.atlassian.jira.plugin.system.issuetabpanels:changehistory-tabpanel\\\" class=\\\"ajax-activity-content\\\"\u003eHistory\u003c\\/a\u003e\\n                            \u003c\\/li\u003e\\n                                \\n            \u003cli class=\\\"menu-item \\\"\\n                id=\\\"activity-stream-issue-tab\\\"\\n                data-id=\\\"activity-stream-issue-tab\\\"\\n                data-key=\\\"com.atlassian.streams.streams-jira-plugin:activity-stream-issue-tab\\\"\\n                data-label=\\\"Activity\\\"\\n                data-href=\\\"\\/browse\\/OF-39108?page=com.atlassian.streams.streams-jira-plugin:activity-stream-issue-tab\\\"\\n            \u003e\\n                                    \u003ca id=\\\"activity-stream-issue-tab\\\" href=\\\"\\/browse\\/OF-39108?page=com.atlassian.streams.streams-jira-plugin:activity-stream-issue-tab\\\" class=\\\"ajax-activity-content\\\"\u003eActivity\u003c\\/a\u003e\\n                            \u003c\\/li\u003e\\n                                \\n            \u003cli class=\\\"menu-item \\\"\\n                id=\\\"transitions-summary-tabpanel\\\"\\n                data-id=\\\"transitions-summary-tabpanel\\\"\\n                data-key=\\\"com.googlecode.jira-suite-utilities:transitions-summary-tabpanel\\\"\\n                data-label=\\\"Transitions\\\"\\n                data-href=\\\"\\/browse\\/OF-39108?page=com.googlecode.jira-suite-utilities:transitions-summary-tabpanel\\\"\\n            \u003e\\n                                    \u003ca id=\\\"transitions-summary-tabpanel\\\" href=\\\"\\/browse\\/OF-39108?page=com.googlecode.jira-suite-utilities:transitions-summary-tabpanel\\\" class=\\\"ajax-activity-content\\\"\u003eTransitions\u003c\\/a\u003e\\n                            \u003c\\/li\u003e\\n                                \\n            \u003cli class=\\\"menu-item \\\"\\n                id=\\\"je-audit-tabpanel\\\"\\n                data-id=\\\"je-audit-tabpanel\\\"\\n                data-key=\\\"com.thed.zephyr.je:je-audit-tabpanel\\\"\\n                data-label=\\\"Test Details History\\\"\\n                data-href=\\\"\\/browse\\/OF-39108?page=com.thed.zephyr.je:je-audit-tabpanel\\\"\\n            \u003e\\n                                    \u003ca id=\\\"je-audit-tabpanel\\\" href=\\\"\\/browse\\/OF-39108?page=com.thed.zephyr.je:je-audit-tabpanel\\\" class=\\\"ajax-activity-content\\\"\u003eTest Details History\u003c\\/a\u003e\\n                            \u003c\\/li\u003e\\n                                \\n            \u003cli class=\\\"menu-item \\\"\\n                id=\\\"fisheye-issuepanel\\\"\\n                data-id=\\\"fisheye-issuepanel\\\"\\n                data-key=\\\"com.atlassian.jirafisheyeplugin:fisheye-issuepanel\\\"\\n                data-label=\\\"Source\\\"\\n                data-href=\\\"\\/browse\\/OF-39108?page=com.atlassian.jirafisheyeplugin:fisheye-issuepanel\\\"\\n            \u003e\\n                                    \u003ca id=\\\"fisheye-issuepanel\\\" href=\\\"\\/browse\\/OF-39108?page=com.atlassian.jirafisheyeplugin:fisheye-issuepanel\\\" class=\\\"ajax-activity-content\\\"\u003eSource\u003c\\/a\u003e\\n                            \u003c\\/li\u003e\\n                                \\n            \u003cli class=\\\"menu-item \\\"\\n                id=\\\"crucible-issuepanel\\\"\\n                data-id=\\\"crucible-issuepanel\\\"\\n                data-key=\\\"com.atlassian.jirafisheyeplugin:crucible-issuepanel\\\"\\n                data-label=\\\"Reviews\\\"\\n                data-href=\\\"\\/browse\\/OF-39108?page=com.atlassian.jirafisheyeplugin:crucible-issuepanel\\\"\\n            \u003e\\n                                    \u003ca id=\\\"crucible-issuepanel\\\" href=\\\"\\/browse\\/OF-39108?page=com.atlassian.jirafisheyeplugin:crucible-issuepanel\\\" class=\\\"ajax-activity-content\\\"\u003eReviews\u003c\\/a\u003e\\n                            \u003c\\/li\u003e\\n                \u003c\\/ul\u003e\\n\\n                        \u003cdiv class=\\\"tabs-pane active-pane\\\"\u003e\u003c\\/div\u003e\\n    \u003c\\/div\u003e\\n    \u003cdiv class=\\\"issuePanelWrapper\\\"\u003e\\n        \u003cdiv class=\\\"issuePanelProgress\\\"\u003e\u003c\\/div\u003e\\n        \u003cdiv class=\\\"issuePanelContainer\\\" id=\\\"issue_actions_container\\\"\u003e\\n                                                \u003cdiv class=\\\"message-container\\\"\u003e\\n    There are no comments yet on this issue.\\n\u003c\\/div\u003e                                     \u003c\\/div\u003e\\n    \u003c\\/div\u003e\\n\"";
+if(window.WRM._dataArrived)window.WRM._dataArrived();</script>
+<script>
+window.WRM=window.WRM||{};window.WRM._unparsedData=window.WRM._unparsedData||{};window.WRM._unparsedErrors=window.WRM._unparsedErrors||{};
+WRM._unparsedData["scope-filter-data"]="{\"selectedScope\":{\"link\":\"/secure/RapidBoard.jspa?rapidView\\u003d28\\u0026projectKey\\u003dOF\\u0026useStoredSettings\\u003dtrue\",\"label\":\"Provider API\",\"styleClass\":\"\"},\"scopes\":[],\"createScopeActions\":[{\"link\":\"\",\"label\":\"Create board\",\"styleClass\":\"scope-filter-create-board js-create-board\"}]}";
+WRM._unparsedData["sidebar-collapsed-by-default"]="true";
+WRM._unparsedData["com.atlassian.jira.projects.shortcuts:can-manage"]="false";
+WRM._unparsedData["com.atlassian.jira.projects.shortcuts:with-icons"]="false";
+WRM._unparsedData["com.atlassian.jira.projects.shortcuts:shortcuts"]="[]";
+WRM._unparsedData["com.atlassian.jira.projects.shortcuts:project-id"]="11600";
+WRM._unparsedData["sidebar-id"]="\"\u003cdiv class=\\\"aui-sidebar  projects-sidebar sidebar-pending\\\" \u003e\u003cdiv class=\\\"aui-sidebar-wrapper\\\"\u003e\u003cdiv class=\\\"aui-sidebar-body\\\"\u003e\u003cheader class=\\\"aui-page-header\\\"\u003e\u003cdiv class=\\\"aui-page-header-inner\\\"\u003e\u003cdiv class=\\\"aui-page-header-image\\\"\u003e\u003ca href=\\\"\\/projects\\/OF\\/summary\\\" title=\\\"OfflineDLP\\\" class=\\\"jira-project-avatar\\\"\u003e\u003cspan class=\\\"aui-avatar aui-avatar-large aui-avatar-project\\\"\u003e\u003cspan class=\\\"aui-avatar-inner\\\"\u003e\u003cimg src=\\\"\\/secure\\/projectavatar?pid=11600&amp;avatarId=10011\\\" alt=\\\"OfflineDLP\\\" \\/\u003e\u003c\\/span\u003e\u003c\\/span\u003e\u003cimg src=\\\"data:image\\/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxIiBpZD0iV2Fyc3R3YV8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3MiA3MiIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgNzIgNzIiPjxzdHlsZT4uc3Qye2ZpbGw6I2ZmZn08L3N0eWxlPjxnIGlkPSJHcm91cCI+PGNpcmNsZSBpZD0iT3ZhbCIgY3g9IjM2IiBjeT0iMzYiIHI9IjM2IiBmaWxsPSIjZmY5OTFmIi8+PC9nPjxnIGlkPSJQYWdlLTEiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDE2IDIxKSI+PGcgaWQ9Ikdyb3VwLTMiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgLjYxNjcpIj48ZGVmcz48ZmlsdGVyIGlkPSJBZG9iZV9PcGFjaXR5TWFza0ZpbHRlciIgZmlsdGVyVW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4PSIwIiB5PSIuNCIgd2lkdGg9IjE2LjkiIGhlaWdodD0iMjcuNiI+PGZlQ29sb3JNYXRyaXggdmFsdWVzPSIxIDAgMCAwIDAgMCAxIDAgMCAwIDAgMCAxIDAgMCAwIDAgMCAxIDAiLz48L2ZpbHRlcj48L2RlZnM+PG1hc2sgbWFza1VuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeD0iMCIgeT0iLjQiIHdpZHRoPSIxNi45IiBoZWlnaHQ9IjI3LjYiIGlkPSJtYXNrLTJfMV8iPjxnIGZpbHRlcj0idXJsKCNBZG9iZV9PcGFjaXR5TWFza0ZpbHRlcikiPjxwYXRoIGlkPSJwYXRoLTFfMV8iIGNsYXNzPSJzdDIiIGQ9Ik0wIC40aDE2LjlWMjhIMHoiLz48L2c+PC9tYXNrPjxwYXRoIGlkPSJGaWxsLTEiIGQ9Ik0xMy43IDI4Yy0uOCAwLTEuNi0uMy0yLjMtLjlMMS4xIDE2LjhjLTEuNS0xLjUtMS41LTMuOSAwLTUuNGwxMC0xMGMxLjItMS4yIDMuMy0xLjIgNC41IDAgMS4yIDEuMyAxLjIgMy4zIDAgNC41bC04LjIgOC4yIDguNSA4LjVjMS4yIDEuMiAxLjIgMy4zIDAgNC41LS42LjYtMS40LjktMi4yLjkiIG1hc2s9InVybCgjbWFzay0yXzFfKSIgZmlsbD0iI2ZmZiIvPjwvZz48ZyBpZD0iR3JvdXAtNiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjMgLjYxNjcpIj48ZGVmcz48ZmlsdGVyIGlkPSJBZG9iZV9PcGFjaXR5TWFza0ZpbHRlcl8xXyIgZmlsdGVyVW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4PSIuNCIgeT0iLjQiIHdpZHRoPSIxNi45IiBoZWlnaHQ9IjI3LjYiPjxmZUNvbG9yTWF0cml4IHZhbHVlcz0iMSAwIDAgMCAwIDAgMSAwIDAgMCAwIDAgMSAwIDAgMCAwIDAgMSAwIi8+PC9maWx0ZXI+PC9kZWZzPjxtYXNrIG1hc2tVbml0cz0idXNlclNwYWNlT25Vc2UiIHg9Ii40IiB5PSIuNCIgd2lkdGg9IjE2LjkiIGhlaWdodD0iMjcuNiIgaWQ9Im1hc2stNF8xXyI+PGcgZmlsdGVyPSJ1cmwoI0Fkb2JlX09wYWNpdHlNYXNrRmlsdGVyXzFfKSI+PHBhdGggaWQ9InBhdGgtM18xXyIgY2xhc3M9InN0MiIgZD0iTS40LjRoMTYuOVYyOEguNHoiLz48L2c+PC9tYXNrPjxwYXRoIGlkPSJGaWxsLTQiIGQ9Ik0xMS43IDE1Ljl6TTMuNiAyOGMtLjggMC0xLjYtLjMtMi4zLS45LTEuMi0xLjItMS4yLTMuMyAwLTQuNWw4LjUtOC41LTguMi04LjNDLjQgNC42LjQgMi41IDEuNiAxLjMgMi44LjEgNC45LjEgNi4xIDEuM2wxMCAxMGMuNy43IDEuMSAxLjcgMS4xIDIuNyAwIDEtLjQgMi0xLjEgMi43TDUuOSAyNy4xYy0uNi42LTEuNS45LTIuMy45eiIgbWFzaz0idXJsKCNtYXNrLTRfMV8pIiBmaWxsPSIjZmZmIi8+PC9nPjwvZz48L3N2Zz4=\\\" alt=\\\"Icon indicating the project type\\\" class=\\\"jira-project-avatar-icon\\\" \\/\u003e\u003c\\/a\u003e\u003c\\/div\u003e\u003c!-- .aui-page-header-image --\u003e\u003cdiv class=\\\"aui-page-header-main\\\"\u003e\u003ch1\u003e\u003cdiv class=\\\"aui-group aui-group-split\\\"\u003e\u003cdiv class=\\\"aui-item project-title\\\"\u003e\u003ca href=\\\"\\/projects\\/OF\\/summary\\\" title=\\\"OfflineDLP\\\"\u003eOfflineDLP\u003c\\/a\u003e\u003c\\/div\u003e\u003c\\/div\u003e\u003c\\/h1\u003e\u003c\\/div\u003e\u003c!-- .aui-page-header-main --\u003e\u003cdiv class=\\\"aui-page-header-main scopeFilterContainer\\\"\u003e\u003cdiv class=\\\"scope-filter aui-scope-filter-spectrum\\\"\u003e\u003ca href=\\\"\\/secure\\/RapidBoard.jspa?rapidView=28&amp;projectKey=OF&amp;useStoredSettings=true\\\" aria-owns=\\\"sidebar-scope-filter-list\\\" aria-haspopup=\\\"true\\\" class=\\\"aui-button aui-button-subtle aui-style-default aui-dropdown2-trigger scope-filter-trigger\\\" data-scope-filter-id=\\\"scope-filter-board-item-28\\\"\u003e\u003cspan class=\\\"scope-filter-icon aui-icon\\\"\u003e\u003c\\/span\u003eProvider API\u003c\\/a\u003e\u003cdiv id=\\\"sidebar-scope-filter-list\\\" class=\\\"aui-dropdown2 aui-style-default scope-filter-list\\\"\u003e\u003cdiv class=\\\"aui-dropdown2-section\\\"\u003e\u003cul class=\\\"aui-list-truncate\\\"\u003e\u003cli\u003e\u003ca href=\\\"\\\"class=\\\"scope-filter-create-board js-create-board\\\"\u003eCreate board\u003c\\/a\u003e\u003c\\/li\u003e\u003c\\/ul\u003e\u003c\\/div\u003e\u003c\\/div\u003e\u003c\\/div\u003e\u003c\\/div\u003e\u003c!-- .aui-page-header-main --\u003e\u003c\\/div\u003e\u003c!-- .aui-page-header-inner --\u003e\u003c\\/header\u003e\u003c!-- .aui-page-header --\u003e\u003cnav class=\\\"aui-navgroup aui-navgroup-vertical\\\"\u003e\u003cdiv class=\\\"aui-navgroup-inner sidebar-content-container jira-navigation\\\"\u003e\u003cdiv class=\\\"aui-sidebar-group aui-sidebar-group-tier-one\\\" data-id=\\\"sidebar-navigation-panel\\\"\u003e\u003cul class=\\\"aui-nav\\\"\u003e\u003cli  \u003e\u003ca class=\\\"aui-nav-item \\\" href=\\\"\\/secure\\/RapidBoard.jspa?projectKey=OF&amp;rapidView=28&amp;view=planning\\\" data-link-id=\\\"com.pyxis.greenhopper.jira:project-sidebar-plan-scrum\\\" \u003e\u003cspan class=\\\"aui-icon aui-icon-large agile-icon-plan aui-iconfont-backlog\\\"\u003e\u003c\\/span\u003e\u003cspan class=\\\"aui-nav-item-label\\\" title=\\\"Backlog\\\"\u003eBacklog\u003c\\/span\u003e\u003c\\/a\u003e\u003c\\/li\u003e\u003cli  \u003e\u003ca class=\\\"aui-nav-item \\\" href=\\\"\\/secure\\/RapidBoard.jspa?projectKey=OF&amp;rapidView=28\\\" data-link-id=\\\"com.pyxis.greenhopper.jira:project-sidebar-work-scrum\\\" \u003e\u003cspan class=\\\"aui-icon aui-icon-large agile-icon-work aui-iconfont-board\\\"\u003e\u003c\\/span\u003e\u003cspan class=\\\"aui-nav-item-label\\\" title=\\\"Active sprints\\\"\u003eActive sprints\u003c\\/span\u003e\u003c\\/a\u003e\u003c\\/li\u003e\u003cli  \u003e\u003ca class=\\\"aui-nav-item \\\" href=\\\"\\/projects\\/OF?selectedItem=com.atlassian.jira.jira-projects-plugin:release-page\\\" data-link-id=\\\"com.atlassian.jira.jira-projects-plugin:release-page\\\" \u003e\u003cspan class=\\\"aui-icon aui-icon-large icon-sidebar-release aui-iconfont-ship\\\"\u003e\u003c\\/span\u003e\u003cspan class=\\\"aui-nav-item-label\\\" title=\\\"Releases\\\"\u003eReleases\u003c\\/span\u003e\u003c\\/a\u003e\u003c\\/li\u003e\u003cli  \u003e\u003ca class=\\\"aui-nav-item \\\" href=\\\"\\/projects\\/OF?selectedItem=com.atlassian.jira.jira-projects-plugin:report-page\\\" data-link-id=\\\"com.atlassian.jira.jira-projects-plugin:report-page\\\" \u003e\u003cspan class=\\\"aui-icon aui-icon-large agile-icon-report aui-iconfont-graph-line\\\"\u003e\u003c\\/span\u003e\u003cspan class=\\\"aui-nav-item-label\\\" title=\\\"Reports\\\"\u003eReports\u003c\\/span\u003e\u003c\\/a\u003e\u003c\\/li\u003e\u003cli class=\\\"aui-nav-selected\\\" \u003e\u003ca class=\\\"aui-nav-item \\\" href=\\\"\\/projects\\/OF\\/issues\\\" data-link-id=\\\"com.atlassian.jira.jira-projects-issue-navigator:sidebar-issue-navigator\\\" \u003e\u003cspan class=\\\"aui-icon aui-icon-large icon-sidebar-issues aui-iconfont-issues\\\"\u003e\u003c\\/span\u003e\u003cspan class=\\\"aui-nav-item-label\\\" title=\\\"Issues\\\"\u003eIssues\u003c\\/span\u003e\u003c\\/a\u003e\u003c\\/li\u003e\u003cli  \u003e\u003ca class=\\\"aui-nav-item \\\" href=\\\"\\/projects\\/OF?selectedItem=com.atlassian.jira.jira-projects-plugin:components-page\\\" data-link-id=\\\"com.atlassian.jira.jira-projects-plugin:components-page\\\" \u003e\u003cspan class=\\\"aui-icon aui-icon-large icon-sidebar-components\\\"\u003e\u003c\\/span\u003e\u003cspan class=\\\"aui-nav-item-label\\\" title=\\\"Components\\\"\u003eComponents\u003c\\/span\u003e\u003c\\/a\u003e\u003c\\/li\u003e\u003cli  \u003e\u003ca class=\\\"aui-nav-item \\\" href=\\\"\\/projects\\/OF?selectedItem=com.devsamurai.atlassian.jira.story-mapping-board-page&amp;currentProjectId=11600&amp;rapidView=28\\\" data-link-id=\\\"com.devsamurai.plugin.jira.story-mapping:board-page\\\" \u003e\u003cspan class=\\\"aui-icon aui-icon-large icon-sidebar-smb\\\"\u003e\u003c\\/span\u003e\u003cspan class=\\\"aui-nav-item-label\\\" title=\\\"Story Mapping Board\\\"\u003eStory Mapping Board\u003c\\/span\u003e\u003c\\/a\u003e\u003c\\/li\u003e\u003cli  \u003e\u003ca class=\\\"aui-nav-item \\\" href=\\\"\\/projects\\/OF?selectedItem=com.thed.zephyr.je:zephyr-tests-page#test-summary-tab\\\" data-link-id=\\\"com.thed.zephyr.je:zephyr-tests-page\\\" \u003e\u003cspan class=\\\"aui-icon aui-icon-large icon-sidebar-test\\\"\u003e\u003c\\/span\u003e\u003cspan class=\\\"aui-nav-item-label\\\" title=\\\"Tests\\\"\u003eTests\u003c\\/span\u003e\u003c\\/a\u003e\u003c\\/li\u003e\u003cli  \u003e\u003ca class=\\\"aui-nav-item \\\" href=\\\"\\/projects\\/OF?selectedItem=com.thed.zephyr.je:zephyr-atom-project-sidebar\\\" data-link-id=\\\"com.thed.zephyr.je:zephyr-atom-project-sidebar\\\" \u003e\u003cspan class=\\\"aui-icon aui-icon-large icon-sidebar-test-atom\\\"\u003e\u003c\\/span\u003e\u003cspan class=\\\"aui-nav-item-label\\\" title=\\\"A.T.O.M\\\"\u003eA.T.O.M\u003c\\/span\u003e\u003c\\/a\u003e\u003c\\/li\u003e\u003cli  aria-expanded=\\\"false\\\"\u003e\u003ca href=\\\"#\\\" class=\\\"aui-nav-subtree-toggle\\\"\u003e\u003cspan class=\\\"aui-icon aui-icon-small aui-iconfont-collapsed\\\"\u003e\u003c\\/span\u003e\u003c\\/a\u003e\u003ca class=\\\"aui-nav-item \\\" href=\\\"#\\\" data-link-id=\\\"com.atlassian.jira.jira-projects-plugin:tab-panel-link-parent\\\" \u003e\u003cspan class=\\\"aui-icon aui-icon-large icon-sidebar-add-ons\\\"\u003e\u003c\\/span\u003e\u003cspan class=\\\"aui-nav-item-label\\\" title=\\\"Add-ons\\\"\u003eAdd-ons\u003c\\/span\u003e\u003c\\/a\u003e\u003cul class=\\\"aui-nav\\\"\u003e\u003cli  \u003e\u003ca class=\\\"aui-nav-item \\\" href=\\\"\\/projects\\/OF?selectedItem=com.metainf.jira.plugin.bug-watcher:watches-project-tab-panel\\\" data-link-id=\\\"com.metainf.jira.plugin.bug-watcher:watches-project-tab-panel\\\" \u003e\u003cspan class=\\\"aui-nav-item-label\\\" title=\\\"Watches\\\"\u003eWatches\u003c\\/span\u003e\u003c\\/a\u003e\u003c\\/li\u003e\u003c\\/ul\u003e\u003c\\/li\u003e\u003c\\/ul\u003e\u003c\\/div\u003e\u003c\\/div\u003e\u003c\\/nav\u003e\u003c\\/div\u003e\u003cdiv class=\\\"aui-sidebar-footer\\\"\u003e\u003ca class=\\\"aui-button aui-button-subtle aui-sidebar-toggle aui-sidebar-footer-tipsy\\\" data-tooltip=\\\"Expand sidebar ( [ )\\\" href=\\\"#\\\"\u003e\u003cspan class=\\\"aui-icon aui-icon-small\\\"\u003e\u003c\\/span\u003e\u003c\\/a\u003e\u003c\\/div\u003e\u003c\\/div\u003e\u003c\\/div\u003e\"";
+if(window.WRM._dataArrived)window.WRM._dataArrived();</script>
+<script type="text/javascript" src="/s/d41d8cd98f00b204e9800998ecf8427e-CDN/-1t8urs/802003/4a32d4cfcad1aecd53f58c8f8bf1a5e3/1.0/_/download/batch/jira.webresources:bigpipe-init/jira.webresources:bigpipe-init.js" data-wrm-key="jira.webresources:bigpipe-init" data-wrm-batch-type="resource" data-initially-rendered></script>
+
+<form id="jira_request_timing_info" class="dont-default-focus" >
+	<fieldset class="parameters hidden">
+		<input type="hidden" title="jira.request.start.millis" value="1760515385981" />
+		<input type="hidden" title="jira.request.server.time" value="242" />
+		<input type="hidden" title="jira.request.id" value="483x2738838x2" />
+		<input type="hidden" title="jira.session.expiry.time" value="1760533385184" />
+		<input type="hidden" title="jira.session.expiry.in.mins" value="299" />
+		<input id="jiraConcurrentRequests" type="hidden" name="jira.request.concurrent.requests" value="2" />
+		<input type="hidden" title="db.reads.time.in.ms" value="36" />
+		<input type="hidden" title="db.conns.time.in.ms" value="79" />
+	</fieldset>
+</form>
+<!--
+	                 REQUEST ID : 483x2738838x2
+	          REQUEST TIMESTAMP : [15/Oct/2025:08:03:05 +0000]
+	               REQUEST TIME : 0.2420
+	                 ASESSIONID : 1olhr80
+	        CONCURRENT REQUESTS : 2
+
+	                      db.reads : OpSnapshot{name='db.reads', invocationCount=76, elapsedTotal=36491058, elapsedMin=234444, elapsedMax=3497880, resultSetSize=0, cpuTotal=0, cpuMin=0, cpuMax=0}
+	                      db.conns : OpSnapshot{name='db.conns', invocationCount=102, elapsedTotal=79953316, elapsedMin=258284, elapsedMax=5545379, resultSetSize=0, cpuTotal=0, cpuMin=0, cpuMax=0}
+-->
+
+</body>
+</html>
