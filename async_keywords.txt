@@ -1,0 +1,2 @@
+wait for sometime,
+validate threat protection activities
