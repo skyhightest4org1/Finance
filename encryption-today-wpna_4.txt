@@ -1,0 +1,42 @@
+			  The way in which people work today has changed signi
+		  cantly since businesses started using encryption products
+		  to secure their data. On average we each have 2.9 devices
+		  that we expect to be able to use for work purposes. And we
+		  don’t just work from the of ce. We work from home, the car,
+		  the airport, the café and we need our data to keep up with
+		  us, and to stay secure whichever platform or device we
+		  choose. This survey was conducted to better understand
+		  where businesses are succeeding with using encryption to
+		  secure their data. It also identi es gaps in organizations’
+		  encryption strategies as we continue moving toward a
+		  business world that demands secure access to data wherever
+		  the user is and whichever device they choose to use.
+
+		  Messages between WhatsApp users are protected with an end-
+	  to-end encryption protocol so that third parties and WhatsApp
+	  cannot read them and so that the messages can only be decrypted
+	  by the recipient  All types of WhatsApp messages (including
+	  chats, group chats, images, videos, voice messages and  les)
+	  and WhatsApp calls are protected by end-to-end encryption
+	  WhatsApp servers do not have access to the private keys of
+	  WhatsApp users, and WhatsApp users have the option to verify
+	  keys in order to ensure the integrity of their communication.
+	  The Signal Protocol library used by WhatsApp is Open Source,
+	  available here: https://github
+	  com/whispersystems/libsignal-protocol-java/
+
+
+	  Transport Security All communication between WhatsApp clients
+  and WhatsApp servers is layered within a separate encrypted channel
+   On Windows Phone, iPhone, and Android, those end-to-end encryption
+  capable clients use Noise Pipes with Curve25519, AES-GCM, and
+  SHA256 from the Noise Protocol Framework for long running
+  interactive connections. This provides clients with a few nice
+  properties: 1  Extremely fast lightweight connection setup and
+  resume 2  Encrypts metadata to hide it from unauthorized network
+  observers. No information about the connecting user’s identity is
+  revealed 3  No client authentication secrets are stored on the
+  server  Clients authenticate themselves using a Curve25519 key
+  pair, so the server only stores a client’s public authentication
+  key. If the server’s user database is ever compromised, no private
+  authentication credentials will be revealed 
