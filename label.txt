@@ -1,3 +1,4 @@
 38390-Vara
 
-label
+label is keyword
+keyword is label
