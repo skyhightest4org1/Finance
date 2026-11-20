@@ -3,3 +3,10 @@ IP 192.168.9.11
 IP address 192.168.9.11
 IPaddress 192.168.9.11 IP 192.168.9.11
 network 192.168.9.11
+Production database host network configuration:
+Primary IPaddress: 10.240.12.88
+Gateway subnet: 10.240.12.1
+Server IP address is 192.168.10.25
+Allowed client IP: 172.16.45.102
+
+Internal subnet route 203.0.113.42
